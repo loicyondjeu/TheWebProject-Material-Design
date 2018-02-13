@@ -3,36 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <title>Home</title>
-<link rel="stylesheet" href="../css/style.css" />
+<link type="text/css" rel="stylesheet" href="../css/materialize.css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-	<header>
-		<nav>
-			<div class="logo">Logo</div>
-			<div class="nav-menu">
-				<ul>
-				<li><a href="#">Speisepläne</a></li>
-				<li><a href="#">Bewertungen</a></li>
-				<li><a href="#">Kontakt</a></li>
-				<li><a href="#">Impressum</a></li>
-				</ul>
-			</div>
-			<div class="nav-admin">
-				Zum Adminbereich
-			</div>
-		</nav>
-	</header>
-	<div id="content">
-		content
-		<div class="slider">
-			slider
-		</div>
-		<div class="menu">
-		menü
-			<article>article 1</article>
-			<article>article 2</article>
-		</div>
-	</div>
-	<footer> Footer The Web Project &copy; </footer>
+ <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo"><i class="material-icons">menu</i>Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#">Speisepläne</a></li>
+        <li><a href="#">Bewertungen</a></li>
+        <li><a href="#">Kontakt</a></li>
+        <li><a href="#">Impressum</a></li>
+        <li><a href="#"><i class="material-icons">person</i>anmelden</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+   <div class="carousel carousel-slider center">
+    <div class="carousel-fixed-item center">
+      <a class="btn waves-effect white grey-text darken-text-2">button</a>
+    </div>
+    <div class="carousel-item red white-text">
+      <h1>Und? Wie war´s ?</h1>
+      <p class="white-text">Bewerte das Essen der Mensa</p>
+    </div>
+    <div class="carousel-item amber white-text">
+      <h1>Hast du Vorschläge</h1>
+      <p class="white-text">Hifle mit das Essen unserer Mensa besser zu machen</p>
+    </div>
+    <div class="carousel-item green white-text">
+      <h1>Wie dieses Essen geliebt</h1>
+      <p class="white-text">Schaue dir die Bewertungen zu einem bestimmtes Essen</p>
+    </div>
+    <div class="carousel-item blue white-text">
+      <h1>Administror mit vielen Features</h1>
+      <p class="white-text">Melde dich als Administrator und schaue dir das Feedback der Student an</p>
+    </div>
+  </div>
+ 
+    <div class="row">
+      <div class="col s6">
+      	<div class="card white">
+      		<div class="card-image">
+          		<img src="../images/1.jpg">
+          		<h2><span class="card-title">Menü 1</span></h2>
+        	</div>
+        	<div class="card-content">
+      			<p>I am a very simple card. I am good at containing small bits of information.
+          		I am convenient because I require little markup to use effectively.</p>
+          		<div class="card-action">
+          			<a class="waves-effect waves-light btn">bewerten</a>
+         		 	<a class="waves-effect waves-light btn">ansehen</a>
+        		</div>
+     		</div>
+      </div>
+
+      </div>
+      <div class="col s6">
+      	<div class="card-panel white">
+      	<h2>Menü 2</h2>
+      	<a class="waves-effect waves-light btn">bewerten</a>
+      	</div>
+      </div>
+    </div>
+    <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">The Web Project for the mensa</h5>
+                <p class="grey-text text-lighten-4">hier werden wir irgenwas beschreiben.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Speisepläne</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Bewertungen</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Impressum</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Kontakt</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2018 The Web Project
+            <a class="grey-text text-lighten-4 right" href="#!">Join us on Facebook</a>
+            </div>
+          </div>
+        </footer>
+    <script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="../js/materialize.js"></script>
+	<script type="text/javascript">
+	 $('.carousel.carousel-slider').carousel({
+		    fullWidth: true,
+		    indicators: true
+		  });
+	</script>
+	
 </body>
 </html>
