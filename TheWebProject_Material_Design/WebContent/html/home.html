@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Home</title>
-<link type="text/css" rel="stylesheet" href="../css/materialize.css" />
+<link rel="stylesheet" type="text/css" href="../css/materialize.css" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
@@ -14,97 +14,119 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="#">Speisepläne</a></li>
         <li><a href="#">Bewertungen</a></li>
-        <li><a href="#">Kontakt</a></li>
         <li><a href="#">Impressum</a></li>
-        <li><a href="#">Anmelden</a></li>
-        <li><a href="#"><i class="material-icons">person</i></a></li>
+        <li><a href="#">Administratorbereich</a></li>
       </ul>
     </div>
   </nav>
-  
-   <div class="carousel carousel-slider center">
-    <div class="carousel-fixed-item center">
-      <a class="btn waves-effect white grey-text darken-text-2">button</a>
-    </div>
-    <div class="carousel-item red white-text">
-      <h1>Und? Wie war's ?</h1>
-      <p class="white-text">Bewerte das Essen der Mensa</p>
-    </div>
-    <div class="carousel-item amber white-text">
-      <h1>Hast du Vorschläge</h1>
-      <p class="white-text">Hifle mit das Essen unserer Mensa besser zu machen</p>
-    </div>
-    <div class="carousel-item green white-text">
-      <h1>Wie dieses Essen geliebt</h1>
-      <p class="white-text">Schaue dir die Bewertungen zu einem bestimmtes Essen</p>
-    </div>
-    <div class="carousel-item blue white-text">
-      <h1>Administrator mit vielen Features</h1>
-      <p class="white-text">Melde dich als Administrator und schaue dir das Feedback der Student an</p>
-    </div>
-  </div>
- 
-    <div class="row">
-    
-      <div class="col s6">
-      	<div class="card white">
-      		<div class="card-image">
-          		<img src="../images/1.jpg">
-          		<h2><span class="card-title">Menü 1</span></h2>
-        	</div>
-        	<div class="card-content">
-      			<p>Hier wird das Essen beschrieben :)</p>
-          		<div class="card-action">
-          			<a class="waves-effect waves-light tooltipped btn" data-delay="50" data-tooltip="Gehe zu bewertung">bewerten</a>
-         		 	<a class="waves-effect waves-light btn">ansehen</a>
-        		</div>
-     		</div>
-      </div>
-      </div>
-      
-      <div class="col s6">
-      	<div class="card white">
-      		<div class="card-image">
-          		<img src="../images/1.jpg">
-          		<h2><span class="card-title">Menü 2</span></h2>
-        	</div>
-        	<div class="card-content">
-        		<p class="red-text">Hier wird das Essen beschrieben</p>
-        		<div class="card-action">
-        		<a class="waves-effect waves-light blue btn">bewerten</a>
-        		<a class="waves-effect waves-light blue btn">bewerten</a>
-        		</div>
-        	</div>
-      	</div>
-      </div>
-      
-    </div>
-    
-    
-    <div class="slider">
+
+	<!-- App Info Slider -->
+	<div class="carousel carousel-slider center">
+		<div class="carousel-item red white-text">
+			<h1>Bewerte das Essen deiner Mensa</h1>
+			<p class="white-text">Sag uns einfach wie dir das Essen
+				geschmeckt hat !</p>
+			<i class="material-icons">directions_bike</i><br/>
+			<a class="btn waves-effect white grey-text darken-text-2">Zur Bewertung</a>
+		</div>
+		<div class="carousel-item grey white-text">
+			<h1>Gib deiner Mensa Vorschläge</h1>
+			<p class="white-text">Hilf mit das Essen in deiner Mensa besser
+				zu machen !</p>
+			<i class="material-icons">directions_bike</i>
+		</div>
+		<div class="carousel-item blue white-text">
+			<h1>verfolge Speise</h1>
+			<p class="white-text">gib uns deiner E-Mail und bekommen
+				Benachrichtigung für dein Lieblingsessen</p>
+			<i class="material-icons">directions_bike</i>
+		</div>
+		<div class="carousel-item yellow white-text">
+			<h1>Administrator</h1>
+			<p class="white-text">Melde dich als Administrator und schaue dir
+				das Feedback der Studenten an</p>
+			<i class="material-icons">directions_bike</i>
+		</div>
+	</div>
+
+
+
+	<div class="container">
+		<p>Heute in deiner Mensa</p>
+	</div>
+	
+	<div class="row">
+		<div class="col s6">
+			<div class="card white">
+				<div class="card-image">
+					<img src="../images/1.jpg">
+					<h2>
+						<span class="card-title">Menü 1</span>
+					</h2>
+				</div>
+				<div class="card-content">
+					<div class="card-action">
+						<a class="waves-effect waves-light tooltipped blue btn"
+							data-tooltip="Gehe zu bewertung">bewerten</a> 
+							<a class="waves-effect waves-light tooltipped blue btn" 
+							   data-tooltip="Sehe dir bisherige Bewertungen an">ansehen</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col s6">
+			<div class="card white">
+				<div class="card-image">
+					<img src="../images/1.jpg">
+					<h2>
+						<span class="card-title">Menü 2</span>
+					</h2>
+				</div>
+				<div class="card-content">
+					<div class="card-action">
+						<a class="waves-effect waves-light blue btn">bewerten</a> <a
+							class="waves-effect waves-light blue btn">ansehen</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="slider">
     <ul class="slides">
       <li>
-        <img src="../images/calenoli.jpg">
         <div class="caption center-align">
           <h3>Willst du heute vegetarisch essen ?</h3>
           <h5 class="light grey-text text-lighten-3">Komm schon.</h5>
         </div>
       </li>
       <li>
-        <img src="../images/risoto.jpg">
         <div class="caption left-align">
           <h3>Lust auf Reis?</h3>
           <h5 class="light grey-text text-lighten-3">In unserer Mensa gibt es alles!</h5>
         </div>
       </li>
       <li>
-        <img src="WebContent/images/schnitzel.jpg">
         <div class="caption right-align">
           <h3>Das beste Schnitzel vom Rheinlandplaz</h3>
           <h5 class="light grey-text text-lighten-3">findest du in unserer Mensa</h5>
         </div>
       </li>
     </ul>
+  </div>
+  
+  <div class="row">
+  	<h1>Unsere Standorten</h1>
+  </div>
+  <div class="row red darken-4">
+  	<div class="col s6">
+  		<h2 class="white-text">Mensa am Campus</h2>
+  	</div>
+  	<div class="col s6">
+  		<h2 class="white-text">Betriebsrestauration in der Berliner Str. 23a</h2>
+  	</div>
   </div>
     
     
@@ -122,7 +144,6 @@
                   <li><a class="grey-text text-lighten-3" href="#!">Speisepläne</a></li>
                   <li><a class="grey-text text-lighten-3" href="#!">Bewertungen</a></li>
                   <li><a class="grey-text text-lighten-3" href="#!">Impressum</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Kontakt</a></li>
                 </ul>
               </div>
             </div>
@@ -145,6 +166,10 @@
 	 $(document).ready(function(){
 		    $('.tooltipped').tooltip({delay: 50});
 		  });
+	 
+	 $(document).ready(function(){
+	      $('.slider').slider();
+	    });
 	</script>
 	
 </body>
