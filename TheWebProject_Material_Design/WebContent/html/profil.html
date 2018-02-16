@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Profil</title>
+<!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+<!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="../css/materialize.css"  media="screen,projection"/>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <!-- <div class="container"> -->
+
+
+        <div class="nav-wrapper red">
+          <!-- <a href="#" class="brand-logo">Logo</a> -->
+          <ul class="right">
+            <li class="hide-on-med-and-down"><a href="funktionen.html">Funktionen</a></li>
+            <li class="hide-on-med-and-down"><a href="home.html">Abmelden</a></li>
+            <li><a class='dropdown-button  hide-on-large-only' href='#' data-activates='dropdown1'> <i class="material-icons">arrow_drop_down</i> </a></li>
+
+              <!-- Dropdown Structure -->
+
+            </ul>
+        </div>
+
+      <!-- </div> -->
+    </nav>
+    <ul id='dropdown1' class='dropdown-content'>
+      <li><a href="funktionen.html" class="red-text ">Funktionen</a></li>
+      <li><a href="home.html" class="red-text ">Abmelden</a></li>
+    </ul>
+  </header>
+  <main>
+
+  <div class="row">
+      <form class="col s12 m6 l6">
+        <div class="card">
+          <div class="card-action red white-text">
+              <h3 class="center-align"> Mein Profil</h3>
+          </div>
+          <div class="card-content">
+            <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input disabled value="Mustermann" id="disabled" type="text" class="validate">
+                    <label for="disabled">Nachname</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input disabled value="Max" id="disabled" type="text" class="validate">
+                    <label for="disabled">Vorname</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input disabled value="admin@hs-lu.de" id="disabled" type="text" class="validate">
+                    <label for="disabled">Email</label>
+                  </div>
+                </div>
+              </form>
+          </div>
+        </div>
+      </form>
+
+      <form class="col s12 m6 l6">
+        <div class="card">
+          <div class="card-action red white-text">
+              <h3 class="center-align"> Konto anlegen</h3>
+          </div>
+          <div class="card-content">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="last_name" type="text" class="validate">
+                  <label for="first_name">Vorname</label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="last_name" type="text" class="validate">
+                  <label for="last_name">Nachname</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="password" type="password" class="validate">
+                  <label for="password">Passwort</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="email" type="email" class="validate">
+                  <label for="email">Email</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12">
+                  <div class="form-field">
+                    <a href="#" ><button class="btn-large red waves-effect waves-dark" style="width:100%;">anlegen</button></a>
+                  </div>
+                </div>
+              </div>
+            </form>
+            </div>
+          </div>
+        </form>
+      </div>
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../js/materialize.js"></script>
+    <script type="text/javascript">
+
+      $('.dropdown-button').dropdown({
+        inDuration: 300,
+        outDuration: 225,
+        constrainWidth: false, // Does not change width of dropdown to that of the activator
+        hover: true, // Activate on hover
+        gutter: 0, // Spacing from edge
+        belowOrigin: true, // Displays dropdown below the button
+        alignment: 'right', // Displays dropdown with edge aligned to the left of button
+        stopPropagation: false // Stops event propagation
+      }
+      );
+    </script>
+
+  </main>
+</body>
+</html>
