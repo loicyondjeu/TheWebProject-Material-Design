@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Vorschläge</title>
  <link type="text/css" rel="stylesheet" href="../css/materialize.css"/>
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
  
 <style>
 body{background-color: 	#C0C0C0;}
@@ -15,7 +16,7 @@ body{background-color: 	#C0C0C0;}
 
   <header>
     <nav>
-    <div class="nav-wrapper">
+    <div class="nav-wrapper red lighten-1">
       <a href="home.html" class="brand-logo">&nbsp;Vorschläge</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="speisepläne.html">Speisepläne</a></li>
@@ -26,12 +27,110 @@ body{background-color: 	#C0C0C0;}
     </div>
   </nav>
   </header>
-  
+
+  <div class="slider">
+    <ul class="slides">
+    <li>
+     <img src = "https://www.herzogtum-lauenburg.de/images/yj36soohwvu-/lecker-essen-im-forsthaus-gruener-jaeger.jpeg"/>
+      <div class="caption left-align">
+         <h3> <b>Vielleicht gibt es schon bald euer Gericht in der Mensa!</b></h3>
+          <h5 class="light green-text text-lighten-3"> <b>Schreibt uns einfach welches Gericht ihr euch wünscht!</b></h5>
+           </div>
+      </li>
+      <li>
+      <img src = "http://rnll.fh-kl.de/oml/ehochb/fileadmin/templates/images/HS_Panorama.jpg"/>
+        <div class="caption center-align">
+        <h3 class="light grey-text text-lighten-3"> <b>Hast du Anregungen oder Verbesserungsvorschläge?</b></h3>
+           <h5 class="light grey-text text-lighten-3"> <b>Dann teile uns diese bitte mit!</b></h5>
+           <a class="carousel-item" href="#one!"><img src="..\images\staff.jpg"></a>
+        </div>
+      </li>
+      <li>
+       <img src = "http://www.forcelliniselfservice.it/UserFiles/images/staff.jpg"/>
+        <div class="caption left-align">
+         <h3 class="black-text text-lighten-3"> <b>Wir freuen uns auf Deine Nachricht!</b></h3>
+        </div>
+      </li>
+    </ul>
       <form>
   <span class="right">
   <input class="waves-effect waves-light grey btn" type="button" value="Zur&uuml;ck" onClick="history.go(-1);return true;"><br />
   </span><br />
 </form><br />
+  </div>
+
+<h4>Kontaktformular</h4>
+      <form class="col s12" action="..\php\form-to-email.php" name="myemailform" method="post">
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="Vorname" type="text" class="validate">
+          <label for="first_name">Vorname</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Nachname</label>
+        </div>
+        </div>
+
+	<div class="row">
+	<div class="input-field col s6">
+           <i class="material-icons prefix">mail</i>
+            <input id="email" type="email" class="validate">
+            <label for="email" data-error="wrong" data-success="right">Email</label>
+          </div>
+      <div class="input-field col s6">
+          <i class="material-icons prefix">phone</i>
+          <input id="icon_telephone" type="tel" class="validate">
+          <label for="icon_telephone">Telefon</label>
+        </div>
+          </div>
+     
+  <label>Kontaktgrund</label>
+  <select class="browser-default grey lighten-1">
+    <option value="" disabled selected>Bitte wählen Sie den Anlass Ihrer Nachricht</option>
+    <option value="1" selected="selected">Menüvorschlag</option>
+    <option value="2">allgemeine Wünsche/Vorschläge</option>
+    <option value="3">Sonstiges</option>
+  </select>
+        
+         <div class="row">
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <label for="textarea1">Eure Vorschläge:</label>
+        </div>
+      </div>
+  </div>
+  
+    <div class="file-field input-field">
+      <div class="btn waves-effect waves-light grey">
+        <span>Datei</span>
+        <input type="file" multiple>
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" placeholder="Laden Sie eine oder mehrere Dateien hoch"><br />
+      </div>
+    </div><br />
+       <div style="text-align: center;">
+        <input class="btn waves-effect waves-light grey center" type="submit" name="submit" value="Submit"><br />
+      </div><br/>
+  		</form>
+  		<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="../js/materialize.js"></script>
+	<script type="text/javascript">
+	 $('.carousel.carousel-slider').carousel({
+		    fullWidth: true,
+		    indicators: true
+		  });
+	 
+	 $(document).ready(function(){
+		    $('.tooltipped').tooltip({delay: 50});
+		  });
+	 
+	 $(document).ready(function(){
+	      $('.slider').slider();
+	    });
+	</script>
 
  <footer class="page-footer">
           <div class="container">
