@@ -20,17 +20,45 @@ margin-right: 30%
 <body>
 
 <header>
+<!-- <nav> -->
+<!--     <div class="nav-wrapper"> -->
+<!--       <a href="home.html" class="brand-logo">&nbsp;Impressum HS LU</a> -->
+<!--       <ul id="nav-mobile" class="right hide-on-med-and-down"> -->
+<!--         <li><a href="speisepläne.html">Speisepläne</a></li> -->
+<!--         <li><a href="vorschläge.html">Vorschläge</a></li> -->
+<!--         <li><a href="login.html">Login</a></li> -->
+<!--         <li><a href="home.html">Home</a></li> -->
+<!--       </ul> -->
+<!--     </div> -->
+<!--   </nav> -->
+
+
 <nav>
-    <div class="nav-wrapper">
-      <a href="home.html" class="brand-logo">&nbsp;Impressum HS LU</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="speisepläne.html">Speisepläne</a></li>
-        <li><a href="vorschläge.html">Vorschläge</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="home.html">Home</a></li>
+        <!-- <div class="container"> -->
+
+
+          <div class="nav-wrapper ">
+            <a href="impressum.html" class="brand-logo">&nbsp;Impressum</a>
+            <ul class="right">
+             <li class="hide-on-med-and-down"><a href="home.html">Home</a></li>
+              <li class="hide-on-med-and-down"><a href="vorschläge.html">Vorschläge</a></li>
+              <li class="hide-on-med-and-down"><a href="speisepläne.html">Speisepläne</a></li>
+                <li class="hide-on-med-and-down"><a href="login.html">Login</a></li>
+              <li><a class='dropdown-button  hide-on-large-only' href='#' data-activates='dropdown1'> <i class="material-icons">arrow_drop_down</i> </a></li>
+
+                <!-- Dropdown Structure -->
+
+              </ul>
+          </div>
+
+        <!-- </div> -->
+      </nav>
+
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="home.html" class="red-text">Home</a></li>
+        <li><a href="speisepläne.html" class="red-text ">Speisepläne</a></li>
+        <li><a href="impressum.html" class="red-text ">Impressum</a></li>
       </ul>
-    </div>
-  </nav>
   </header>
   
   <form>
@@ -297,5 +325,20 @@ margin-right: 30%
 </footer>
 <script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="../js/materialize.js"></script>
+ <script type="text/javascript">
+       $(document).ready(function(){$('.button-collapse').sideNav();
+      $('.dropdown-button').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      constrainWidth: false, // Does not change width of dropdown to that of the activator
+      hover: true, // Activate on hover
+      gutter: 0, // Spacing from edge
+      belowOrigin: true, // Displays dropdown below the button
+      alignment: 'left', // Displays dropdown with edge aligned to the left of button
+      stopPropagation: false // Stops event propagation
+      }
+      );
+          });
+      </script>
 </body>
 </html>
