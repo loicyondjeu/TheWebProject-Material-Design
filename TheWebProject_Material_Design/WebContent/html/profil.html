@@ -2,12 +2,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Profil</title>
 <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+ <script src="..\js\materialize.js"></script>
+
+<style>
+body{background-color: 	#C0C0C0;}
+</style>
 
 <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -19,28 +23,26 @@
 
   <header>
     <nav>
-      <!-- <div class="container"> -->
-
-
-        <div class="nav-wrapper red">
-          <!-- <a href="#" class="brand-logo">Logo</a> -->
-          <ul class="right">
-            <li class="hide-on-med-and-down"><a href="funktionen.html">Funktionen</a></li>
-            <li class="hide-on-med-and-down"><a href="home.html">Abmelden</a></li>
-            <li><a class='dropdown-button  hide-on-large-only' href='#' data-activates='dropdown1'> <i class="material-icons">arrow_drop_down</i> </a></li>
-
-              <!-- Dropdown Structure -->
-
-            </ul>
-        </div>
-
-      <!-- </div> -->
-    </nav>
-    <ul id='dropdown1' class='dropdown-content'>
-      <li><a href="funktionen.html" class="red-text ">Funktionen</a></li>
-      <li><a href="home.html" class="red-text ">Abmelden</a></li>
-    </ul>
+    <div class="nav-wrapper">
+      <a href="home.html" class="brand-logo">&nbsp;Profil</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="speisepläne.html">Speisepläne</a></li>
+        <li><a href="vorschläge.html">Vorschläge</a></li>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+   		 <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="funktionen.html">Administratorbereich</a></li>
+      </ul>
+    </div>
+  </nav>
   </header>
+  
+      <form>
+  <span class="right">
+  <input class="waves-effect waves-light grey btn" type="button" value="Zur&uuml;ck" onClick="history.go(-1);return true;"><br />
+  </span><br />
+</form><br />
+
   <main>
 
   <div class="row">

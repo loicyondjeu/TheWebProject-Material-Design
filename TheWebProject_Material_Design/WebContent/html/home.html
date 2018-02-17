@@ -6,21 +6,27 @@
 <title>Home</title>
 <link rel="stylesheet" type="text/css" href="../css/materialize.css" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+body{background-color: 	#C0C0C0;}
+</style>
+
 </head>
 <body>
-
- <nav>
+  
+  <header>
+<nav>
     <div class="nav-wrapper red darken-4">
-      <a href="#" class="brand-logo"><i class="material-icons">menu</i>Logo</a>
+       <a href="home.html" class="brand-logo"><i class="material-icons">menu</i>Home</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#">Speisepläne</a></li>
-        <li><a href="#">Bewertungen</a></li>
+        <li><a href="speisepläne.html">Speisepläne</a></li>
+         <li><a href="vorschläge.html">Vorschläge</a></li>
+        <li><a href="login.html">Login</a></li>
         <li><a href="impressum.html">Impressum</a></li>
-        <li><a href="#">Administratorbereich</a></li>
       </ul>
     </div>
   </nav>
-
+  </header>
+  
 	<!-- App Info Slider -->
 	<div class="carousel carousel-slider center">
 		<div class="carousel-item red white-text">
@@ -50,6 +56,11 @@
 		</div>
 	</div>
 
+<form>
+  <span class="right">
+  <input class="waves-effect waves-light grey btn" type="button" value="Zur&uuml;ck" onClick="history.go(-1);return true;"><br />
+  </span><br />
+</form><br />
 
 
 	<div class="container">
@@ -101,6 +112,7 @@
         <div class="caption center-align">
           <h3>Willst du heute vegetarisch essen ?</h3>
           <h5 class="light grey-text text-lighten-3">Komm schon.</h5>
+          <a class="carousel-item" href="#one!"><img src="..\images\food.jpg"></a>
         </div>
       </li>
       <li>
