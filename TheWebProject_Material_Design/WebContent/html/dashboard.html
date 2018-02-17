@@ -8,13 +8,53 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-	<div class="side-nav fixed blue">
+	<div class="nav-mobile blue">
 		<h1 class="white-text">SideNav</h1>
 	</div>
+	<div class="row">
+		<div class="col s6">
+			<div class="card">
+				<canvas id="bewertungen"></canvas>
+			</div>
+		</div>
+		<div class="col s6"></div>
+	</div>
+	
+	
 	
 <script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="../js/materialize.js"></script>
 <script type="text/javascript" src="../js/Chart.js"></script>
 <script type="text/javascript" src="../js/dashboard.js"></script>
+
+<script>
+var ctx = document.getElementById("bewertungen");
+var myChart = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+        labels: ["Hauptspeise", "Dessert", "Salat", "Suppe"],
+        datasets: [{
+            label: 'Anzahl der Bewertungen',
+            data: [12, 119, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.8)',
+                'rgba(54, 162, 235, 0.8)',
+                'rgba(255, 206, 86, 0.8)',
+                'rgba(75, 192, 192, 0.8)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
 </body>
 </html>
