@@ -6,21 +6,27 @@
 <title>Home</title>
 <link rel="stylesheet" type="text/css" href="../css/materialize.css" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+body{background-color: 	#C0C0C0;}
+</style>
+
 </head>
 <body>
-
- <nav>
+  
+  <header>
+<nav>
     <div class="nav-wrapper red darken-4">
-      <a href="#" class="brand-logo"><i class="material-icons">menu</i>Logo</a>
+       <a href="home.html" class="brand-logo"><i class="material-icons">menu</i>Home</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#">Speisepläne</a></li>
-        <li><a href="#">Bewertungen</a></li>
+        <li><a href="speisepläne.html">Speisepläne</a></li>
+         <li><a href="vorschläge.html">Vorschläge</a></li>
+        <li><a href="login.html">Login</a></li>
         <li><a href="impressum.html">Impressum</a></li>
-        <li><a href="#">Administratorbereich</a></li>
       </ul>
     </div>
   </nav>
-
+  </header>
+  
 	<!-- App Info Slider -->
 	<div class="carousel carousel-slider center">
 		<div class="carousel-item red white-text">
@@ -50,6 +56,11 @@
 		</div>
 	</div>
 
+<form>
+  <span class="right">
+  <input class="waves-effect waves-light grey btn" type="button" value="Zur&uuml;ck" onClick="history.go(-1);return true;"><br />
+  </span><br />
+</form><br />
 
 
 	<div class="container">
@@ -101,6 +112,7 @@
         <div class="caption center-align">
           <h3>Willst du heute vegetarisch essen ?</h3>
           <h5 class="light grey-text text-lighten-3">Komm schon.</h5>
+          <a class="carousel-item" href="#one!"><img src="..\images\food.jpg"></a>
         </div>
       </li>
       <li>
@@ -111,7 +123,7 @@
       </li>
       <li>
         <div class="caption right-align">
-          <h3>Das beste Schnitzel vom Rheinlandplaz</h3>
+          <h3>Das beste Schnitzel in Rheinlandpfalz</h3>
           <h5 class="light grey-text text-lighten-3">findest du in unserer Mensa</h5>
         </div>
       </li>
@@ -119,7 +131,7 @@
   </div>
   
   <div class="row">
-  	<h1>Unsere Standorten</h1>
+  	<h1>Unsere Standorte</h1>
   </div>
   <div class="row red darken-4">
   	<div class="col s6">
@@ -136,15 +148,20 @@
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">The Web Project for the mensa</h5>
-                <p class="grey-text text-lighten-4">hier werden wir irgenwas beschreiben.</p>
+                <h5 class="white-text">Impressum</h5>
+                <p class="grey-text text-lighten-4">Hochschulgastronomie Campus Ernst-Boehe-Straße<br />
+                Ernst-Boehe-Str. 4 <br />
+                 67059 Ludwigshafen <br />
+                 <i class="material-icons">call</i> +49 (0) 6341/9179-0 <br />
+                 <i class="material-icons">email</i> <a href="mailto:info@stw-vp.de"><span style="color:white">info@stw-vp.de</span></a> <br />
               </div>
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Links</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Speisepläne</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Bewertungen</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Impressum</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.hs-lu.de/service/studierendenwerk-vorderpfalz.html">Studierendenwerk Vorderpfalz</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.studierendenwerk-vorderpfalz.de/home/speiseplaene/speiseplaene/ludwigshafen-mensa-wochenplan-aktuell.html">simpler Mensaplan mit PDF-Funktionalität</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.hs-lu.de/">Startseite Hochschule Ludwigshafen</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.studierendenwerk-vorderpfalz.de/en/home/speiseplaene/menu/ludwigshafen-weekly-menu-current-week.html">Menu in English </a></li>
                 </ul>
               </div>
             </div>

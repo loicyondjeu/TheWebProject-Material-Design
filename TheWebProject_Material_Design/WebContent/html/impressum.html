@@ -18,45 +18,65 @@ margin-right: 30%
 </style>
 </head>
 <body>
+
 <header>
-</header>
 <nav>
     <div class="nav-wrapper">
-      <a href="home.html" class="brand-logo">Impressum HS LU</a>
+      <a href="home.html" class="brand-logo">&nbsp;Impressum HS LU</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="speisepläne.html">Speisepläne</a></li>
-        <li><a href="dashboard.html">Bewertungen</a></li>
+        <li><a href="vorschläge.html">Vorschläge</a></li>
+        <li><a href="login.html">Login</a></li>
         <li><a href="home.html">Home</a></li>
-        <li><a href="funktionen.html">Administratorbereich</a></li>
       </ul>
     </div>
   </nav>
-      <form>
-  <span class="right">
+  </header>
+  
+  <form>
+   <span class="right">
   <input class="waves-effect waves-light grey btn" type="button" value="Zur&uuml;ck" onClick="history.go(-1);return true;"><br />
   </span><br />
-</form>
-   <div class="slider">
-            <ul class="slides">
-                <li>
-                    <img src="..\images\staff.jpg">
-                </li>
-                <li>
-                    <img src="..\images\mensa.jpg">
-                </li>
-                <li>
-                    <img src="..\images\food.jpg">
-                </li>
-            </ul>
+</form><br />
+  
+ 
+  <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="http://www.forcelliniselfservice.it/UserFiles/images/staff.jpg">
+         <div class="caption center-align">
+          <h3 class="black-text text-lighten-3"><b>Wir sind immer für euch da!</b></h3>
+          <h5 class="black-text text-lighten-3"><b>Schreibt uns bei Fragen oder Anregungen!</b></h5>
         </div>
-        <!--your code end-->
-
-            <script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+      </li>
+       <li>
+        <img src="https://chayns1.tobit.com/SlitteRessource/Locations/84366/TappMaker/Images/045b302a-cf8f-4d94-926f-107668c5c915.jpg">
+           <div class="caption right-align">
+          <h3><b>Bei uns herrscht frische Garantie!</b></h3>
+          <h5 class="black-text text-lighten-3"><b>Sollte doch einmal etwas nicht zu eurer Zufriedenheit sein, teilt uns dies bitte mit!</b></h5>
+        </div>
+        </li>
+      <li>
+        <img src="https://www.hs-nb.de/fileadmin/hs-neubrandenburg/Studium_Weiterbildung/Bilder/essen.jpg">
+        <div class="caption left-align">
+          <h3><b>Gemeinsam werden wir noch besser!"</b></h3>
+          <h5 class="light grey-text text-lighten-3"><b>Bitte bewertet eure Mahlzeit.</b></h5>
+        </div>
+      </li>
+      <li>
+        <img src="https://www.stw.berlin/en/assets/components/phpthumbof/cache/1120_Mensa_Nord_1_.6af1287f2d22c0705fa4d4dc76e897f2.jpg"> 
+        <div class="caption right-align">
+          <h3 class="black-text text-lighten-3"><b>Unsere Köche kochen täglich frisch!</b></h3>
+          <h5 class="black-text text-lighten-3"><b>Das Essen wird mit saisonalen und regionalen Zutaten zubereitet.</b></h5>
+        </div>
+      </li>
+    </ul>
+  </div>
+  
+ <script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
 	<script type="text/javascript" src="../js/materialize.js"></script>
-	
-
-        <script>
-   	 $('.carousel.carousel-slider').carousel({
+	<script type="text/javascript">
+	 $('.carousel.carousel-slider').carousel({
 		    fullWidth: true,
 		    indicators: true
 		  });
@@ -68,20 +88,25 @@ margin-right: 30%
 	 $(document).ready(function(){
 	      $('.slider').slider();
 	    });
-        </script>         
+	</script>
+	
   
 
     <div class="row">
     <div class="col s6">
     <div class="card-panel grey">
-    <h3>So finden Sie zu uns:</h3><br />
+    <h3>So findet ihr zu uns:</h3><br />
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1056.6973116017093!2d8.423566803215005!3d49.473468962007026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4797cc7dbbd596fb%3A0x6c46f7025066f5d0!2sStudierendenwerk+Vorderpfalz+-+Mensa!5e1!3m2!1sen!2sde!4v1518518615723" width="600" height="450" style="border:0"></iframe>
 	<br />
 	<p class="flow-text">
-	Sie erreichen uns mit den Buslinien 75 und 76. Steigen Sie hierzu an der Haltestelle Hochschule aus <br />
-	und überqueren Sie, falls Sie aus Richtung des Berliner Platzes / Hauptbahnhofs kommen die Bruchwiesenstraße.
+	Ihr erreicht uns mit den Buslinien 75 und 76. Steigt hierzu an der Haltestelle Hochschule aus <br />
+	und überquert, falls ihr aus der Richtung des Berliner Platzes / Hauptbahnhofs kommt die Bruchwiesenstraße.
+	Die Mensa befindet sich im A-Gebäude der Hochschule.
+	<br />
+	<br />
 	</p>
 	</div></div>
+	</br>
       <div class="col s6">
       <div class="card-panel grey">
       <h3>Öffnungszeiten</h3><br />
@@ -151,6 +176,33 @@ margin-right: 30%
       </table><br />
       </div></div>
       </div>
+      
+      <div class="slider">
+    <ul class="slides">
+      <li>
+        <div class="caption center-align">
+          <h3>Hast du Anregungen oder Verbesserungsvorschläge?</h3>
+           <h5 class="light grey-text text-lighten-3">Dann teile uns diese bitte mit!</h5>
+           <a class="carousel-item" href="#one!"><img src="..\images\staff.jpg"></a>
+        </div>
+      </li>
+      <li>
+        <div class="caption left-align">
+          <h3>Wir freuen uns auf Deine Nachricht!</h3>
+        </div>
+      </li>
+      <li>
+      <div class="caption left-align">
+          <h3>Unser Motto: Saisonal & regional!</h3>
+           <h5 class="light grey-text text-lighten-3">Alle Zutaten kommen aus der Region!</h5>
+        </div>
+        <div class="caption right-align">
+          <h3>Immer frisch! Immer lecker!</h3>
+           <h5 class="light grey-text text-lighten-3">Komm vorbei und überzeuge dich selbst!</h5>
+        </div>
+      </li>
+    </ul>
+  </div>
       
       <h4>Kontaktformular</h4>
       <form class="col s12" action="..\php\form-to-email.php" name="myemailform" method="post">
