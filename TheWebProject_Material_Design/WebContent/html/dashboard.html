@@ -2,17 +2,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Dashboard</title>
 <link rel="stylesheet" type="text/css" href="../css/materialize.css" />
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
 <style>
-body{background-color: 	#C0C0C0;}
+body {
+	background-color: #C0C0C0;
+}
 </style>
 </head>
 <body>
-	
+
 	<header>
+
 <!-- <nav>
     <div class="nav-wrapper">
      <a href="home.html" class="brand-logo">&nbsp;Dashboard</a>
@@ -58,7 +62,7 @@ body{background-color: 	#C0C0C0;}
         <li><a href="impressum.html" class="red-text ">Impressum</a></li>
         <li><a href="funktionen.html" class="red-text ">Administratorbereich</a></li>
       </ul>
-  </header>
+
 
   
       <form>
@@ -66,6 +70,29 @@ body{background-color: 	#C0C0C0;}
   <input class="waves-effect waves-light grey btn" type="button" value="Zur&uuml;ck" onClick="history.go(-1);return true;"><br />
   </span><br />
 </form><br />
+		<nav>
+			<div class="nav-wrapper">
+				<a href="home.html" class="brand-logo">&nbsp;Dashboard</a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="home.html">Home</a></li>
+					<li><a href="speisepläne.html">Speisepläne</a></li>
+					<li><a href="profil.html">Profil</a></li>
+					<li><a href="gesundheitsdaten.html">Gesundheitsdaten</a></li>
+					<li><a href="impressum.html">Impressum</a></li>
+					<li><a href="funktionen.html">Administratorbereich</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<form>
+		<span class="right"> <input
+			class="waves-effect waves-light grey btn" type="button"
+			value="Zur&uuml;ck" onClick="history.go(-1);return true;"><br />
+		</span><br />
+	</form>
+	<br />
+
 
 	<div class="row">
 		<div class="col s6">
@@ -75,42 +102,51 @@ body{background-color: 	#C0C0C0;}
 		</div>
 		<div class="col s6"></div>
 	</div>
-	
- <footer class="page-footer">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Impressum</h5>
-                <p class="grey-text text-lighten-4">Hochschulgastronomie Campus Ernst-Boehe-Straße<br />
-                Ernst-Boehe-Str. 4 <br />
-                 67059 Ludwigshafen <br />
-                 <i class="material-icons">call</i> +49 (0) 6341/9179-0 <br />
-                 <i class="material-icons">email</i> <a href="mailto:info@stw-vp.de"><span style="color:white">info@stw-vp.de</span></a> <br />
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="https://www.hs-lu.de/service/studierendenwerk-vorderpfalz.html">Studierendenwerk Vorderpfalz</a></li>
-                  <li><a class="grey-text text-lighten-3" href="https://www.studierendenwerk-vorderpfalz.de/home/speiseplaene/speiseplaene/ludwigshafen-mensa-wochenplan-aktuell.html">simpler Mensaplan mit PDF-Funktionalität</a></li>
-                  <li><a class="grey-text text-lighten-3" href="https://www.hs-lu.de/">Startseite Hochschule Ludwigshafen</a></li>
-                  <li><a class="grey-text text-lighten-3" href="https://www.studierendenwerk-vorderpfalz.de/en/home/speiseplaene/menu/ludwigshafen-weekly-menu-current-week.html">Menu in English </a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2018 The Web Project
-            <a class="grey-text text-lighten-4 right" href="#!">Join us on Facebook</a>
-            </div>
-          </div>
-        </footer>
-<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="../js/materialize.js"></script>
-<script type="text/javascript" src="../js/Chart.js"></script>
-<script type="text/javascript" src="../js/dashboard.js"></script>
 
-<script>
+	<footer class="page-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="white-text">Impressum</h5>
+					<p class="grey-text text-lighten-4">
+						Hochschulgastronomie Campus Ernst-Boehe-Straße<br />
+						Ernst-Boehe-Str. 4 <br /> 67059 Ludwigshafen <br /> <i
+							class="material-icons">call</i> +49 (0) 6341/9179-0 <br /> <i
+							class="material-icons">email</i> <a href="mailto:info@stw-vp.de"><span
+							style="color: white">info@stw-vp.de</span></a> <br />
+				</div>
+				<div class="col l4 offset-l2 s12">
+					<h5 class="white-text">Links</h5>
+					<ul>
+						<li><a class="grey-text text-lighten-3"
+							href="https://www.hs-lu.de/service/studierendenwerk-vorderpfalz.html">Studierendenwerk
+								Vorderpfalz</a></li>
+						<li><a class="grey-text text-lighten-3"
+							href="https://www.studierendenwerk-vorderpfalz.de/home/speiseplaene/speiseplaene/ludwigshafen-mensa-wochenplan-aktuell.html">simpler
+								Mensaplan mit PDF-Funktionalität</a></li>
+						<li><a class="grey-text text-lighten-3"
+							href="https://www.hs-lu.de/">Startseite Hochschule
+								Ludwigshafen</a></li>
+						<li><a class="grey-text text-lighten-3"
+							href="https://www.studierendenwerk-vorderpfalz.de/en/home/speiseplaene/menu/ludwigshafen-weekly-menu-current-week.html">Menu
+								in English </a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+				© 2018 The Web Project <a class="grey-text text-lighten-4 right"
+					href="#!">Join us on Facebook</a>
+			</div>
+		</div>
+	</footer>
+	<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="../js/materialize.js"></script>
+	<script type="text/javascript" src="../js/Chart.js"></script>
+	<script type="text/javascript" src="../js/dashboard.js"></script>
+
+	<script>
 var ctx = document.getElementById("bewertungen");
 var myChart = new Chart(ctx, {
     type: 'horizontalBar',
