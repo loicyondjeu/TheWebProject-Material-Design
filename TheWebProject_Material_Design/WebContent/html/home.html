@@ -53,11 +53,6 @@ body{background-color: 	#C0C0C0;}
         <li><a href="impressum.html" class="red-text ">Impressum</a></li>
         <li><a href="login.html" class="red-text ">Login</a></li>
       </ul>
-      <form>
-  <span class="right">
-  <input class="waves-effect waves-light grey btn" type="button" value="Zur&uuml;ck" onClick="history.go(-1);return true;"><br />
-  </span><br />
-</form><br />
   
   </header>
   
@@ -93,17 +88,32 @@ body{background-color: 	#C0C0C0;}
 <form>
   <span class="right">
   <input class="waves-effect waves-light grey btn" type="button" value="Zur&uuml;ck" onClick="history.go(-1);return true;"><br />
-  </span><br />
+  </span>
 </form><br />
 
 
-	<div class="container" style="text-align:center">
-		<h2><b>Heute <script type="text/javascript">
-		
-   var d = new Date();
-   document.write(d.getDate()+"."+parseInt(d.getMonth()+1)+"."+(d.getYear()+1900));
- </script>
- in deiner Mensa</b></h2>
+	<div align="center">
+	<div class="card-panel" style="border: 5px solid #f44336; width:60%; border-radius: 20px;">
+		<h2 style=" text-align: center; text-shadow: 10px 11px 12px red;"><b>Heute 
+	
+	<!-- JavaScript Code für den Wochentag und das aktuelle Datum  -->
+		<script type="text/javascript">
+		//Funktion zur Auswahl des korrekten Wochentages
+		function wochentag(i){
+		    var tage = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'];
+		    var tag = (typeof(i) == 'object') ? i.getDay() : i ;
+		    return tage[tag];
+		}
+		var datum = new Date();
+
+		var tag = datum.getDay();
+		  var tag = datum.getDay();
+
+		//Ausgabe des Wochentags + Datums
+		   document.write(wochentag(tag) + ", " + datum.getDate()+"."+parseInt(datum.getMonth()+1)+"."+(datum.getYear()+1900));
+ 		</script>
+ 		
+  in deiner Mensa</b></h2></div>
 	</div>
 	
 	<div class="row">
