@@ -13,7 +13,7 @@ body{background-color: 	#C0C0C0;}
 <body>
 
 <header>
-<nav>
+<!-- <nav>
     <div class="nav-wrapper">
       <a href="home.html" class="brand-logo">&nbsp;Gesundheitsdaten</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -25,7 +25,39 @@ body{background-color: 	#C0C0C0;}
         <li><a href="funktionen.html">Administratorbereich</a></li>
       </ul>
     </div>
-  </nav>
+  </nav> -->
+  
+  
+<nav>
+        <!-- <div class="container"> -->
+
+
+          <div class="nav-wrapper ">
+            <a href="home.html" class="brand-logo">&nbsp;Gesundheitsdaten</a>
+            <ul class="right">
+              <li class="hide-on-med-and-down"><a href="home.html">Home</a></li>
+              <li class="hide-on-med-and-down"><a href="speisepläne.html">Speisepläne</a></li>
+               <li class="hide-on-med-and-down"><a href="profil.html">Profil</a></li>
+               <li class="hide-on-med-and-down"><a href="dashboard.html">Dashboard</a></li>
+                <li class="hide-on-med-and-down"><a href="impressum.html">Impressum</a></li>
+                 <li class="hide-on-med-and-down"><a href="funktionen.html">Administratorbereich</a></li>
+              <li><a class='dropdown-button  hide-on-large-only' href='#' data-activates='dropdown1'> <i class="material-icons">arrow_drop_down</i> </a></li>
+
+                <!-- Dropdown Structure -->
+
+              </ul>
+          </div>
+
+        <!-- </div> -->
+      </nav>
+      <ul id="dropdown1" class="dropdown-content ">
+        <li><a href="home.html" class="red-text ">Home</a></li>
+        <li><a href="speisepläne.html" class="red-text " >Speisepläne</a></li>
+        <li><a href="profil.html" class="red-text ">Profil</a></li> 
+        <li><a href="dashboard.html" class="red-text ">Dashboard</a></li>
+        <li><a href="impressum.html" class="red-text ">Impressum</a></li>
+        <li><a href="funktionen.html" class="red-text ">Administratorbereich</a></li>
+      </ul>
   </header>
 
 <div class="slider">
@@ -145,5 +177,20 @@ for(int i = 0; i < 5; i++){
             </div>
           </div>
         </footer>
+         <script type="text/javascript">
+       $(document).ready(function(){$('.button-collapse').sideNav();
+      $('.dropdown-button').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      constrainWidth: false, // Does not change width of dropdown to that of the activator
+      hover: true, // Activate on hover
+      gutter: 0, // Spacing from edge
+      belowOrigin: true, // Displays dropdown below the button
+      alignment: 'left', // Displays dropdown with edge aligned to the left of button
+      stopPropagation: false // Stops event propagation
+      }
+      );
+          });
+      </script>
 </body>
 </html>

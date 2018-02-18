@@ -15,7 +15,7 @@ body{background-color: 	#C0C0C0;}
 <body>
 
   <header>
-    <nav>
+<!--     <nav>
     <div class="nav-wrapper red lighten-1">
       <a href="home.html" class="brand-logo">&nbsp;Vorschläge</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -25,7 +25,35 @@ body{background-color: 	#C0C0C0;}
         <li><a href="impressum.html">Impressum</a></li>
       </ul>
     </div>
-  </nav>
+  </nav> -->
+  
+  <nav>
+        <!-- <div class="container"> -->
+
+
+          <div class="nav-wrapper red darken-4">
+            <a href="home.html" class="brand-logo">&nbsp;Vorschläge</a>
+            <ul class="right">
+              <li class="hide-on-med-and-down"><a href="home.html">Home</a></li>
+              <li class="hide-on-med-and-down"><a href="speisepläne.html">Speisepläne</a></li>
+                <li class="hide-on-med-and-down"><a href="impressum.html">Impressum</a></li>
+                <li class="hide-on-med-and-down"><a href="login.html">Login</a></li>
+              <li><a class='dropdown-button  hide-on-large-only' href='#' data-activates='dropdown1'> <i class="material-icons">arrow_drop_down</i> </a></li>
+
+                <!-- Dropdown Structure -->
+
+              </ul>
+          </div>
+
+        <!-- </div> -->
+      </nav>
+
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="home.html" class="red-text ">Home</a></li>
+        <li><a href="speisepläne.html" class="red-text ">Speisepläne</a></li>
+        <li><a href="impressum.html" class="red-text ">Impressum</a></li>
+        <li><a href="login.html" class="red-text ">Login</a></li>
+      </ul>
   </header>
 
   <div class="slider">
@@ -161,5 +189,20 @@ body{background-color: 	#C0C0C0;}
             </div>
           </div>
         </footer>
+        
+            <script type="text/javascript">
+
+      $('.dropdown-button').dropdown({
+        inDuration: 300,
+        outDuration: 225,
+        constrainWidth: false, // Does not change width of dropdown to that of the activator
+        hover: true, // Activate on hover
+        gutter: 0, // Spacing from edge
+        belowOrigin: true, // Displays dropdown below the button
+        alignment: 'right', // Displays dropdown with edge aligned to the left of button
+        stopPropagation: false // Stops event propagation
+      }
+      );
+    </script>
 </body>
 </html>
