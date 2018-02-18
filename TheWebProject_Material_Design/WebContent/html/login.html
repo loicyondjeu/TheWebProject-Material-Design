@@ -6,8 +6,10 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <title>Anmeldung</title>
 
+
+
   <script src="..\js\materialize.js"></script>
-  
+
   <style>
 body{background-color: 	#C0C0C0;}
 </style>
@@ -21,23 +23,49 @@ body{background-color: 	#C0C0C0;}
 <body>
 
   <header>
-    <nav>
-    <div class="nav-wrapper">
-      <a href="home.html" class="brand-logo">&nbsp;Login</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="speisepläne.html">Speisepläne</a></li>
-        <li><a href="vorschläge.html">Vorschläge</a></li>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="impressum.html">Impressum</a></li>
+<!--     <nav> -->
+<!--     <div class="nav-wrapper"> -->
+<!--       <a href="home.html" class="brand-logo">&nbsp;Login</a> -->
+<!--       <ul id="nav-mobile" class="right hide-on-med-and-down"> -->
+<!--         <li><a href="speisepläne.html">Speisepläne</a></li> -->
+<!--         <li><a href="vorschläge.html">Vorschläge</a></li> -->
+<!--         <li><a href="home.html">Home</a></li> -->
+<!--         <li><a href="impressum.html">Impressum</a></li> -->
+<!--       </ul> -->
+<!--     </div> -->
+<!--   </nav> -->
+
+<nav>
+        <!-- <div class="container"> -->
+
+
+          <div class="nav-wrapper ">
+            <a href="home.html" class="brand-logo">&nbsp;Login</a>
+            <ul class="right">
+              <li class="hide-on-med-and-down"><a href="home.html">Home</a></li>
+              <li class="hide-on-med-and-down"><a href="speisepläne.html">Speisepläne</a></li>
+                <li class="hide-on-med-and-down"><a href="impressum.html">Impressum</a></li>
+              <li><a class='dropdown-button  hide-on-large-only' href='#' data-activates='dropdown1'> <i class="material-icons">arrow_drop_down</i> </a></li>
+
+                <!-- Dropdown Structure -->
+
+              </ul>
+          </div>
+
+        <!-- </div> -->
+      </nav>
+
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="home.html" class="red-text">Home</a></li>
+        <li><a href="speisepläne.html" class="red-text ">Speisepläne</a></li>
+        <li><a href="impressum.html" class="red-text ">Impressum</a></li>
       </ul>
-    </div>
-  </nav>
       <form>
   <span class="right">
   <input class="waves-effect waves-light grey btn" type="button" value="Zur&uuml;ck" onClick="history.go(-1);return true;"><br />
   </span><br />
 </form><br />
-  
+
   </header>
 
 
@@ -48,27 +76,29 @@ body{background-color: 	#C0C0C0;}
           <div class="card-action red white-text">
               <h3 class="center-align"> Anmelden</h3>
           </div>
+				    <form class="" action="login.html" method="post" >
 
-            <div class="card-content">
-              <div class="form-field">
-                <label for="username">Benutzername</label>
-                <input type="text" id="username">
-              </div><br>
+	            <div class="card-content">
+	              <div class="form-field">
+	                <label for="username">Benutzername</label>
+	                <input type="text" name="username" id="username">
+	              </div><br>
 
-              <div class="form-field">
-                <label for="password">Passwort</label>
-                  <input type="password" id="password">
-              </div><br>
+	              <div class="form-field">
+	                <label for="password">Passwort</label>
+	                  <input type="password" name="password" id="password">
+	              </div><br>
 
-              <div class="form-field">
-                <input type="checkbox" id="remem">
-                <label for="remem">Passwort speichern</label>
-              </div><br>
+	              <div class="form-field">
+	                <input type="checkbox" id="remem">
+	                <label for="remem">Passwort speichern</label>
+	              </div><br>
 
-              <div class="form-field">
-                <a href="funktionen.html" ><button class="btn-large red waves-effect waves-dark" style="width:100%;">Login</button></a>
-              </div>
-            </div>
+	              <div class="form-field">
+	                <button class="btn-large red waves-effect waves-dark" style="width:100%;">Login</button>
+	              </div>
+	            </div>
+             </form>
         </div>
       </div>
   </div>
