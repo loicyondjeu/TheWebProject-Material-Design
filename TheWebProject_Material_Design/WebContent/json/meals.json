@@ -1,7 +1,42 @@
 {
 	"meals": [{
-			"name": "Spaghetti Bolognese vegetarisch",
-			"image": "bolognese.jpg",
+		
+			"name": "Kalbsrahmbraten Münchner Art",
+			"image": "http://gasthaus-uhlberg.de/wp-content/uploads/2016/12/gasthaus_uhlberg_sauer-rahmbraten-620x402.jpg",
+			"vegetarian" : false,
+			"number-of-likes": 0,
+			"wochentag": "Dienstag",
+			"number-of-reviews": 0,
+			"average-evaluation": 0,
+			"description": "Kalbsrahmbraten Münchner Art mit Bratkartoffeln oder Teigwaren an Knoblauchcremesuppe mit frischen Croutons an Leiziger Allerlei oder Salat",
+			"calories-in-kcal": 268,
+			"allergens": [{
+				"Gluten": "Gluten",
+				"pork": "pork",
+				"Ei": "Ei",
+				"Soja": "Soja",
+				"Senf": "Senf"
+			}],
+
+			"suitable-diet": [{}],
+
+			"vitamins": [{
+				"Vitamin A": "Vitamin A",
+				"Vitamin B": "B-Vitamine",
+				"Vitamin E": "E Vitamine",
+				"Vitamin K": "Vitamin K"
+			}],
+			"trace-minerals": [{
+				"Kalium": "Kalium",
+				"Natrium": "Natrium",
+				"Calcium": "Calcium",
+				"Magnesium": "Magnesium"
+			}]
+		},
+		
+		{
+					"name": "Spaghetti Bolognese vegetarisch",
+			"image": "https://media-cdn.tripadvisor.com/media/photo-s/0d/3c/bf/22/paste-bolognese.jpg",
 			"number-of-likes": 200,
 			"number-of-reviews": 210,
 			"average-evaluation": 5,
@@ -40,41 +75,8 @@
 			}]
 		},
 		{
-			"name": "Kalbsrahmbraten Münchner Art",
-			"image": "kalbsrahmbraten.jpg",
-			"vegetarian" : false,
-			"number-of-likes": 0,
-			"wochentag": "Dienstag",
-			"number-of-reviews": 0,
-			"average-evaluation": 0,
-			"description": "Kalbsrahmbraten Münchner Art mit Bratkartoffeln oder Teigwaren an Knoblauchcremesuppe mit frischen Croutons an Leiziger Allerlei oder Salat",
-			"calories-in-kcal": 268,
-			"allergens": [{
-				"Gluten": "Gluten",
-				"pork": "pork",
-				"Ei": "Ei",
-				"Soja": "Soja",
-				"Senf": "Senf"
-			}],
-
-			"suitable-diet": [{}],
-
-			"vitamins": [{
-				"Vitamin A": "Vitamin A",
-				"Vitamin B": "B-Vitamine",
-				"Vitamin E": "E Vitamine",
-				"Vitamin K": "Vitamin K"
-			}],
-			"trace-minerals": [{
-				"Kalium": "Kalium",
-				"Natrium": "Natrium",
-				"Calcium": "Calcium",
-				"Magnesium": "Magnesium"
-			}]
-		},
-		{
 			"name": "Hähnchenbrustfilet im Knuspermantel",
-			"image": "KnusperHaehnchen.jpg",
+			"image": "https://www.aldi-sued.de/fileadmin/fm-dam/Recipes/Rezept-Detailbild_708x360/RamS/kw0816_rzw_Schnelles-Knusperhaehnchen_daP.jpg",
 			"wochentag": "Montag",
 			"vegetarian" : false,
 			"number-of-likes": 200,
@@ -113,7 +115,7 @@
 		},
 		{
 			"name": "Lauch-Maisplätzle mit heller Soße",
-			"image": "lauch-maisspaetzle.jpg",
+			"image": "https://static.chefkoch-cdn.de/ck.de/rezepte/169/169955/289947-960x720-speck-lauch-kaesespaetzle.jpg",
 			"vegetarian" : true,
 			"wochentag": "Dienstag",
 			"suppe" : "Kräutercremesuppe",
@@ -195,7 +197,7 @@
 			"salat" : "Italienischer Salatteller",
 			"vegetarian" : true,
 			"dessert" : "Dessert",
-			"image": "cannelloni.jpg",
+			"image": "https://images.eatsmarter.de/sites/default/files/styles/max_size/public/spinat-cannelloni-mit-pinienkernen-115787.jpg",
 			"number-of-likes": 0,
 			"number-of-reviews": 0,
 			"average-evaluation": 0,
@@ -237,7 +239,7 @@
 			"komplement" : "Teigwaren oder Reis",
 			"salat" : "Kohlrabi in Rahm oder Salat",
 			"dessert" : "Dessert",
-			"image": "rahmgulasch.jpg",
+			"image": "http://images.lecker.de/,id=9210458e,b=lecker,w=610,cg=c.jpg",
 			"number-of-likes": 0,
 			"wochentag": "Donnerstag",
 			"number-of-reviews": 0,
@@ -272,7 +274,7 @@
 			"vegetarian" : true,
 			"salat" : "Gemischter Salatteller",
 			"dessert" : "Dessert",
-			"image": "gemueserisotto.jpg",
+			"image": "http://images.lecker.de/gruenkohl-risotto-F7448603,id=6b858be1,b=lecker,w=610,cg=c.jpg",
 			"number-of-likes": 0,
 			"number-of-reviews": 0,
 			"average-evaluation": 0,
@@ -313,7 +315,7 @@
 			"komplement" : "Kartoffelsalat",
 			"salat" : "salat",
 			"dessert" : "Dessert",
-			"image": "seelachsfilet.jpg",
+			"image": "https://www.kuechengoetter.de/uploads/media/630x630/03/19683-fischfilet-im-kartoffelmantel.jpg?v=1-0",
 			"number-of-likes": 0,
 			"number-of-reviews": 0,
 			"average-evaluation": 0,
@@ -351,7 +353,7 @@
 			"vegetarian" : true,
 			"salat" : "Italienischer Salatteller",
 			"dessert" : "Dessert",
-			"image": "gemueselasagne.jpg",
+			"image": "http://orsimages.unileversolutions.com/ORS_Images/Knorr_de-DE/580x326_3_12214_326X580.Jpeg",
 			"number-of-likes": 0,
 			"number-of-reviews": 0,
 			"average-evaluation": 0,
