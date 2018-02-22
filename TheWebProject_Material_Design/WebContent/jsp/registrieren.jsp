@@ -6,7 +6,7 @@
 <title>Registrieren</title>
 </head>
 <body>
-<form method="post" action="register">
+<form action="registrieren" method="post">
 	username: <input type="text" name="username" value=""/><br/>
 	email: <input type="email" name="email" value=""/><br/>
 	passwort: <input type="password" name="password" value=""/><br/>
