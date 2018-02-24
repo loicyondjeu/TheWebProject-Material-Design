@@ -20,16 +20,16 @@ public class SigninServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html;charset=UTF-8");
-		
 		String username = request.getParameter("username");
+		
+		response.setContentType("text/html;charset=UTF-8");
 		
 		final PrintWriter out = response.getWriter();
 		
 		out.println("<!DOCTYPE html>");
 		out.println("<html>");
 		out.println("<body>");
-		out.println("Der Benutzer " + username + "ist erfolgreich angemeldet");
+		out.println("Der Benutzer " + username + " ist erfolgreich angemeldet");
 		out.println("</body>");
 		out.println("</html>");
 	}
