@@ -9,18 +9,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import de.hs_lu.mensa.model.Meal;
+
 /**
- * Servlet implementation class SigninServlet
+ * Servlet implementation class MealServlet
  */
-@WebServlet("/signin")
-public class SigninServlet extends HttpServlet {
+@WebServlet("/createMeal")
+public class MealServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String username = request.getParameter("username");
+		String name = request.getParameter("name");
+		String type = request.getParameter("type");
+		
+		Meal meal = new Meal();
+		
+		meal.setName(name);
+		meal.setType(type);
 		
 		response.setContentType("text/html;charset=UTF-8");
 		
@@ -29,7 +37,8 @@ public class SigninServlet extends HttpServlet {
 		out.println("<!DOCTYPE html>");
 		out.println("<html>");
 		out.println("<body>");
-		out.println("Der Benutzer " + username + " ist erfolgreich angemeldet");
+		out.println("Daten der Speise: <br>");
+		out.println(meal.toString());
 		out.println("</body>");
 		out.println("</html>");
 	}
