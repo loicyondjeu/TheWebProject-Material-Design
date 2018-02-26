@@ -1,4 +1,4 @@
-package pojos;
+package de.hs_lu.mensa.model;
 
 import java.io.Serializable;
 

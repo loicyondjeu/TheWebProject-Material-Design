@@ -1,4 +1,4 @@
-package MongoDB;
+package de.hs_lu_mensa_dataaccess;
 
 import java.util.Iterator;
 
@@ -49,11 +49,11 @@ public class MongoDB {
 
 						try {
 
-							// URI für die Verbindung aufsetzen
+							// URI fï¿½r die Verbindung aufsetzen
 							String uri0 = "mongodb://TheWebProject:flamongo@mensaapp-shard-00-00-dyqy3.mongodb.net:27017,mensaapp-shard-00-01-dyqy3.mongodb.net:27017,mensaapp-shard-00-02-dyqy3.mongodb.net:27017/test?ssl=true&replicaSet=MensaApp-shard-0&authSource=admin";
 							MongoClientURI uri = new MongoClientURI(uri0);
 
-							// MongoClient für den Zugriff auf die Datenbank
+							// MongoClient fï¿½r den Zugriff auf die Datenbank
 							MongoClient mongoClient = new MongoClient(uri);
 
 							// Datenbank als Java-Objekt erhalten  

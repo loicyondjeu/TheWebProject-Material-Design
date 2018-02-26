@@ -1,4 +1,4 @@
-package pojos;
+package de.hs_lu.mensa.model;
 
 public class User {
 

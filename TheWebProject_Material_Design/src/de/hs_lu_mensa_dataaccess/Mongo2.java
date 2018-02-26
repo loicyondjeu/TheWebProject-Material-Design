@@ -1,4 +1,4 @@
-package MongoDB;
+package de.hs_lu_mensa_dataaccess;
 
 import com.mongodb.MongoClient;
 	import com.mongodb.MongoClientURI;
@@ -14,7 +14,7 @@ import com.mongodb.client.MongoCollection;
 
 	import com.mongodb.client.MongoCursor;
 
-	public class Mongo {
+	public class Mongo2 {
 
 		public static void insertDocuments(MongoCollection<Document> collection) {
 			Document document = new Document();
@@ -23,7 +23,7 @@ import com.mongodb.client.MongoCollection;
 			document.put("carbs", 1000);
 
 			Document document2 = new Document();
-			document2.put("name", "Hühnersuppe");
+			document2.put("name", "Hï¿½hnersuppe");
 			document2.put("vegetarisch", false);
 			document2.put("komplement", "Pommes");
 
@@ -40,15 +40,15 @@ import com.mongodb.client.MongoCollection;
 		public static void main(String[] args) {
 
 			try {
-			// Um den Client erstellen zu können, benötigen wir die URI unseres MongoDB
+			// Um den Client erstellen zu kï¿½nnen, benï¿½tigen wir die URI unseres MongoDB
 			// Clusters
 			// Das Cluster beinhaltet bereits eine REST API
 
-			// URI für die Verbindung aufsetzen
+			// URI fï¿½r die Verbindung aufsetzen
 			String uri0 = "mongodb://TheWebProject:flamongo@mensaapp-shard-00-00-dyqy3.mongodb.net:27017,mensaapp-shard-00-01-dyqy3.mongodb.net:27017,mensaapp-shard-00-02-dyqy3.mongodb.net:27017/test?ssl=true&replicaSet=MensaApp-shard-0&authSource=admin";
 			MongoClientURI uri = new MongoClientURI(uri0);
 
-			// MongoClient für den Zugriff auf die Datenbank
+			// MongoClient fï¿½r den Zugriff auf die Datenbank
 			MongoClient mongoClient = new MongoClient(uri);
 
 			// Datenbank als Java-Objekt erhalten  
@@ -104,7 +104,7 @@ import com.mongodb.client.MongoCollection;
 			/* myDoc = collection1.find(eq("wochentag", "Montag")).first();
 			System.out.println(myDoc.toJson()); */
 
-			//Schließe den MongoClient
+			//Schlieï¿½e den MongoClient
 			System.out.println("finished");
 			mongoClient.close();
 			
