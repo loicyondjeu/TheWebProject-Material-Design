@@ -17,7 +17,7 @@ if(empty($name)||empty($visitor_email))
 
 if(IsInjected($visitor_email))
 {
-    echo "Email-Format nicht zulässig!";
+    echo "Email-Format nicht zulaessig!";
     exit;
 }
 
@@ -31,9 +31,9 @@ $headers = "Von: $email_from \r\n";
 $headers .= "Antwort an: $visitor_email \r\n";
 //Email senden
 mail($to,$email_subject,$email_body,$headers);
-//Bestätigungs
-echo "Vielen Dank für Ihre Nachricht!";
-
+?>
+Vielen Dank f�r deine Nachricht!
+<?php >
 // Validierung um Spamming vorzubeugen
 function IsInjected($str)
 {
