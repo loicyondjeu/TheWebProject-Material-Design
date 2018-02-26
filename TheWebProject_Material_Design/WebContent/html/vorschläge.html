@@ -88,6 +88,9 @@ body{background-color: 	#C0C0C0;}
 </form><br />
   </div>
 
+
+
+
 <h4>Kontaktformular</h4>
       <form class="col s12" action="..\php\form-to-email.php" name="myemailform" method="post">
       <div class="row">
@@ -104,7 +107,7 @@ body{background-color: 	#C0C0C0;}
 	<div class="row">
 	<div class="input-field col s6">
            <i class="material-icons prefix">mail</i>
-            <input id="email" type="email" class="validate">
+            <input id="email" type="email" class="validate" required>
             <label for="email" data-error="wrong" data-success="right" style="color:black">Email</label>
           </div>
       <div class="input-field col s6">
@@ -125,7 +128,7 @@ body{background-color: 	#C0C0C0;}
          <div class="row">
       <div class="row">
         <div class="input-field col s12">
-          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <textarea id="textarea1" type="text" class="materialize-textarea"></textarea>
           <label for="textarea1" style="color:black">Eure Vorschläge:</label>
         </div>
       </div>

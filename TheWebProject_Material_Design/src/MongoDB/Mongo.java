@@ -1,9 +1,13 @@
+package MongoDB;
 
-	import com.mongodb.MongoClient;
+import com.mongodb.MongoClient;
 	import com.mongodb.MongoClientURI;
+import com.mongodb.MongoException;
+import com.mongodb.client.MongoDatabase;
 
-	import com.mongodb.client.MongoDatabase;
-	import com.mongodb.client.MongoCollection;
+//import pojos.Employee;
+
+import com.mongodb.client.MongoCollection;
 
 	import org.bson.Document;
 
@@ -12,8 +16,30 @@
 
 	public class Mongo {
 
+		public static void insertDocuments(MongoCollection<Document> collection) {
+			Document document = new Document();
+			document.put("name", "Knusperhuhn");
+			document.put("salat", "Salatteller");
+			document.put("carbs", 1000);
+
+			Document document2 = new Document();
+			document2.put("name", "Hühnersuppe");
+			document2.put("vegetarisch", false);
+			document2.put("komplement", "Pommes");
+
+			Document document3 = new Document();
+			document3.put("name", "Gemueserisotto");
+			document3.put("vegetarisch", true);
+			document3.put("komplement", "kroketten");
+
+			collection.insertOne(document);
+			collection.insertOne(document2);
+			collection.insertOne(document3);
+		}
+
 		public static void main(String[] args) {
 
+			try {
 			// Um den Client erstellen zu können, benötigen wir die URI unseres MongoDB
 			// Clusters
 			// Das Cluster beinhaltet bereits eine REST API
@@ -33,15 +59,35 @@
 			MongoCollection<Document> offers = database.getCollection("Offers");
 
 			MongoCollection<Document> users = database.getCollection("Users");
+			
+			MongoCollection<Document> test = database.getCollection("test");
 
 			// Ein BSON-Array ist wie eine List
 			// Anzahl der Dokumente in einer Collection
 
-			System.out.println(offers.count());
+			System.out.println("Anzahl Dokumente in offers: " + offers.count());
+			System.out.println("Anzahl Dokumente in test: " + test.count());
+
+			//Einuegen der beiden oben genannten Dokumente
+			insertDocuments(test);
+			
+			System.out.println("Anzahl Dokumente in test: " + test.count());
+			
+			//POJO to JSON 
+			
+//			Employee employee = new Employee();
+//	        employee.setNo(1L);
+//	        employee.setName("Deborah Nosh");
+//
+//
+//	       Document doc = new Document("name", employee);
+//	       
+//	       users.insertOne(doc);
+			
 
 			// Zeigt das erste Dokument innerhalb einer Collection an (komplettes JSON file)
 			Document myDoc = offers.find().first();
-			System.out.println(myDoc.toJson());
+			System.out.println(myDoc);
 
 			// Gibt alle Dokumente innerhalb einer Collection aus
 			MongoCursor<Document> cursor = users.find().iterator();
@@ -52,13 +98,20 @@
 			} finally {
 				cursor.close();
 			}
-
+			
+			
 			// Gibt das erste Dokument bei dem der Wochentag Montag ist
 			/* myDoc = collection1.find(eq("wochentag", "Montag")).first();
 			System.out.println(myDoc.toJson()); */
 
 			//Schließe den MongoClient
+			System.out.println("finished");
 			mongoClient.close();
+			
+		}
+			catch(MongoException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
