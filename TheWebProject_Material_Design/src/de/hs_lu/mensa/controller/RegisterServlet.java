@@ -27,7 +27,6 @@ public class RegisterServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		
 		String username = request.getParameter("username");
@@ -36,7 +35,7 @@ public class RegisterServlet extends HttpServlet {
 		String uri0 = "mongodb://TheWebProject:flamongo@mensaapp-shard-00-00-dyqy3.mongodb.net:27017,mensaapp-shard-00-01-dyqy3.mongodb.net:27017,mensaapp-shard-00-02-dyqy3.mongodb.net:27017/test?ssl=true&replicaSet=MensaApp-shard-0&authSource=admin";
 		MongoClientURI uri = new MongoClientURI(uri0);
 
-		// MongoClient für den Zugriff auf die Datenbank
+		// MongoClient fÃ¼r den Zugriff auf die Datenbank
 		MongoClient mongoClient = new MongoClient(uri);
 		
 		MongoDatabase database = mongoClient.getDatabase("MensaBase");
