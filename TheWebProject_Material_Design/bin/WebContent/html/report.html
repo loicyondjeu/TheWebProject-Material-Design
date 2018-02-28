@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Dashboard</title>
+	<link rel="stylesheet" href="../css/materialize.css">
+	<link rel="stylesheet" href="../css/foo.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+	 <ul id="slide-out" class="side-nav fixed">
+	 	<li>
+	 		<div class="user-view">
+	 			<div class="background">
+	 				<img src="../images/City.jpg"/>
+	 			</div>
+	 			<a><img class="circle" src="../images/2.png"/></a>
+	 			<a><span class="white-text name">Max Mustermann</span></a>
+	 			<a><span class="white-text email">maxmustermann@gmail.com</span></a>
+	 		</div>
+	 	</li>
+	 	<li>Nav 1</li>
+	 	<li>
+	 		<div class="divider"></div>
+	 	</li>
+	 	<li>Nav 2</li>
+      </ul>
+      
+      <nav>
+      	<div class="nav-wrapper">
+      		 <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+      		<a class="brand-logo center">Dashboard</a>
+      	</div>
+      </nav>
+      
+      <div id="content">
+      	<div class="row">
+      	<div class="col s12 l12">
+      		<div class="card medium">
+      			<canvas id="bewertungen" height="100px"></canvas>
+      		</div>
+      	</div>
+      	<div class="col s12 l6">
+      		<div class="card medium">
+      			<canvas id="chart1" height="200px"></canvas>
+      		</div>
+      	</div>
+      	<div class="col s12 l6">
+      		<div class="card medium">
+      		<canvas id="chart2" height="200px"></canvas>
+      	</div></div>
+      	<div class="col s12 l6">
+      		<div class="card medium">
+      		<canvas id="chart3" height="200px"></canvas>
+      		</div>
+      	</div>
+      	<div class="col s12 l6">
+      		<div class="card medium">
+      		<canvas id="chart4" height="200px"></canvas>
+      		</div>
+      	</div>
+      	</div>
+      </div>
+     
+      <footer class="page-footer">
+      	<div class="footer-copyright">
+      			© 2018 The Web Project
+      	</div>
+      </footer>
+      
+      <script src="../js/jquery-3.3.1.js"></script>
+      <script src="../js/materialize.js"></script>
+      <script src="../js/Chart.js"></script>
+      <script type="text/javascript" src="../js/main.js"></script>
+      
+</body>
+</html>

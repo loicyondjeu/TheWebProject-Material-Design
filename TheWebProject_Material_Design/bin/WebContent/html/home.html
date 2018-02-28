@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Home</title>
+<link rel="stylesheet" type="text/css" href="../css/materialize.css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+body{background-color: 	#C0C0C0;}
+</style>
+
+</head>
+<body>
+  
+  <header>
+<!-- <nav> -->
+<!--     <div class="nav-wrapper red darken-4"> -->
+<!--        <a href="home.html" class="brand-logo"><i class="material-icons">menu</i>Home</a> -->
+<!--       <ul id="nav-mobile" class="right hide-on-med-and-down"> -->
+<!--         <li><a href="speisepläne.html">Speisepläne</a></li> -->
+<!--          <li><a href="vorschläge.html">Vorschläge</a></li> -->
+<!--         <li><a href="login.html">Login</a></li> -->
+<!--         <li><a href="impressum.html">Impressum</a></li> -->
+<!--       </ul> -->
+<!--     </div> -->
+<!--   </nav> -->
+
+<nav>
+        <!-- <div class="container"> -->
+
+
+          <div class="nav-wrapper red darken-4">
+            <a href="home.html" class="brand-logo">&nbsp;Home</a>
+            <ul class="right">
+              <li class="hide-on-med-and-down"><a href="vorschläge.html">Vorschläge</a></li>
+              <li class="hide-on-med-and-down"><a href="speisepläne.html">Speisepläne</a></li>
+                <li class="hide-on-med-and-down"><a href="impressum.html">Impressum</a></li>
+                <li class="hide-on-med-and-down"><a href="login.html">Login</a></li>
+              <li><a class='dropdown-button  hide-on-large-only' href='#' data-activates='dropdown1'> <i class="material-icons">arrow_drop_down</i> </a></li>
+
+                <!-- Dropdown Structure -->
+
+              </ul>
+          </div>
+
+        <!-- </div> -->
+      </nav>
+
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="vorschläge.html" class="red-text ">Vorschläge</a></li>
+        <li><a href="speisepläne.html" class="red-text ">Speisepläne</a></li>
+        <li><a href="impressum.html" class="red-text ">Impressum</a></li>
+        <li><a href="login.html" class="red-text ">Login</a></li>
+      </ul>
+  
+  </header>
+  
+	<!-- App Info Slider -->
+	<div class="carousel carousel-slider center">
+		<div class="carousel-item red white-text">
+			<h1>Bewerte das Essen deiner Mensa</h1>
+			<p class="white-text">Sag uns einfach wie dir das Essen
+				geschmeckt hat !</p>
+			<i class="material-icons">directions_bike</i><br/>
+			<a class="btn waves-effect white grey-text darken-text-2">Zur Bewertung</a>
+		</div>
+		<div class="carousel-item grey white-text">
+			<h1>Gib deiner Mensa Vorschläge</h1>
+			<p class="white-text">Hilf mit das Essen in deiner Mensa besser
+				zu machen !</p>
+			<i class="material-icons">directions_bike</i>
+		</div>
+		<div class="carousel-item blue white-text">
+			<h1>verfolge Speise</h1>
+			<p class="white-text">gib uns deiner E-Mail und bekommen
+				Benachrichtigung für dein Lieblingsessen</p>
+			<i class="material-icons">directions_bike</i>
+		</div>
+		<div class="carousel-item yellow white-text">
+			<h1>Administrator</h1>
+			<p class="white-text">Melde dich als Administrator und schaue dir
+				das Feedback der Studenten an</p>
+			<i class="material-icons">directions_bike</i>
+		</div>
+	</div>
+
+<form>
+  <span class="right">
+  <input class="waves-effect waves-light grey btn" type="button" value="Zur&uuml;ck" onClick="history.go(-1);return true;"><br />
+  </span>
+</form><br />
+
+
+	<div align="center">
+	<div class="card-panel" style="border: 5px solid #f44336; width:60%; border-radius: 20px;">
+		<h2 style=" text-align: center; text-shadow: 10px 11px 12px red;"><b>Heute 
+	
+	<!-- JavaScript Code für den Wochentag und das aktuelle Datum  -->
+		<script type="text/javascript">
+		//Funktion zur Auswahl des korrekten Wochentages
+		function wochentag(i){
+		    var tage = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'];
+		    var tag = (typeof(i) == 'object') ? i.getDay() : i ;
+		    return tage[tag];
+		}
+		var datum = new Date();
+
+		var tag = datum.getDay();
+		  var tag = datum.getDay();
+
+		//Ausgabe des Wochentags + Datums
+		   document.write(wochentag(tag) + ", " + datum.getDate()+"."+parseInt(datum.getMonth()+1)+"."+(datum.getYear()+1900));
+ 		</script>
+ 		
+  in deiner Mensa</b></h2></div>
+	</div>
+	
+	<div class="row">
+		<div class="col s6">
+			<div class="card white">
+				<div class="card-image">
+					<img src="../images/1.jpg">
+					<h2>
+						<span class="card-title">Menü 1</span>
+					</h2>
+				</div>
+				<div class="card-content">
+					<div class="card-action">
+						<a class="waves-effect waves-light tooltipped blue btn"
+							data-tooltip="Gehe zu bewertung">bewerten</a> 
+							<a class="waves-effect waves-light tooltipped blue btn" 
+							   data-tooltip="Sehe dir bisherige Bewertungen an">ansehen</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col s6">
+			<div class="card white">
+				<div class="card-image">
+					<img src="../images/1.jpg">
+					<h2>
+						<span class="card-title">Menü 2</span>
+					</h2>
+				</div>
+				<div class="card-content">
+					<div class="card-action">
+						<a class="waves-effect waves-light blue btn">bewerten</a> <a
+							class="waves-effect waves-light blue btn">ansehen</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="slider">
+    <ul class="slides">
+      <li>
+        <div class="caption center-align">
+          <h3>Willst du heute vegetarisch essen ?</h3>
+          <h5 class="light grey-text text-lighten-3">Komm schon.</h5>
+          <a class="carousel-item" href="#one!"><img src="..\images\food.jpg"></a>
+        </div>
+      </li>
+      <li>
+        <div class="caption left-align">
+          <h3>Lust auf Reis?</h3>
+          <h5 class="light grey-text text-lighten-3">In unserer Mensa gibt es alles!</h5>
+        </div>
+      </li>
+      <li>
+        <div class="caption right-align">
+          <h3>Das beste Schnitzel in Rheinlandpfalz</h3>
+          <h5 class="light grey-text text-lighten-3">findest du in unserer Mensa</h5>
+        </div>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="row">
+  	<h1>Unsere Standorte</h1>
+  </div>
+  <div class="row red darken-4">
+  	<div class="col s6">
+  		<h2 class="white-text">Mensa am Campus</h2>
+  	</div>
+  	<div class="col s6">
+  		<h2 class="white-text">Betriebsrestauration in der Berliner Str. 23a</h2>
+  	</div>
+  </div>
+    
+    
+    
+    <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Impressum</h5>
+                <p class="grey-text text-lighten-4">Hochschulgastronomie Campus Ernst-Boehe-Straße<br />
+                Ernst-Boehe-Str. 4 <br />
+                 67059 Ludwigshafen <br />
+                 <i class="material-icons">call</i> +49 (0) 6341/9179-0 <br />
+                 <i class="material-icons">email</i> <a href="mailto:info@stw-vp.de"><span style="color:white">info@stw-vp.de</span></a> <br />
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://www.hs-lu.de/service/studierendenwerk-vorderpfalz.html">Studierendenwerk Vorderpfalz</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.studierendenwerk-vorderpfalz.de/home/speiseplaene/speiseplaene/ludwigshafen-mensa-wochenplan-aktuell.html">simpler Mensaplan mit PDF-Funktionalität</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.hs-lu.de/">Startseite Hochschule Ludwigshafen</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.studierendenwerk-vorderpfalz.de/en/home/speiseplaene/menu/ludwigshafen-weekly-menu-current-week.html">Menu in English </a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2018 The Web Project
+            <a class="grey-text text-lighten-4 right" href="#!">Join us on Facebook</a>
+            </div>
+          </div>
+        </footer>
+    <script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="../js/materialize.js"></script>
+	<script type="text/javascript">
+	 $('.carousel.carousel-slider').carousel({
+		    fullWidth: true,
+		    indicators: true
+		  });
+	 
+	 $(document).ready(function(){
+		    $('.tooltipped').tooltip({delay: 50});
+		  });
+	 
+	 $(document).ready(function(){
+	      $('.slider').slider();
+	    });
+	</script>
+	      <script type="text/javascript">
+       $(document).ready(function(){$('.button-collapse').sideNav();
+      $('.dropdown-button').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      constrainWidth: false, // Does not change width of dropdown to that of the activator
+      hover: true, // Activate on hover
+      gutter: 0, // Spacing from edge
+      belowOrigin: true, // Displays dropdown below the button
+      alignment: 'left', // Displays dropdown with edge aligned to the left of button
+      stopPropagation: false // Stops event propagation
+      }
+      );
+          });
+      </script>
+	
+</body>
+</html>

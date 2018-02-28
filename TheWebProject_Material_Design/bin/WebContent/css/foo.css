@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+ header, #content, footer {
+      padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+ header, #content, footer {
+      padding-left: 0;
+  }
+}
