@@ -6,6 +6,9 @@ public class Meal {
 	String name, type, description, soup, entree, complement, salad, dessert, allergies;
 	boolean vegetarian, thumsup;
 	int stars; 
+	String image;
+
+
 	double energy, protein, fat, carbs, avg_evaluation;
 	ArrayList<String> vitamins, comments;
 	
@@ -27,6 +30,14 @@ public class Meal {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public String getDescription() {
