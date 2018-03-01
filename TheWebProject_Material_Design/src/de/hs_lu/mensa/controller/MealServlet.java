@@ -22,14 +22,20 @@ public class MealServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//GET View
 		String name = request.getParameter("name");
 		String type = request.getParameter("type");
 		
+		//CREATE Model
 		Meal meal = new Meal();
 		
 		meal.setName(name);
 		meal.setType(type);
 		
+		//PERSIST to DB
+		//meal.persist();
+		
+		//UPDATE View
 		response.setContentType("text/html;charset=UTF-8");
 		
 		final PrintWriter out = response.getWriter();
