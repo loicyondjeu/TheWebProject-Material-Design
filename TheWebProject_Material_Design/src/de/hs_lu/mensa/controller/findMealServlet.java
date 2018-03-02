@@ -32,6 +32,7 @@ public class findMealServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	//	request.setAttribute("test", "Blablablablalbalbabla");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		List<Meal>meals;
 		MealsODM odm;

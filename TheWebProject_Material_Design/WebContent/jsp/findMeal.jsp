@@ -8,9 +8,10 @@
 	<title>Speise auswählen</title>
 </head>
 <body>
+
 	<h1>Speise suchen</h1>
 	<hr>
-	<form action="../findMeal" method="get">
+	<form action="findMeal" method="get">
 		Name:<input type="text" name="name" value=""><br/>
 		Note:<input type="number" name="avg_eval" value=""><br/>
 		<input type="checkbox" name="vegetarian" value="vegetarian"/>vegetarisch<br/>
