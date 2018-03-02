@@ -19,7 +19,7 @@
 		<option value="komplement">Komplement</option>
 		<option value="dessert">Dessert</option>
 	</select><br/>
-	<input type="checkbox" name="isVegetarisch" value="isVegetarisch"/>Speise ist vegetarisch<br/>
+	<input type="checkbox" name="vegetarian" value="vegetarian"/>Speise ist vegetarisch<br/>
 	Beschreibung<br>
 	<textarea rows="10" cols="10" name="description"></textarea>
 	<hr/>

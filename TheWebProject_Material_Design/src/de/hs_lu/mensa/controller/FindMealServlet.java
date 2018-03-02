@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class findMealServlet
  */
 @WebServlet("/findMeal")
-public class findMealServlet extends HttpServlet {
+public class FindMealServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -21,7 +21,7 @@ public class findMealServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
+				
 		String name = request.getParameter("name");
 		String vegetarian = request.getParameter("vegetarian");
 		
