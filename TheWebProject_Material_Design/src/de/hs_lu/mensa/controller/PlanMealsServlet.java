@@ -35,10 +35,11 @@ public class PlanMealsServlet extends HttpServlet {
 		//Handle Session
 		HttpSession session = request.getSession();
 		session.setAttribute("mealPlan", mealPlan);
+		session.setAttribute("giveMeal", true);
 		
 		//Handle Response
 		request.getRequestDispatcher("/findMeal")
-				.forward(request, response);
+			   .forward(request, response);
 		
 		
 	}

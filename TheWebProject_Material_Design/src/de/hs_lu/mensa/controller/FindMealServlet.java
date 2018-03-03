@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.bson.Document;
 
@@ -24,15 +25,18 @@ import de.hs_lu_mensa_dataaccess.MongoConnection;
  * Servlet implementation class findMealServlet
  */
 @WebServlet("/findMeal")
-public class findMealServlet extends HttpServlet {
+public class FindMealServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	//	request.setAttribute("test", "Blablablablalbalbabla");
+		boolean giveMeal = (boolean)request.getSession().getAttribute("giveMeal");
+		
+		if (giveMeal){
+			request.getRequestDispatcher("jsp/findMeal.jsp")
+				   .forward(request, response);
+		}
+		
+		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		List<Meal>meals;
 		MealsODM odm;
