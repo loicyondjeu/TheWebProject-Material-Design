@@ -2,18 +2,45 @@ package de.hs_lu.mensa.model;
 
 import java.util.ArrayList;
 
+import org.bson.Document;
+
+import com.mongodb.client.MongoCollection;
+
+import de.hs_lu_mensa_dataaccess.MongoConnection;
+
 public class Meal {
-	String name, type, description, soup, entree, complement, salad, dessert, allergies;
-	boolean vegetarian, thumsup;
+	String name, description, soup, entree, complement, salad, dessert, allergies;
+	Boolean vegetarian, thumsup;
 	int stars; 
 	String image;
-
-
 	double energy, protein, fat, carbs, avg_evaluation;
 	ArrayList<String> vitamins, comments;
 	
+	private MongoCollection<Document> meals;
+	
 	public Meal(){
 		super();
+	}
+	
+	public void persist(){
+		MongoConnection mongoConn = new MongoConnection();
+		this.meals = mongoConn.getMongoDataBase().getCollection("Meals");
+		meals.insertOne(this.getDocument());
+		mongoConn.close();
+	}
+
+	public Document getDocument() {
+		Document mealDoc = new Document();
+		
+		mealDoc.append("name", this.name)
+				.append("entree", this.entree)
+				.append("vegetarian", this.vegetarian)
+				.append("description", this.description)
+				.append("energy", this.energy)
+				.append("vitamins", this.vitamins)
+				.append("allergies", this.allergies);
+		
+		return mealDoc;
 	}
 
 	public String getName() {
@@ -22,14 +49,6 @@ public class Meal {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
 	}
 
 	public String getImage() {
@@ -179,7 +198,7 @@ public class Meal {
 	
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Meal [name=").append(name).append(", type=").append(type).append(", description=")
+		builder.append("Meal [name=").append(name).append(", type=").append(", description=")
 				.append(description).append(", soup=").append(soup).append(", entree=").append(entree)
 				.append(", complement=").append(complement).append(", salad=").append(salad).append(", dessert=")
 				.append(dessert).append(", allergies=").append(allergies).append(", vegetarian=").append(vegetarian)

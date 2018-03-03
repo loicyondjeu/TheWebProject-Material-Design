@@ -6,17 +6,17 @@
 <title>Registrieren</title>
 </head>
 <body>
-<form action="../registrieren" method="post">
+<form action="../register" method="post">
 	username: <input type="text" name="username" value=""/><br/>
 	email: <input type="email" name="email" value=""/><br/>
 	passwort: <input type="password" name="password" value=""/><br/>
 	geschlecht:
-	<input type="radio" name="gender" value="m"/> Männlich
-	<input type="radio" name="gender" value="w"/> Weiblich
+	<input type="radio" name="sex" value="male"/> Männlich
+	<input type="radio" name="sex" value="female"/> Weiblich
 	funktion:
-	<select name="funktion">
-		<option value="koch">Koch</option>
-		<option value="helfer">Küchenhilfe</option>
+	<select name="function">
+		<option value="cook">Koch</option>
+		<option value="helper">Küchenhilfe</option>
 		<option value="service">Servicemitarbeiter</option>
 	</select>
 	<br/>

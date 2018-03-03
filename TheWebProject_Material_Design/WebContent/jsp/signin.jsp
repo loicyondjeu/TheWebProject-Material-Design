@@ -10,7 +10,7 @@
 Anmelden
 Username:<input type="text" name="username" value=""/>
 Passwort:<input type="password" name="password" value=""/>
-<input type="submit" name="signin" value="anmelden">
+<input type="submit" name="signin" value="submit">
 </form>
 </body>
 </html>

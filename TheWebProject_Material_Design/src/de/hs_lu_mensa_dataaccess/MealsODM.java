@@ -13,12 +13,12 @@ import com.mongodb.client.MongoDatabase;
 import de.hs_lu.mensa.model.Meal;
 
 public class MealsODM {
-	MongoClientProvider mcp;
+	MongoConnection mcp;
 	MongoClient mc;
 	MongoDatabase md;
 	MongoCollection<Document>mco;
 	public MealsODM() {
-		mcp=new MongoClientProvider();
+		mcp=new MongoConnection();
 		mc= mcp.getMongoClient();
 		md=mc.getDatabase("MensaBase");
 		mco=md.getCollection("Meals");

@@ -9,53 +9,43 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.bson.Document;
-
-import com.mongodb.MongoClient;
-import com.mongodb.MongoClientURI;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
+import de.hs_lu.mensa.model.User;
 
 /**
  * Servlet implementation class RegisterServlet
  */
-@WebServlet("/registrieren")
+@WebServlet("/register")
 public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html;charset=UTF-8");
 		
+		//Handle Request
 		String username = request.getParameter("username");
+		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		String sex = request.getParameter("sex");
+		String function = request.getParameter("function");
+		//String submit = request.getParameter("submit");
 		
-		String uri0 = "mongodb://TheWebProject:flamongo@mensaapp-shard-00-00-dyqy3.mongodb.net:27017,mensaapp-shard-00-01-dyqy3.mongodb.net:27017,mensaapp-shard-00-02-dyqy3.mongodb.net:27017/test?ssl=true&replicaSet=MensaApp-shard-0&authSource=admin";
-		MongoClientURI uri = new MongoClientURI(uri0);
-
-		// MongoClient für den Zugriff auf die Datenbank
-		MongoClient mongoClient = new MongoClient(uri);
+		//Handle Bean
+		User user = new User();
+		user.setUsername(username);
+		user.setEmail(email);
+		user.setPassword(password);
+		user.setSex(sex);
+		user.setFunction(function);
 		
-		MongoDatabase database = mongoClient.getDatabase("MensaBase");
+		//Handle Database
+		user.persist();
 		
-		MongoCollection<Document> users = database.getCollection("Users");
-		
-		
-		Document doc = new Document();
-		doc.put("username", username);
-		doc.put("password", password);
-		System.out.println("inserting");
-		users.insertOne(doc);
-		System.out.println("completed");
-		
+		//Handle Response
+		response.setContentType("text/html;charset=UTF-8");
 		final PrintWriter out = response.getWriter();
-		
-		mongoClient.close();
-		
 		out.println("<!DOCTYPE html>");
 		out.println("<html>");
 		out.println("<body>");
-		out.println("Ihre eingegebene Daten:");
-		out.println("<br>Username: " + username);
+		out.println("Der User " + user.getUsername() + " wurde erfolgreich registriert");
 		out.println("</body>");
 		out.println("</html>");
 	}

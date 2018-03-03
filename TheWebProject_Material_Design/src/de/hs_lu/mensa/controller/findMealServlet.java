@@ -18,7 +18,7 @@ import com.mongodb.client.MongoDatabase;
 
 import de.hs_lu.mensa.model.Meal;
 import de.hs_lu_mensa_dataaccess.MealsODM;
-import de.hs_lu_mensa_dataaccess.MongoClientProvider;
+import de.hs_lu_mensa_dataaccess.MongoConnection;
 
 /**
  * Servlet implementation class findMealServlet

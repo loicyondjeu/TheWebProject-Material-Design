@@ -2,6 +2,7 @@ package de.hs_lu_mensa_dataaccess;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
+import com.mongodb.client.MongoDatabase;
 
 /**
  * Diese Klasse liefert eine Instanz eines MongoDB Clients zur Datenbank von Jasmin.
@@ -10,13 +11,13 @@ import com.mongodb.MongoClientURI;
  * @author loicy
  *
  */
-public class MongoClientProvider {
+public class MongoConnection {
 	
 	MongoClient mongoClient;
 	MongoClientURI mongoURI;
 	String uri;
 	
-	public MongoClientProvider(){
+	public MongoConnection(){
 		this.uri = "mongodb://TheWebProject:flamongo@"
 					+"mensaapp-shard-00-00-dyqy3.mongodb.net:27017,"
 					+"mensaapp-shard-00-01-dyqy3.mongodb.net:27017,"
@@ -28,6 +29,14 @@ public class MongoClientProvider {
 	
 	public MongoClient getMongoClient(){
 		return this.mongoClient;
+	}
+	
+	public MongoDatabase getMongoDataBase(){
+		return this.mongoClient.getDatabase("MensaBase");
+	}
+	
+	public void close(){
+		this.mongoClient.close();
 	}
 
 }

@@ -14,7 +14,7 @@ import de.hs_lu.mensa.model.Meal;
 /**
  * Servlet implementation class MealServlet
  */
-@WebServlet("/createMeal")
+@WebServlet("/createMealFoo")
 public class MealServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -30,7 +30,6 @@ public class MealServlet extends HttpServlet {
 		Meal meal = new Meal();
 		
 		meal.setName(name);
-		meal.setType(type);
 		
 		//PERSIST to DB
 		//meal.persist();
