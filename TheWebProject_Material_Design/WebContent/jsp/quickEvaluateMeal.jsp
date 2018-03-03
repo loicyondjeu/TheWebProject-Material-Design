@@ -7,13 +7,29 @@
 </head>
 <body>
 	<h1>Meal</h1>
-	<form>
-		Suppe:<input type="radio" name="eval" value="gut"/>gut<input type="radio" name="eval" value="schlecht"/>schlecht<br/>
-		Dessert:<input type="radio" name="eval" value="gut"/>gut<input type="radio" name="eval" value="schlecht"/>schlecht<br/>
-		Salat:<input type="radio" name="eval" value="gut"/>gut<input type="radio" name="eval" value="schlecht"/>schlecht<br/>
-		Hauptspeise:<input type="radio" name="eval" value="gut"/>gut<input type="radio" name="eval" value="schlecht"/>schlecht<br/>
-		Komplement:<input type="radio" name="eval" value="gut"/>gut<input type="radio" name="eval" value="schlecht"/>schlecht<br/>
-		<input type="submit" value="bewerten"/>	<input type="submit" value="abbrechen"/>
+	<form action="../quickEvaluateMeal" method="post">
+		Meal_id<input type="number" name="meal_id" value=""/>
+		Suppe:
+		<input type="radio" name="soup" value="good"/>gut
+		<input type="radio" name="soup" value="bad"/>schlecht<br/>
+		
+		Dessert:
+		<input type="radio" name="dessert" value="good"/>gut
+		<input type="radio" name="dessert" value="bad"/>schlecht<br/>
+		
+		Salat:
+		<input type="radio" name="salad" value="good"/>gut
+		<input type="radio" name="salad" value="bad"/>schlecht<br/>
+		
+		Hauptspeise:
+		<input type="radio" name="entree" value="good"/>gut
+		<input type="radio" name="entree" value="bad"/>schlecht<br/>
+		
+		Komplement:
+		<input type="radio" name="complement" value="good"/>gut
+		<input type="radio" name="complement" value="bad"/>schlecht<br/>
+		
+		<input type="submit" value="bewerten"/>
 		</form>
 </body>
 </html>

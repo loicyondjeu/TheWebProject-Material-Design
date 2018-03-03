@@ -2,7 +2,6 @@ package de.hs_lu.mensa.controller;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,9 +22,9 @@ public class PlanMealsServlet extends HttpServlet {
 		//Handle Request
 		Integer weekNum = Integer.parseInt(request.getParameter("weekNum"));
 		Integer year = Integer.parseInt(request.getParameter("year"));
-		String day = request.getParameter("day");
-		String type = request.getParameter("type");
-		String submit = request.getParameter("submit");
+//		String day = request.getParameter("day");
+//		String type = request.getParameter("type");
+//		String submit = request.getParameter("submit");
 		
 		//Handle Bean
 		MealPlan mealPlan = new MealPlan();

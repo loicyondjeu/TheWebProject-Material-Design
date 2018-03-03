@@ -7,7 +7,8 @@
 </head>
 <body>
 	<h1>Meal</h1>
-	<form>
+	<form action="../evaluateMeal" method="post">
+		Meal_ID<input type="number" name="meal_id" value=""><br/>
 		Anzahl der Sterne<input type="number" name="stars" value=""><br/>
 		emoticon:
 			<select name="emoticon">
@@ -16,9 +17,9 @@
 				<option value="super">super happy</option>
 			</select><br/>
 		dein Kommentar:<br/>
-		<textarea rows="10" cols="30"></textarea>
+		<textarea name="comment" rows="10" cols="30"></textarea>
 		<br/>
-		<input type="submit" value="bewerten"/>	<input type="submit" value="abbrechen"/>
+		<input type="submit" value="bewerten"/>
 	</form>
 </body>
 </html>

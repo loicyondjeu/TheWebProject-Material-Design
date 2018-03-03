@@ -19,7 +19,7 @@ public class User {
 	public void persist(){
 		MongoConnection mongoConn = new MongoConnection();
 		this.users = mongoConn.getMongoDataBase().getCollection("Users");
-		users.insertOne(this.getDocument());
+		users.insertOne(this.toDocument());
 		mongoConn.close();
 	}
 	
@@ -42,7 +42,7 @@ public class User {
 		this.setFunction(userDoc.getString("function"));
 	}
 
-	public Document getDocument(){
+	public Document toDocument(){
 		Document userDoc =  new Document();
 		
 		userDoc.append("username", this.username)
