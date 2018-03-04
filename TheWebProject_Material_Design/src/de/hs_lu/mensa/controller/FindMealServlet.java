@@ -1,7 +1,6 @@
 package de.hs_lu.mensa.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -9,17 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import org.bson.Document;
-
-import com.mongodb.MongoClient;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
 
 import de.hs_lu.mensa.model.Meal;
 import de.hs_lu_mensa_dataaccess.MealsODM;
-import de.hs_lu_mensa_dataaccess.MongoConnection;
 
 /**
  * Servlet implementation class findMealServlet
@@ -36,20 +27,21 @@ public class FindMealServlet extends HttpServlet {
 				   .forward(request, response);
 		}
 		
-		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 		List<Meal>meals;
 		MealsODM odm;
+		
 		String name = request.getParameter("name");
 		String vegetarian = request.getParameter("vegetarian");
 		String avg_eval = request.getParameter("avg_eval");
 		String calories = request.getParameter("calories");
 		String submit = request.getParameter("submit");
+		
 		/*PrintWriter out = response.getWriter();
 		out.println("\nName: " + name );
 		out.println("Note: " + avg_eval );
 		out.println( "Vegetarian:" + vegetarian);
 		out.println("Kalories: " + calories);*/
+		
 		if(submit != null)
 		{ 	
 			odm=new MealsODM();

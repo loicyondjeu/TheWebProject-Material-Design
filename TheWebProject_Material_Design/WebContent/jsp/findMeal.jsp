@@ -22,7 +22,7 @@
 	String submit =(String)request.getAttribute("submit");
 	List<Meal> meals;
 	
-	if(submit!=null ){ 
+	if(submit!=null){ 
 		meals=(List<Meal>)request.getAttribute("meals");
 	%>
 	<div>

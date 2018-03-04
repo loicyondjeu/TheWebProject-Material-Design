@@ -21,7 +21,7 @@ public class QuickMealEvaluation {
 	
 	public void persist(){
 		MongoConnection mongoConn = new MongoConnection();
-		this.quickMealEvaluations = mongoConn.getMongoDataBase().getCollection("quickMealEvaluations");
+		this.quickMealEvaluations = mongoConn.getMongoDataBase().getCollection("QuickMealEvaluations");
 		quickMealEvaluations.insertOne(this.toDocument());
 		mongoConn.close();
 	}

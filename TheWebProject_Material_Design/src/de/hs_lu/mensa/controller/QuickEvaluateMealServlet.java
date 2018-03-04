@@ -1,6 +1,7 @@
 package de.hs_lu.mensa.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -20,6 +21,7 @@ public class QuickEvaluateMealServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//Handle Request
+		
 		String soup = request.getParameter("soup");
 		String dessert = request.getParameter("dessert");
 		String salad = request.getParameter("salad");
@@ -38,6 +40,17 @@ public class QuickEvaluateMealServlet extends HttpServlet {
 		
 		//Handle Database
 		qMealEvaluation.persist();
+		
+		//Handle Response
+		//Handle Response
+		response.setContentType("text/html;charset=UTF-8");
+		final PrintWriter out = response.getWriter();
+		out.println("<!DOCTYPE html>");
+		out.println("<html>");
+		out.println("<body>");
+		out.println("Schnelle Bewertung gespeichert am " + qMealEvaluation.getDay());
+		out.println("</body>");
+		out.println("</html>");
 	}
 
 }

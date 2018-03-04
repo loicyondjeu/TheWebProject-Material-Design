@@ -36,6 +36,7 @@ public class MealsODM {
 			d.append("vegetarian", vegetarian);
 		if(calories.length()>0)
 			d.append("calories-in-kcal", Integer.parseInt(calories));
+		
 		FindIterable<Document>fi=mco.find(d);
 		for(Document meal:fi) 
 		{	m= new Meal();
@@ -47,11 +48,11 @@ public class MealsODM {
 		}
 		
 		return meals;
-		}
+	}
 	
 		public static void main(String[]args ) 
 		{
-			MealsODM m=new MealsODM();
+			// MealsODM m=new MealsODM();
 		//	m.getMeals(null,null,null,"152").forEach( n-> System.out.println(n.getName()+"        "+n.getImage()));
 		}
 	
