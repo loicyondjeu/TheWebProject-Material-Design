@@ -22,7 +22,6 @@
 		<br/>
 		<input type="submit" name="submit" value="auswaehlen"/><br>
 		<input type="submit" name="submit" value="planerstellen">
-	
 	</form>
 
 	
