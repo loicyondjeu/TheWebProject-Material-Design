@@ -20,16 +20,21 @@ public class FindMealServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		//Handle Session
 		boolean giveMeal = (boolean)request.getSession().getAttribute("giveMeal");
 		
 		if (giveMeal){
-			request.getRequestDispatcher("jsp/findMeal.jsp")
+			/*request.getRequestDispatcher("jsp/findMeal.jsp")
 				   .forward(request, response);
-		}
+		*/
 		
+			
+		// Handle Bean	
 		List<Meal>meals;
 		MealsODM odm;
 		
+		//Handle Request
 		String name = request.getParameter("name");
 		String vegetarian = request.getParameter("vegetarian");
 		String avg_eval = request.getParameter("avg_eval");
@@ -42,19 +47,29 @@ public class FindMealServlet extends HttpServlet {
 		out.println( "Vegetarian:" + vegetarian);
 		out.println("Kalories: " + calories);*/
 		
-		if(submit != null)
-		{ 	
-			odm=new MealsODM();
-			meals=odm.getMeals(name, avg_eval, (vegetarian!=null), calories);
-			System.out.println(meals.size());
-			request.setAttribute("meals", meals);
-			request.setAttribute("submit", submit);
+		
+		if(submit != null )
+			if(submit.equals("suchen")){ 	
+			
+		//Instantiation 	of ODM
+				odm=new MealsODM();
+			
+		// Call ODM Method getMeals with parameters
+				meals=odm.getMeals(name, avg_eval, (vegetarian!=null), calories);
+		
+		// Sending attribute to jsp		
+				request.setAttribute("meals", meals);
+				request.setAttribute("submit", submit);
 			
 		}
-	
+		//Handle Response 
 		request.getRequestDispatcher("jsp/findMeal.jsp").forward(request, response);
+		}
 		
-
+		else {
+		//if the giveMeal was not given	
+			request.getRequestDispatcher("jsp/planMeals.jsp").forward(request, response);
+		}
 	}
 
 }

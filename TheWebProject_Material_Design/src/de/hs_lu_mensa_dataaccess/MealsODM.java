@@ -13,6 +13,8 @@ import com.mongodb.client.MongoDatabase;
 import de.hs_lu.mensa.model.Meal;
 
 public class MealsODM {
+	
+	
 	MongoConnection mcp;
 	MongoClient mc;
 	MongoDatabase md;
@@ -49,11 +51,5 @@ public class MealsODM {
 		
 		return meals;
 	}
-	
-		public static void main(String[]args ) 
-		{
-			// MealsODM m=new MealsODM();
-		//	m.getMeals(null,null,null,"152").forEach( n-> System.out.println(n.getName()+"        "+n.getImage()));
-		}
 	
 }
