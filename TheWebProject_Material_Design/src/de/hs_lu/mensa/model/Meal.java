@@ -39,10 +39,10 @@ public class Meal implements Persistable {
 		initMongo();
 		
 		Bson vegetarian = Filters.eq("vegetarian", this.vegetarian);
-		Bson halal = Filters.eq("halal", this.halal);
+//		Bson halal = Filters.eq("halal", this.halal);
 		
 		mealList = new MealList();
-		MongoCursor<Document> cursor = this.meals.find(Filters.and(vegetarian, halal)).iterator();
+		MongoCursor<Document> cursor = this.meals.find(vegetarian).iterator();
 		
 		try{
 			while(cursor.hasNext()){
@@ -83,6 +83,7 @@ public class Meal implements Persistable {
 	public void toObject(Document doc){
 		this.setMeal_id(doc.getObjectId("_id"));
 		this.setName(doc.getString("name"));
+		this.setImage(doc.getString("image"));
 	}
 	
 	public Document toDocument() {
@@ -95,7 +96,8 @@ public class Meal implements Persistable {
 				.append("description", this.description)
 				.append("energy", this.energy)
 				.append("vitamins", this.vitamins)
-				.append("allergies", this.allergies);
+				.append("allergies", this.allergies)
+				.append("image", this.image);
 		
 		return mealDoc;
 	}

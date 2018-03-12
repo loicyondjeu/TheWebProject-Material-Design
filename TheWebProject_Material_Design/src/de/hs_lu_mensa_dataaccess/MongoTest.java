@@ -22,7 +22,11 @@ import org.bson.Document;
 		@SuppressWarnings("unchecked")
 		public static void main(String[] args) {
 			
-			String uri0 = "mongodb://TheWebProject:flamongo@mensaapp-shard-00-00-dyqy3.mongodb.net:27017,mensaapp-shard-00-01-dyqy3.mongodb.net:27017,mensaapp-shard-00-02-dyqy3.mongodb.net:27017/test?ssl=true&replicaSet=MensaApp-shard-0&authSource=admin";
+			String uri0 = "mongodb://TheWebProject:flamongo@mensaapp-shard-00-00-dyqy3.mongodb.net:27017,"
+														+ "mensaapp-shard-00-01-dyqy3.mongodb.net:27017,"
+														+ "mensaapp-shard-00-02-dyqy3.mongodb.net:27017"
+														+ "/test?ssl=true&replicaSet=MensaApp-shard-0&authSource=admin";
+			
 			MongoClientURI uri = new MongoClientURI(uri0);
 			MongoClient mongoClient = new MongoClient(uri);
 			MongoDatabase database = mongoClient.getDatabase("MensaBase");
