@@ -2,34 +2,154 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <jsp:include page="../jsp_components/linkMetaDependencies.jsp">
+   <jsp:param name="domain" value="guest" />
+  </jsp:include>
 	<title>Schnell bewerten</title>
 </head>
-<body>
-	<h1>Meal</h1>
-	<form action="../quickEvaluateMeal" method="post">
-		Meal_id<input type="number" name="meal_id" value=""/>
-		Suppe:
-		<input type="radio" name="soup" value="good"/>gut
-		<input type="radio" name="soup" value="bad"/>schlecht<br/>
-		
-		Dessert:
-		<input type="radio" name="dessert" value="good"/>gut
-		<input type="radio" name="dessert" value="bad"/>schlecht<br/>
-		
-		Salat:
-		<input type="radio" name="salad" value="good"/>gut
-		<input type="radio" name="salad" value="bad"/>schlecht<br/>
-		
-		Hauptspeise:
-		<input type="radio" name="entree" value="good"/>gut
-		<input type="radio" name="entree" value="bad"/>schlecht<br/>
-		
-		Komplement:
-		<input type="radio" name="complement" value="good"/>gut
-		<input type="radio" name="complement" value="bad"/>schlecht<br/>
-		
-		<input type="submit" value="bewerten"/>
-		</form>
+
+<body class="white">
+
+ <jsp:include page="../jsp_components/guestHeader.jsp"/>
+
+	<div id="content" class="container">
+	    <h1 class="red-text">Wie hat es dir geschmeckt ? :)</h1>
+
+	    <form action="../saveQuickMealEvaluation" method="post">
+	    <div class="container flow-text">Speise: ${sessionScope.toEvaluateMeal.name}</div>
+	    <input type="hidden" name="meal" value="${sessionScope.toEvaluateMeal.meal_id}"/>
+  <ul class="stepper horizontal">
+ 
+   <li class="step active">
+      <div class="step-title waves-effect">Salat</div>
+      <div class="step-content">
+        				<div class="container">
+				<div class="center">
+					<img src="../images/icons/salad.png" height="150" width="150px"/>
+				</div>
+				<div class="center"><h2>Wie war dein Salat ?</h2></div>
+				<div class="center">
+				    <input type="radio" id="salad_bad" name="salad" value="bad"/>
+					<label for="salad_bad"><i class="material-icons large teal-text">thumb_down</i></label>
+					<input type="radio" id="salad_good" name="salad" value="good"/>
+					<label for="salad_good"><i class="material-icons large teal-text">thumb_up</i></label>
+				</div>
+				</div>
+         <div class="step-actions">
+            <button class="waves-effect waves-dark btn next-step">WEITER</button>
+         </div>
+      </div>
+   </li>
+   
+   
+   <li class="step">
+      <div class="step-title waves-effect">Hauptspeise</div>
+      <div class="step-content">
+         				<div class="container">
+				<div class="center">
+					<img src="../images/icons/chicken.png" height="150" width="150px"/>
+				</div>
+				<div class="center"><h2>Wie war die Hauptspeise ?</h2></div>
+				<div class="center">
+				    <input type="radio" id="entree_bad" name="entree" value="bad"/>
+					<label for="entree_bad"><i class="material-icons large teal-text">thumb_down</i></label>
+					<input type="radio" id="entree_good" name="entree" value="good"/>
+					<label for="entree_good"><i class="material-icons large teal-text">thumb_up</i></label>
+				</div>
+				</div>
+         <div class="step-actions">
+            <button class="waves-effect waves-dark btn next-step">WEITER</button>
+            <button class="waves-effect waves-dark btn-flat previous-step">ZURÜCK</button>
+         </div>
+      </div>
+   </li>
+  
+    <li class="step">
+      <div class="step-title waves-effect">Komplement</div>
+      <div class="step-content">
+         				<div class="container">
+				<div class="center">
+					<img src="../images/icons/rice.png" height="150" width="150px"/>
+				</div>
+				<div class="center"><h2>Wie war das Komplement ?</h2></div>
+				<div class="center">
+				    <input type="radio" id="complement_bad" name="complement" value="bad"/>
+					<label for="complement_bad"><i class="material-icons large teal-text">thumb_down</i></label>
+					<input type="radio" id="complement_good" name="complement" value="good"/>
+					<label for="complement_good"><i class="material-icons large teal-text">thumb_up</i></label>
+				</div>
+				</div>
+         <div class="step-actions">
+            <button class="waves-effect waves-dark btn next-step">WEITER</button>
+            <button class="waves-effect waves-dark btn-flat previous-step">ZURÜCK</button>
+         </div>
+      </div>
+   </li>  
+   
+   
+    <li class="step">
+      <div class="step-title waves-effect">Suppe</div>
+      <div class="step-content">
+				<div class="container">
+				<div class="center">
+					<img src="../images/icons/soup.png" height="150" width="150px"/>
+				</div>
+				<div class="center"><h2>Wie war die Suppe ?</h2></div>
+				<div class="center">
+				    <input type="radio" id="soup_bad" name="soup" value="bad"/>
+					<label for="soup_bad"><i class="material-icons large teal-text">thumb_down</i></label>
+					<input type="radio" id="soup_good" name="soup" value="good"/>
+					<label for="soup_good"><i class="material-icons large teal-text">thumb_up</i></label>
+				</div>
+				</div>
+         <div class="step-actions">
+            <button class="waves-effect waves-dark btn next-step">WEITER</button>
+            <button class="waves-effect waves-dark btn-flat previous-step">ZURÜCK</button>
+         </div>
+      </div>
+   </li>
+   
+   
+       <li class="step">
+      <div class="step-title waves-effect">Dessert</div>
+      <div class="step-content">
+<div class="container">
+				<div class="center">
+					<img src="../images/icons/dessert.png" height="150" width="150px"/>
+				</div>
+				<div class="center"><h2>Wie war das Dessert ?</h2></div>
+				<div class="center">
+				    <input type="radio" id="dessert_bad" name="dessert" value="bad"/>
+					<label for="dessert_bad"><i class="material-icons large teal-text">thumb_down</i></label>
+					<input type="radio" id="dessert_good" name="dessert" value="good"/>
+					<label for="dessert_good"><i class="material-icons large teal-text">thumb_up</i></label>
+				</div>
+				</div>
+         <div class="step-actions">
+            <button class="waves-effect waves-dark btn next-step">WEITER</button>
+            <button class="waves-effect waves-dark btn-flat previous-step">ZURÜCK</button>
+         </div>
+      </div>
+   </li>  
+   
+   
+   <li class="step">
+      <div class="step-title waves-effect">OK</div>
+      <div class="step-content">
+         <div class="step-actions">
+            <input type="hidden" name="bewerten" value="bewerten"/>
+            <button class="waves-effect waves-dark btn" type="submit" name="bewerten" value="bewerten">BEWERTUNG SCHICKEN<i class="material-icons right">send</i></button>
+         </div>
+      </div>
+   </li>
+</ul>
+ </form>
+	    
+	</div>
+
+ <jsp:include page="../jsp_components/guestFooter.jsp"/>
+ 
+ <jsp:include page="../jsp_components/javaScriptDependencies.jsp"/>
+
 </body>
 </html>

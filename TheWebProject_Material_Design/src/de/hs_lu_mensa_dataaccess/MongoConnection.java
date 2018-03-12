@@ -13,9 +13,9 @@ import com.mongodb.client.MongoDatabase;
  */
 public class MongoConnection {
 	
-	MongoClient mongoClient;
-	MongoClientURI mongoURI;
-	String uri;
+	private MongoClient mongoClient;
+	private MongoClientURI mongoURI;
+	private String uri;
 	
 	public MongoConnection(){
 		this.uri = "mongodb://TheWebProject:flamongo@"

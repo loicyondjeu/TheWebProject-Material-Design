@@ -1,16 +1,16 @@
 package de.hs_lu.mensa.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Date;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import de.hs_lu.mensa.model.MealEvaluation;
+import org.bson.types.ObjectId;
+
+import de.hs_lu.mensa.model.Meal;
 
 /**
  * Servlet implementation class EvaluateMealServlet
@@ -19,34 +19,30 @@ import de.hs_lu.mensa.model.MealEvaluation;
 public class EvaluateMealServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//Handle Request
-		Long meal_id = Long.parseLong(request.getParameter("meal_id"));
-		Integer stars = Integer.parseInt(request.getParameter("stars"));
-		String emoticon = request.getParameter("emoticon");
-		String comment = request.getParameter("comment");
-		Date today = new Date();
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		//Handle Bean
-		MealEvaluation mealEvaluation = new MealEvaluation();
-		mealEvaluation.setMeal_id(meal_id);
-		mealEvaluation.setStars(stars);
-		mealEvaluation.setEmoticon(emoticon);
-		mealEvaluation.setComment(comment);
-		mealEvaluation.setDay(today);
 		
-		//Handle Database
-		mealEvaluation.persist();
+		ObjectId meal_id = new ObjectId(request.getParameter("meal"));
+		String evaltype = request.getParameter("evaltype");
 		
-		//Handle Response
-		response.setContentType("text/html;charset=UTF-8");
-		final PrintWriter out = response.getWriter();
-		out.println("<!DOCTYPE html>");
-		out.println("<html>");
-		out.println("<body>");
-		out.println("Evaluation wurde am " + mealEvaluation.getDay() + " erfolgreich gespeichert \n");
-		out.println("</body>");
-		out.println("</html>");
+		if(evaltype != null){
+			Meal meal = new Meal();
+			meal.setMeal_id(meal_id);
+			
+			meal.mongoReadById();
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("toEvaluateMeal", meal);
+			
+			if(evaltype.equals("normal")){
+				response.sendRedirect("jsp/evaluateMeal.jsp");
+			}else if(evaltype.equals("quick")){
+				response.sendRedirect("jsp/quickEvaluateMeal.jsp");
+			}else{
+				
+			}
+			
+		}
 		
 	}
 

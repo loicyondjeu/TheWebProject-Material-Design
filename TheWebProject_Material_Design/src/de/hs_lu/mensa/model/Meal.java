@@ -3,44 +3,109 @@ package de.hs_lu.mensa.model;
 import java.util.ArrayList;
 
 import org.bson.Document;
+import org.bson.conversions.Bson;
+import org.bson.types.ObjectId;
 
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
+import com.mongodb.client.model.Filters;
 
 import de.hs_lu_mensa_dataaccess.MongoConnection;
 
-public class Meal {
-	String name, description, soup, entree, complement, salad, dessert, allergies;
-	Boolean vegetarian, thumsup;
-	int stars; 
-	String image;
-	double energy, protein, fat, carbs, avg_evaluation;
-	ArrayList<String> vitamins, comments;
+public class Meal implements Persistable {
+	private ObjectId meal_id;
+	private String name, description, soup, entree, complement, salad, dessert, allergies;
+	private Boolean vegetarian, halal, thumsup;
+	private int stars; 
+	private String image;
+	private double energy, protein, fat, carbs, avg_evaluation;
+	private ArrayList<String> vitamins, comments;
 	
+	private MongoConnection mongoConn;
 	private MongoCollection<Document> meals;
+	private MealList mealList;
 	
 	public Meal(){
 		super();
 	}
 	
-	public void persist(){
-		MongoConnection mongoConn = new MongoConnection();
-		this.meals = mongoConn.getMongoDataBase().getCollection("Meals");
-		meals.insertOne(this.getDocument());
+	public void initMongo(){
+		this.mongoConn = new MongoConnection();
+		this.meals = this.mongoConn.getMongoDataBase().getCollection("Meals");
+	}
+	
+	
+	public boolean mongoRead(){
+		initMongo();
+		
+		Bson vegetarian = Filters.eq("vegetarian", this.vegetarian);
+		Bson halal = Filters.eq("halal", this.halal);
+		
+		mealList = new MealList();
+		MongoCursor<Document> cursor = this.meals.find(Filters.and(vegetarian, halal)).iterator();
+		
+		try{
+			while(cursor.hasNext()){
+				toObject(cursor.next());
+				mealList.add(this.clone());
+			}
+		}finally{
+			cursor.close();
+		}
+		
+		if(mealList.isEmpty())	return false;
+		
+		return true;
+	}
+	
+	public boolean mongoReadById(){
+		initMongo();
+		
+		Bson meal_idCondition = Filters.eq("_id", this.meal_id);
+		
+		Document mealDoc = this.meals.find(meal_idCondition).first();
+		
+		if(mealDoc != null){
+			this.toObject(mealDoc);
+			return true;
+		}
+
+		
+		return false;
+	}
+	
+	public void mongoWrite(){
+		initMongo();
+		meals.insertOne(this.toDocument());
 		mongoConn.close();
 	}
 
-	public Document getDocument() {
+	public void toObject(Document doc){
+		this.setMeal_id(doc.getObjectId("_id"));
+		this.setName(doc.getString("name"));
+	}
+	
+	public Document toDocument() {
 		Document mealDoc = new Document();
 		
 		mealDoc.append("name", this.name)
 				.append("entree", this.entree)
 				.append("vegetarian", this.vegetarian)
+				.append("halal", this.halal)
 				.append("description", this.description)
 				.append("energy", this.energy)
 				.append("vitamins", this.vitamins)
 				.append("allergies", this.allergies);
 		
 		return mealDoc;
+	}
+
+	public ObjectId getMeal_id() {
+		return meal_id;
+	}
+
+	public void setMeal_id(ObjectId meal_id) {
+		this.meal_id = meal_id;
 	}
 
 	public String getName() {
@@ -196,18 +261,40 @@ public class Meal {
 	}
 
 	
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Meal [name=").append(name).append(", type=").append(", description=")
-				.append(description).append(", soup=").append(soup).append(", entree=").append(entree)
-				.append(", complement=").append(complement).append(", salad=").append(salad).append(", dessert=")
-				.append(dessert).append(", allergies=").append(allergies).append(", vegetarian=").append(vegetarian)
-				.append(", thumsup=").append(thumsup).append(", stars=").append(stars).append(", energy=")
-				.append(energy).append(", protein=").append(protein).append(", fat=").append(fat).append(", carbs=")
-				.append(carbs).append(", avg_evaluation=").append(avg_evaluation).append(", vitamins=").append(vitamins)
-				.append(", comments=").append(comments).append("]");
-		return builder.toString();
+	public Boolean getHalal() {
+		return halal;
 	}
+
+	public void setHalal(Boolean halal) {
+		this.halal = halal;
+	}
+
+	public MealList getMealList() {
+		return mealList;
+	}
+
+	public void setMealList(MealList mealList) {
+		this.mealList = mealList;
+	}
+	
+	@Override
+	public Meal clone(){
+		Meal mealClone = new Meal();
+		mealClone.setMeal_id(meal_id);
+		mealClone.setName(this.name);
+		mealClone.setDescription(this.description);
+		return mealClone;
+	}
+	
+	@Override
+	public String toString() {
+		return String.format(
+				"Meal [name=%s, description=%s, soup=%s, entree=%s, complement=%s, salad=%s, dessert=%s, allergies=%s, vegetarian=%s, halal=%s, thumsup=%s, stars=%s, image=%s, energy=%s, protein=%s, fat=%s, carbs=%s, avg_evaluation=%s, vitamins=%s, comments=%s, meals=%s, mealList=%s]",
+				name, description, soup, entree, complement, salad, dessert, allergies, vegetarian, halal, thumsup,
+				stars, image, energy, protein, fat, carbs, avg_evaluation, vitamins, comments, meals, mealList);
+	}
+
+
 	
 	
 }

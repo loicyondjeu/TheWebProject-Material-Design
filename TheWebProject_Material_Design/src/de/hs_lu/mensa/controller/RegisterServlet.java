@@ -1,7 +1,6 @@
 package de.hs_lu.mensa.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import de.hs_lu.mensa.helpers.Messenger;
+import de.hs_lu.mensa.helpers.SessionManager;
 import de.hs_lu.mensa.model.User;
 
 /**
@@ -37,17 +38,14 @@ public class RegisterServlet extends HttpServlet {
 		user.setFunction(function);
 		
 		//Handle Database
-		user.persist();
+		user.mongoWrite();
 		
 		//Handle Response
-		response.setContentType("text/html;charset=UTF-8");
-		final PrintWriter out = response.getWriter();
-		out.println("<!DOCTYPE html>");
-		out.println("<html>");
-		out.println("<body>");
-		out.println("Der User " + user.getUsername() + " wurde erfolgreich registriert");
-		out.println("</body>");
-		out.println("</html>");
+		Messenger messenger = SessionManager.getSessionMessenger(request.getSession());
+		messenger.setMessage(Messenger.CREATE_USER_OK);
+		response.sendRedirect("jsp/messaging.jsp?direct=register");
+
+
 	}
 
 }

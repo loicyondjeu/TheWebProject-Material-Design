@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+#myGeschmack_logo_text{
+	font-weight: 100;
+}
+#my{
+	font-weight: 300;
+}
+ul.stepper.horizontal {
+   min-height: 600px !important;
+}

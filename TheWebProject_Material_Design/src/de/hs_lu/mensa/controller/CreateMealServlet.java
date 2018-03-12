@@ -1,7 +1,6 @@
 package de.hs_lu.mensa.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -10,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import de.hs_lu.mensa.helpers.Messenger;
+import de.hs_lu.mensa.helpers.SessionManager;
 import de.hs_lu.mensa.model.Meal;
 
 /**
@@ -19,15 +20,13 @@ import de.hs_lu.mensa.model.Meal;
 public class CreateMealServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		//Handle Request
 		String name = request.getParameter("name");
 		String entree = request.getParameter("entree");
 		Boolean vegetarian = request.getParameter("vegetarian") == null ? false : true;
+		Boolean halal = request.getParameter("halal") == null ? false : true;
 		String description = request.getParameter("description");
 		Double energy = Double.valueOf(request.getParameter("energy"));
 		
@@ -41,23 +40,20 @@ public class CreateMealServlet extends HttpServlet {
 		meal.setName(name);
 		meal.setEntree(entree);
 		meal.setVegetarian(vegetarian);
+		meal.setHalal(halal);
 		meal.setDescription(description);
 		meal.setEnergy(energy);
 		meal.setVitamins(vitamins);
 		meal.setAllergies(allergies);
 		
 		//Handle database
-		meal.persist();
+		meal.mongoWrite();
 		
 		//Handle Response
-		response.setContentType("text/html;charset=UTF-8");
-		final PrintWriter out = response.getWriter();
-		out.println("<!DOCTYPE html>");
-		out.println("<html>");
-		out.println("<body>");
-		out.println("Die Speise " + meal.getName() + " ist erfolgreich gespeichert");
-		out.println("</body>");
-		out.println("</html>");
+		Messenger messenger = SessionManager.getSessionMessenger(request.getSession());
+		messenger.setMessage(Messenger.CREATE_MEAL_OK);
+		response.sendRedirect("jsp/messaging.jsp?direct=createMeal");
+
 		
 		
 	}

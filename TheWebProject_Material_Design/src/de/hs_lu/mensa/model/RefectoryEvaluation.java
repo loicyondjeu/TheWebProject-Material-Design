@@ -1,5 +1,6 @@
 package de.hs_lu.mensa.model;
 
+
 import java.util.Date;
 
 import org.bson.Document;
@@ -8,33 +9,46 @@ import com.mongodb.client.MongoCollection;
 
 import de.hs_lu_mensa_dataaccess.MongoConnection;
 
-public class RefectoryEvaluation {
-	
+public class RefectoryEvaluation implements Persistable {
 	private Integer quality, diversity, variety, serving_size;
-	private Date day;
+	private Date date;
+	
+	private MongoConnection mongoConn;
 	private MongoCollection<Document> refectoryEvaluations;
 	
 	public RefectoryEvaluation(){
-		
+		super();
 	}
 	
-	public void persist(){
-		MongoConnection mongoConn = new MongoConnection();
-		this.refectoryEvaluations = mongoConn.getMongoDataBase().getCollection("RefectoryEvaluations");
+	public void initMongo(){
+		this.mongoConn = new MongoConnection();
+		this.refectoryEvaluations = this.mongoConn.getMongoDataBase().getCollection("RefectoryEvaluations");
+	}
+	
+	public void toObject(Document doc){
+		this.setQuality(doc.getInteger("quality"));
+		this.setDiversity(doc.getInteger("diversity"));
+		this.setVariety(doc.getInteger("serving_size"));
+		this.setServing_size(doc.getInteger("serving_size"));
+		this.setDate(doc.getDate("date"));
+	}
+	
+	public Document toDocument() {
+		Document doc = new Document();
+		
+		doc.append("quality", this.quality)
+		   .append("diversity", this.diversity)
+		   .append("variety", this.variety)
+		   .append("serving_size", this.serving_size)
+		   .append("date", this.date);
+		
+		return doc;
+	}
+	
+	public void mongoWrite(){
+		initMongo();
 		refectoryEvaluations.insertOne(this.toDocument());
 		mongoConn.close();
-	}
-
-	private Document toDocument() {
-		Document refectoryEvaluationDoc = new Document();
-		
-		refectoryEvaluationDoc.append("quality", this.quality)
-		   					  .append("variety", this.variety)
-		   					  .append("serving_size", this.serving_size)
-		   					  .append("diversity",this.diversity)
-		   					  .append("date", this.day);
-	
-		return refectoryEvaluationDoc;
 	}
 
 	public Integer getQuality() {
@@ -69,13 +83,20 @@ public class RefectoryEvaluation {
 		this.serving_size = serving_size;
 	}
 
-	public Date getDay() {
-		return day;
+	public Date getDate() {
+		return date;
 	}
 
-	public void setDay(Date day) {
-		this.day = day;
+	public void setDate(Date date) {
+		this.date = date;
 	}
-	
+
+	@Override
+	public String toString() {
+		return String.format(
+				"RefectoryEvaluation [quality=%s, diversity=%s, variety=%s, serving_size=%s, date=%s, refectoryEvaluations=%s]",
+				quality, diversity, variety, serving_size, date, refectoryEvaluations);
+	}
+
 
 }
