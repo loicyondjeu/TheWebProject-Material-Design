@@ -11,9 +11,9 @@
 
 <body class="white">
 
-<%
+<%-- <%
    ApplicationManager.setUpTodayMeals(application);
-%>
+%> --%>
 
 <jsp:include page="../jsp_components/guestHeader.jsp"/>
 
@@ -27,28 +27,21 @@
 	 <h1>Bewerte das Essen deiner Mensa</h1>
 	 <p>Sag uns einfach wie dir das Essen geschmeckt hat !</p>
 	 <i class="material-icons large">directions_bike</i><br/>
-	 <a class="btn waves-effect" href="evaluateMensa.jsp">Zur Bewertung</a>
-	</div>
-	
-	<div class="carousel-item red white-text">
-	 <h1>Bewerte deine Mensa</h1>
-	 <p>Hilf mit das Essen in deiner Mensa besser zu machen !</p>
-	 <i class="material-icons large">directions_bike</i><br/>
-	 <a class="btn waves-effect white grey-text">Zur Bewertung</a>
+	 <a class="btn waves-effect" href="evaluateRefectory.jsp">Zur Bewertung</a>
 	</div>
 	
 	<div class="carousel-item red white-text">
 	 <h1>Verfolge deiner Lieblingsspeise Speise</h1>
 	 <p class="white-text">Gib uns deiner E-Mail und lasst dich benachrichtigen für dein Lieblingsessen</p>
 	 <i class="material-icons large">directions_bike</i><br/>
-	 <a class="btn waves-effect white grey-text">Zur Bewertung</a>
+	 <a class="btn waves-effect" href="notification.jsp">Sich anmelden</a>
 	</div>
 	
 	<div class="carousel-item red white-text">
 	 <h1>Schaue dir deinen Speiseplan an</h1>
 	 <p class="white-text">Bleibe immer im laufenden über die Ausgaben in deiner Mensa</p>
 	 <i class="material-icons large">directions_bike</i><br/>
-	 <a class="btn waves-effect white grey-text">Zur Bewertung</a>
+	 <a class="btn waves-effect" href="viewMealPlan.jsp">Zur Speiseplan</a>
 	</div>
 	
    </div>
@@ -58,13 +51,14 @@
   <div class="row white">
   
    <div class="col s12 m12 l12">
-    <h1 class="red-text center-align">Heute in deiner Mensa</h1>
+    <h1 class="red-text center-align">Heute <span id="today" class="teal-text"></span> in deiner Mensa</h1>
    </div>
    
    <div class="col s12 m6 l6">
    	<h3 class="red-text center-align">Vegetarisch</h3>
     <div class="card">
      <div class="card-image waves-effect waves-block waves-light red">
+     <!-- Hier kommt das Bild der Speise  -->
       <img src="../img/logo.svg" height="300" width="300" id=""/>
      </div>
      <div class="card-content">

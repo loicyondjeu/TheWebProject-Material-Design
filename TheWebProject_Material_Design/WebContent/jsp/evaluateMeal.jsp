@@ -14,7 +14,7 @@
 <main>
  <div class="row">
   <div class="col s12 l6">
-   <div class="card">
+   <div class="card-panel">
      <div class="card-content">
      <div class="card-title red-text">${sessionScope.toEvaluateMeal.name}#Name</div>
      <h5>Beschreibung</h5>
@@ -40,7 +40,7 @@
    </div>
   </div>
   <div class="col s12 l6">
-   <div class="card">
+   <div class="card-panel">
     <div class="card-content">
      <div class="card-title red-text">Speise bewerten</div>
      
