@@ -25,7 +25,7 @@
        <div class="input-field">
 	    <i class="medium material-icons prefix">account_box</i>
 	    <label for="username">Username</label>
-	    <input type="text" name="username" id="username" value="${sessionScope.user.username}">
+	    <input class="validate" type="text" name="username" id="disabled" disabled value="${sessionScope.user.username}">
 	   </div>
 	   <br/>
 	  
