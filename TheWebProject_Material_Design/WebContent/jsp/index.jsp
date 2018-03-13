@@ -119,7 +119,7 @@
   
   <div class="row white">
   	<h1 class="red-text center-align">Unsere Standorte</h1>
-  	<div class="col s12 m6 l6">
+  	<div class="col s12 m12 l6">
   	 <div class="card">
   	  <div class="card-panel large">
   	  	<span class="card-title">Mensa am Campus</span>
@@ -129,7 +129,7 @@
   	 </div>
   	 
   	</div>
-  	<div class="col s12 m6 l6">
+  	<div class="col s12 m12 l6">
      <div class="card">
   	  <div class="card-panel large">
   	  	<span class="card-title">Studierendenwerk Vorderpfalz</span>  
