@@ -52,6 +52,7 @@
 
       <div class="collapsible-header"><i class="material-icons">filter_drama</i>${meal.name}</div>
       <div class="collapsible-body white">
+       <img src="${meal.image}"/>
        <span>${meal.description}</span><br/>
        <form action="../findMeal" method="get">
         <div class="input-field">

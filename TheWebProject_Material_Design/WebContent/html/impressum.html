@@ -1,3 +1,4 @@
+<!-- Achtung diese Seite enthält nur statischen Inhalt und ist daher unabhängig von einer Änderung bei den JSPs -->
 <!DOCTYPE html>
 <html>
 
@@ -45,9 +46,6 @@
    </ul>
    
   </header>
- 
-
- 
  
   <div class="slider red">
     <ul class="slides red">
@@ -171,15 +169,15 @@
       <ul class="collapsible popout" data-collapsible="accordion">
        <li>
         <div class="collapsible-header active"><i class="material-icons">person</i>Jasmin Moos</div>
-        <div class="collapsible-body"><span>Student an HS Ludwigshafen</span></div>
+        <div class="collapsible-body"><span>Student an HS Ludwigshafen. Verantwortlich für die Datenbankschicht der Applikation. Benutzte MongoDB, MongoDB Atlas, Java, HTML, CSS, Web API,  Materialize, JavaScript, JQuery</span></div>
        </li>
        <li>
         <div class="collapsible-header"><i class="material-icons">person</i>Haitem Atyaout</div>
-        <div class="collapsible-body"><span>Student an HS Ludwigshafen</span></div>
+        <div class="collapsible-body"><span>Student an HS Ludwigshafen. Verantwortlich für die Präsentationschicht der Applikation. Benutzte HTML, CSS, JavaScript, Web APIs, MongoDB, MongoDB Atlas, Java, Servlet, JSP, Java EE</span></div>
        </li>
        <li>
         <div class="collapsible-header"><i class="material-icons">person</i>Loic Yondjeu</div>
-        <div class="collapsible-body"><span>Student an HS Ludwigshafen</span></div>
+        <div class="collapsible-body"><span>Student an HS Ludwigshafen. Verantwortlich für die Anwendungschicht der Applikation und den Software Engineering Prozess. (inkl. Deployment). Benutzte MongoDB, MongoDB Atlas, Java, Servlet, JSP, JSP EL, JSTL, Java EE, Microsoft Azure</span></div>
       </li>
      </ul>
     </div>
@@ -188,6 +186,7 @@
 
 <footer class="page-footer red">
   <div class="container">
+  
    <div class="row">
     <div class="col l6 s12">
      <h5>Impressum</h5>
@@ -212,7 +211,10 @@
      </ul>
     </div>
    </div>
+   
   </div>
+  
+  
   <div class="footer-copyright">
    <div class="container center-align">
     © 2018 The Web Project
@@ -223,42 +225,6 @@
 
 <script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="../js/materialize.js"></script>
- <script type="text/javascript">
- 
-  $(document).ready(function(){
-	    $('.collapsible').collapsible();
-	  }); 
- 
- 
-       $(document).ready(function(){$('.button-collapse').sideNav();
-      $('.dropdown-button').dropdown({
-      inDuration: 300,
-      outDuration: 225,
-      constrainWidth: false, // Does not change width of dropdown to that of the activator
-      hover: true, // Activate on hover
-      gutter: 0, // Spacing from edge
-      belowOrigin: true, // Displays dropdown below the button
-      alignment: 'left', // Displays dropdown with edge aligned to the left of button
-      stopPropagation: false // Stops event propagation
-      }
-      );
-          });
-      </script>
-      
-      	<script type="text/javascript">
-	 
-	 $('.carousel.carousel-slider').carousel({
-		    fullWidth: true,
-		    indicators: true
-		  });
-	 
-	 $(document).ready(function(){
-		    $('.tooltipped').tooltip({delay: 50});
-		  });
-	 
-	 $(document).ready(function(){
-	      $('.slider').slider();
-	    });
-	</script>
+<script type="text/javascript" src="../js/app.js"></script>
 </body>
 </html>

@@ -14,7 +14,10 @@ import de.hs_lu.mensa.helpers.SessionManager;
 import de.hs_lu.mensa.model.Meal;
 
 /**
- * Servlet implementation class CreateMealServlet
+ * Die Klasse CreateMealServlet ist für alle Anfragen zum Anlegen eines Speise verantwortlich.
+ * Dafür liest sie die Daten aus dem Request, erste llt eine Speise als Java Objekt und ruft die Methode des Java Objekt, damit
+ * Es sich seblst in der Datenbank speichert.
+ * <p><strong>Note</strong>: Nicht alle Daten der Speise müssen ausgefüllt sein.</p>
  */
 @WebServlet("/createMeal")
 public class CreateMealServlet extends HttpServlet {
@@ -22,7 +25,8 @@ public class CreateMealServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		//Handle Request
+		/*HANDLE REQUEST*/
+		//Request Verarbeitung
 		String name = request.getParameter("name");
 		String entree = request.getParameter("entree");
 		Boolean vegetarian = request.getParameter("vegetarian") == null ? false : true;
@@ -35,7 +39,8 @@ public class CreateMealServlet extends HttpServlet {
 			vitamins.add(request.getParameter("v"+i));
 		String allergies = request.getParameter("allergies");
 		
-		//Handle Bean
+		/*HANDLE BEAN*/
+		//Anlegen einer Bean für die Speise
 		Meal meal = new Meal();
 		meal.setName(name);
 		meal.setEntree(entree);
@@ -46,9 +51,11 @@ public class CreateMealServlet extends HttpServlet {
 		meal.setVitamins(vitamins);
 		meal.setAllergies(allergies);
 		
-		//Handle database
+		/*HANDLE DB*/
+		//Speise schreibt sich selbst in DB
 		meal.mongoWrite();
 		
+		/*HANDLE RESPONSE*/
 		//Handle Response
 		Messenger messenger = SessionManager.getSessionMessenger(request.getSession());
 		messenger.setMessage(Messenger.CREATE_MEAL_OK);

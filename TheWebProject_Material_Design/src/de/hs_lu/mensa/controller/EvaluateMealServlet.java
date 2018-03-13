@@ -13,7 +13,7 @@ import org.bson.types.ObjectId;
 import de.hs_lu.mensa.model.Meal;
 
 /**
- * Servlet implementation class EvaluateMealServlet
+ * Dieser Servlet verarbeitet die Anfragen nach der Speicherung einer Bewertung einer bestimmten Speise in der Datenbank.
  */
 @WebServlet("/evaluateMeal")
 public class EvaluateMealServlet extends HttpServlet {
@@ -21,7 +21,7 @@ public class EvaluateMealServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
+		/*HANDLE REQUEST*/
 		ObjectId meal_id = new ObjectId(request.getParameter("meal"));
 		String evaltype = request.getParameter("evaltype");
 		

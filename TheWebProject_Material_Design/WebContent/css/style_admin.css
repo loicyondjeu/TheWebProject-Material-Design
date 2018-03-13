@@ -1,21 +1,31 @@
 @CHARSET "UTF-8";
-#myGeschmack_logo_text{
-	font-weight: 100;
-}
+
+/**
+* Diese CSS enthält Formatierungen für die Seiten des Administrators.
+* Sie basiert auf unsere 2 CSS Frameworks Materialize und Materialize-stepper
+* Loic
+*/
+
+/*Formatierung des Logos*/
 #my{
 	font-weight: 300;
 }
+#myGeschmack_logo_text{
+	font-weight: 100;
+}
 
+/*Konfiguration des SideNav für die Adminseiten*/
 header, main, footer {
       padding-left: 300px;
 }
-
-ul.stepper.horizontal {
-   min-height: 600px !important; 
-}
-
 @media only screen and (max-width : 992px) {
  header, main, footer {
    padding-left: 0;
  }
 }
+
+/*Konfiguration des Steppers*/
+ul.stepper.horizontal {
+   min-height: 600px !important; 
+}
+
