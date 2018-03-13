@@ -20,27 +20,29 @@ public abstract class ApplicationManager {
 		  
 		  System.out.println(todayMealPlan.getRelatedMeals_ids().toString());
 		  
-		  Meal todayMealVegetarian = new Meal();
-		  todayMealVegetarian.setMeal_id(todayMealPlan.getRelatedMeals_ids().get(0));
-		  
-		  todayMealVegetarian.mongoReadById();
-		  
-		  Meal todayMealVegetarianTemp = (Meal)application.getAttribute("todayMealVegetarian");
-		  if(todayMealVegetarianTemp == null){
-			  application.setAttribute("todayMealVegetarian", todayMealVegetarian);
+		  if(todayMealPlan.getRelatedMeals_ids().size() >= 2){
+			  Meal todayMealVegetarian = new Meal();
+			  todayMealVegetarian.setMeal_id(todayMealPlan.getRelatedMeals_ids().get(0));
+			  
+			  todayMealVegetarian.mongoReadById();
+			  
+			  Meal todayMealVegetarianTemp = (Meal)application.getAttribute("todayMealVegetarian");
+			  if(todayMealVegetarianTemp == null){
+				  application.setAttribute("todayMealVegetarian", todayMealVegetarian);
+			  }
+			  
+			  
+			  Meal todayMealVollkost = new Meal();
+			  todayMealVollkost.setMeal_id(todayMealPlan.getRelatedMeals_ids().get(1));
+			  
+			  todayMealVollkost.mongoReadById();
+			  
+			  Meal todayMealVollkostTemp = (Meal)application.getAttribute("todayMealVollkost");
+			  if(todayMealVollkostTemp == null){
+				  application.setAttribute("todayMealVollkost", todayMealVollkost);
+			  }
 		  }
 		  
-		  
-		  Meal todayMealVollkost = new Meal();
-		  todayMealVollkost.setMeal_id(todayMealPlan.getRelatedMeals_ids().get(1));
-		  
-		  todayMealVollkost.mongoReadById();
-		  
-		  Meal todayMealVollkostTemp = (Meal)application.getAttribute("todayMealVollkost");
-		  if(todayMealVollkostTemp == null){
-			  application.setAttribute("todayMealVollkost", todayMealVollkost);
-		  }
- 
 	 }
 
 }
