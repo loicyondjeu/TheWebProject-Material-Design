@@ -15,7 +15,7 @@ import de.hs_lu_mensa_dataaccess.MongoConnection;
 public class Meal implements Persistable {
 	private ObjectId meal_id;
 	private String name, description, soup, entree, complement, salad, dessert;
-	private Boolean vegetarian, halal, pescetarian, thumsup;
+	private Boolean vegetarian, halal, pescetarian;
 	private int stars; 
 	private String image;
 	private double energy, protein, fat, carbs, avg_evaluation;
@@ -23,6 +23,7 @@ public class Meal implements Persistable {
 	
 	private MongoConnection mongoConn;
 	private MongoCollection<Document> meals;
+	
 	private MealList mealList;
 	
 	public Meal(){
@@ -217,14 +218,6 @@ public class Meal implements Persistable {
 		this.vegetarian = vegetarian;
 	}
 
-	public boolean isThumsup() {
-		return thumsup;
-	}
-
-	public void setThumsup(boolean thumsup) {
-		this.thumsup = thumsup;
-	}
-
 	public int getStars() {
 		return stars;
 	}
@@ -310,8 +303,22 @@ public class Meal implements Persistable {
 	public Meal clone(){
 		Meal mealClone = new Meal();
 		mealClone.setMeal_id(meal_id);
+		
 		mealClone.setName(this.name);
 		mealClone.setDescription(this.description);
+		
+		mealClone.setSoup(this.soup);
+		mealClone.setEntree(this.entree);
+		mealClone.setComplement(complement);
+		mealClone.setSalad(this.salad);
+		mealClone.setDessert(this.dessert);
+		
+		mealClone.setPescetarian(this.pescetarian);
+		mealClone.setVegetarian(this.vegetarian);
+		mealClone.setHalal(this.halal);
+		
+		mealClone.setImage(this.image);
+		
 		return mealClone;
 	}
 

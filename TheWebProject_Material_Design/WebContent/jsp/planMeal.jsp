@@ -59,11 +59,45 @@
        
        <div class="row">
       	<div class="col l3 m12 s12">
-         <img src="${meal.image}" height="300" width="300"/>     	
+         <img src="${meal.image}" class="responsive-img"/>     	
       	</div>
       	<div class="col l9 m12 s12">
          <span>${meal.description}</span>     	
       	</div>
+       </div>
+       
+       <div class="row">
+        <table class="bordered">
+         <tbody>
+          <tr>
+           <td>Suppe</td>
+           <td>${not empty meal.soup ? meal.soup: 'keine Suppe'}</td>
+          </tr>
+          <tr>
+           <td>Hauptspeise</td>
+           <td>${not empty meal.entree ? meal.entree : 'keine Hauptspeise'}</td>          
+          </tr>
+          <tr>
+           <td>Salat</td>
+           <td>${not empty meal.salad ? meal.salad : 'kein Salat'}</td>          
+          </tr>
+          <tr>
+           <td>Beilage</td>
+           <td>${not empty meal.complement ? meal.complement : 'keine Beilage'}</td>          
+          </tr>
+          <tr>
+           <td>Dessert</td>
+           <td>${not empty meal.dessert ? meal.dessert : 'keine Beilage'}</td>          
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       
+       <!-- Icons für Angabe vegetarisch, pescetarian und schwein -->
+       <div class="row">
+        ${meal.pescetarian ? '<img src="../img/pescetarian.svg" height="30" width="30"/>' : '<img src="../img/pescetarian.svg" height="30" width="30"/> '} 
+        ${meal.halal ? '<img src="../img/halal.svg" height="30" width="30"/>' : '<img src="../img/halal.svg" height="30" width="30"/> '} 
+        ${meal.vegetarian ? '<img src="../img/vegetarian.svg" height="30" width="30"/>' : ' '}                 
        </div>
        
        <form action="../findMeal" method="get">

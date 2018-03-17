@@ -40,6 +40,7 @@ public class FindMealServlet extends HttpServlet {
 			boolean halal = request.getParameter("halal") == null ? false:true;
 			
 			Meal mealProfile = new Meal();
+			
 			mealProfile.setVegetarian(vegetarian);
 			mealProfile.setHalal(halal);
 			
@@ -55,6 +56,7 @@ public class FindMealServlet extends HttpServlet {
 				messenger.setMessage(Messenger.SEARCH_FAILED);
 				response.sendRedirect("jsp/messaging.jsp?direct=planMeal");
 			}
+			
 		}else if(planMeal){
 			ObjectId choosedMeal_id = new ObjectId(request.getParameter("choosedMeal"));
 			
