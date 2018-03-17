@@ -30,9 +30,11 @@
 				<div class="center"><h2>Wie war dein Salat ?</h2></div>
 				<div class="center">
 				    <input type="radio" id="salad_bad" name="salad" value="bad"/>
-					<label for="salad_bad"><i class="material-icons large teal-text">thumb_down</i></label>
+					<label for="salad_bad"><i class="material-icons large teal-text">sentiment_very_dissatisfied</i></label>
+					<input type="radio" id="salad_neutral" name="salad" value="neutral"/>
+					<label for="salad_neutral"><i class="material-icons large teal-text">sentiment_neutral</i></label>
 					<input type="radio" id="salad_good" name="salad" value="good"/>
-					<label for="salad_good"><i class="material-icons large teal-text">thumb_up</i></label>
+					<label for="salad_good"><i class="material-icons large teal-text">sentiment_very_satisfied</i></label>
 				</div>
 				</div>
          <div class="step-actions">
@@ -52,9 +54,11 @@
 				<div class="center"><h2>Wie war die Hauptspeise ?</h2></div>
 				<div class="center">
 				    <input type="radio" id="entree_bad" name="entree" value="bad"/>
-					<label for="entree_bad"><i class="material-icons large teal-text">thumb_down</i></label>
+					<label for="entree_bad"><i class="material-icons large teal-text">sentiment_very_dissatisfied</i></label>
+					<input type="radio" id="entree_neutral" name="entree" value="neutral"/>
+					<label for="entree_neutral"><i class="material-icons large teal-text">sentiment_neutral</i></label>
 					<input type="radio" id="entree_good" name="entree" value="good"/>
-					<label for="entree_good"><i class="material-icons large teal-text">thumb_up</i></label>
+					<label for="entree_good"><i class="material-icons large teal-text">sentiment_very_satisfied</i></label>
 				</div>
 				</div>
          <div class="step-actions">
@@ -65,18 +69,20 @@
    </li>
   
     <li class="step">
-      <div class="step-title waves-effect">Komplement</div>
+      <div class="step-title waves-effect">Beilage</div>
       <div class="step-content">
          				<div class="container">
 				<div class="center">
 					<img src="../images/icons/rice.png" height="150" width="150px"/>
 				</div>
-				<div class="center"><h2>Wie war das Komplement ?</h2></div>
+				<div class="center"><h2>Wie war die Beilage ?</h2></div>
 				<div class="center">
 				    <input type="radio" id="complement_bad" name="complement" value="bad"/>
-					<label for="complement_bad"><i class="material-icons large teal-text">thumb_down</i></label>
+					<label for="complement_bad"><i class="material-icons large teal-text">sentiment_very_dissatisfied</i></label>
+					<input type="radio" id="complement_neutral" name="complement" value="neutral"/>
+					<label for="complement_neutral"><i class="material-icons large teal-text">sentiment_neutral</i></label>
 					<input type="radio" id="complement_good" name="complement" value="good"/>
-					<label for="complement_good"><i class="material-icons large teal-text">thumb_up</i></label>
+					<label for="complement_good"><i class="material-icons large teal-text">sentiment_very_satisfied</i></label>
 				</div>
 				</div>
          <div class="step-actions">
@@ -97,9 +103,11 @@
 				<div class="center"><h2>Wie war die Suppe ?</h2></div>
 				<div class="center">
 				    <input type="radio" id="soup_bad" name="soup" value="bad"/>
-					<label for="soup_bad"><i class="material-icons large teal-text">thumb_down</i></label>
+					<label for="soup_bad"><i class="material-icons large teal-text">sentiment_very_dissatisfied</i></label>
+					<input type="radio" id="soup_neutral" name="soup" value="neutral"/>
+					<label for="soup_neutral"><i class="material-icons large teal-text">sentiment_neutral</i></label>
 					<input type="radio" id="soup_good" name="soup" value="good"/>
-					<label for="soup_good"><i class="material-icons large teal-text">thumb_up</i></label>
+					<label for="soup_good"><i class="material-icons large teal-text">sentiment_very_satisfied</i></label>
 				</div>
 				</div>
          <div class="step-actions">
@@ -120,9 +128,11 @@
 				<div class="center"><h2>Wie war das Dessert ?</h2></div>
 				<div class="center">
 				    <input type="radio" id="dessert_bad" name="dessert" value="bad"/>
-					<label for="dessert_bad"><i class="material-icons large teal-text">thumb_down</i></label>
+					<label for="dessert_bad"><i class="material-icons large teal-text">sentiment_very_dissatisfied</i></label>
+					<input type="radio" id="dessert_neutral" name="dessert" value="neutral"/>
+					<label for="dessert_neutral"><i class="material-icons large teal-text">sentiment_neutral</i></label>
 					<input type="radio" id="dessert_good" name="dessert" value="good"/>
-					<label for="dessert_good"><i class="material-icons large teal-text">thumb_up</i></label>
+					<label for="dessert_good"><i class="material-icons large teal-text">sentiment_very_satisfied</i></label>
 				</div>
 				</div>
          <div class="step-actions">

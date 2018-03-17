@@ -79,7 +79,7 @@
     <div class="card">
      <!--   ${tmv =  applicationScope.todayMealVegetarian} -->
      <div class="card-image waves-effect waves-block waves-light red">
-      <img src="${not empty tmv ? tmv.image:'../img/logo.svg'}" height="300" width="300" id=""/>
+      <img src="${not empty tmv ? tmv.image:'../img/logo.svg'}" height="300" width="300"/>
      </div>
      
      <div class="card-content">

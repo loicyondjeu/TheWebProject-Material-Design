@@ -11,7 +11,7 @@
   <ul id="nav-mobile" class="side-nav fixed">
        <li>
        	<div class="user-view red">
-          <a href="#!user">
+          <a href="../jsp/features.jsp">
           	<i class="material-icons large white-text">account_circle</i>
           </a>
           <a href="#!name">

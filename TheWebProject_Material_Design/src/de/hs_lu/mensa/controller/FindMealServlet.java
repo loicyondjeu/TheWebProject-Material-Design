@@ -42,7 +42,9 @@ public class FindMealServlet extends HttpServlet {
 			Meal mealProfile = new Meal();
 			mealProfile.setVegetarian(vegetarian);
 			mealProfile.setHalal(halal);
+			
 			System.out.println(mealProfile.mongoRead());
+			
 			if(mealProfile.mongoRead()){
 				ArrayList<Meal> meals = mealProfile.getMealList();
 				System.out.println(meals.toString());
