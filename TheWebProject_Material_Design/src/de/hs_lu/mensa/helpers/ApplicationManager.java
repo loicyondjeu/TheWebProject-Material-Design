@@ -50,5 +50,49 @@ public abstract class ApplicationManager {
 		}
 		  
 	 }
+	 
+	 
+	 public static void setUpTomorrowMeals(ServletContext application) throws ParseException{
+		  try {
+				Date tomorrow = DateHelper.getTomorrowTimeRemoved(new Date());
+				  
+				  MealPlan tomorrowMealPlan = new MealPlan();
+				  tomorrowMealPlan.setDate(tomorrow);
+				  
+				  tomorrowMealPlan.mongoRead();
+				  
+				  //Für den Debug
+				  System.out.println("Die IDs der Speise für morgen sind:" + tomorrowMealPlan.getRelatedMeals_ids().toString());
+				  
+				  if(tomorrowMealPlan.getRelatedMeals_ids().size() >= 2){
+					  Meal tomorrowMealVegetarian = new Meal();
+					  tomorrowMealVegetarian.setMeal_id(tomorrowMealPlan.getRelatedMeals_ids().get(0));
+					  
+					  tomorrowMealVegetarian.mongoReadById();
+					  
+					  Meal tomorrowMealVegetarianTemp = (Meal)application.getAttribute("tomorrowMealVegetarian");
+					  if(tomorrowMealVegetarianTemp == null){
+						  application.setAttribute("tomorrowMealVegetarian", tomorrowMealVegetarian);
+					  }
+					  
+					  
+					  Meal tomorrowMealVollkost = new Meal();
+					  tomorrowMealVollkost.setMeal_id(tomorrowMealPlan.getRelatedMeals_ids().get(1));
+					  
+					  tomorrowMealVollkost.mongoReadById();
+					  
+					  Meal tomorrowMealVollkostTemp = (Meal)application.getAttribute("tomorrowMealVollkost");
+					  if(tomorrowMealVollkostTemp == null){
+						  application.setAttribute("tomorrowMealVollkost", tomorrowMealVollkost);
+					  }
+				  }
+				  
+				  
+			} catch (Exception e) {
+				//Das Laden der heutigen Speisen ist fehlgeschlagen
+				e.printStackTrace();
+			}
+		  
+	 }
 
 }

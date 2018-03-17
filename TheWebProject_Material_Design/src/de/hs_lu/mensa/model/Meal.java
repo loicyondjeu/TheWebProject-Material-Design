@@ -83,6 +83,27 @@ public class Meal implements Persistable {
 	public void toObject(Document doc){
 		this.setMeal_id(doc.getObjectId("_id"));
 		this.setName(doc.getString("name"));
+		this.setDescription(doc.getString("description"));
+		
+		this.setSalad(doc.getString("salad"));
+		this.setSoup(doc.getString("soup"));
+		this.setEntree(doc.getString("entree"));
+		this.setComplement(doc.getString("complement"));
+		this.setDessert(doc.getString("dessert"));
+		
+		
+		this.setVegetarian(doc.getBoolean("vegetarian"));
+//		this.setHalal(doc.getBoolean("halal"));
+		this.setPescetarian(doc.getBoolean("pescetarian"));
+		
+//		this.setProtein(doc.getDouble("protein"));
+//		this.setEnergy(doc.getDouble("energy"));
+//		this.setFat(doc.getDouble("fat"));
+//		this.setCarbs(doc.getDouble("carbs"));
+		
+		this.setAllergies((ArrayList<String>) doc.get("allergies"));
+		this.setVitamins((ArrayList<String>) doc.get("vitamins"));
+		
 		this.setImage(doc.getString("image"));
 	}
 	
@@ -99,7 +120,7 @@ public class Meal implements Persistable {
 			   .append("complement", this.complement)
 			   
 			   .append("vegetarian", this.vegetarian)
-			   .append("pork", this.halal)
+			   .append("halal", this.halal)
 			   .append("pescetarian", this.pescetarian)
 
 				.append("energy", this.energy)

@@ -40,15 +40,22 @@ public class SigninServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("user", user);
 		
-		//Handle Database
-		if(user.mongoRead()){
-			//Handle Response
-			response.sendRedirect("jsp/features.jsp");
-		}else{
+		try{
+			//Handle Database
+			if(user.mongoRead()){
+				//Handle Response
+				response.sendRedirect("jsp/features.jsp");
+			}else{
+				Messenger messenger = SessionManager.getSessionMessenger(session);
+				messenger.setMessage(Messenger.LOGIN_FAILED);
+				response.sendRedirect("jsp/messaging.jsp?direct=signin");
+			}
+		}catch (Exception e) {
 			Messenger messenger = SessionManager.getSessionMessenger(session);
 			messenger.setMessage(Messenger.LOGIN_FAILED);
 			response.sendRedirect("jsp/messaging.jsp?direct=signin");
 		}
+
 	}
 
 }

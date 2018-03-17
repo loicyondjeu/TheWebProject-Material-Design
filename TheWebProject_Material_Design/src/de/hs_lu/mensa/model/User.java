@@ -30,12 +30,13 @@ public class User implements Persistable {
 		Bson userCondition = Filters.eq("username", this.username);
 		Bson passwordCondition = Filters.eq("password", this.password);
 		
-		Document userDoc = this.users.find(Filters.and(userCondition, passwordCondition)).first();
+		Document userDoc;
 		
+		userDoc = this.users.find(Filters.and(userCondition, passwordCondition)).first();
 		if(userDoc != null){
 			this.toObject(userDoc);
 			return true;
-		}
+			}
 		
 		return false;
 	}

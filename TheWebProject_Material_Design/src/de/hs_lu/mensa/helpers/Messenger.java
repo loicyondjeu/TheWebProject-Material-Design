@@ -13,6 +13,7 @@ public class Messenger {
 	public final static String ERROR = "Unsere Dienste sind leider zurzeit nicht verfügbar";
 	public final static String SAVE_MEALPLAN_OK = "Die Speise wurde erfolgreich an dem Tag gespeichert";
 	public final static String SEARCH_FAILED = "Keine Speise entsprach leider ihrer Suche";
+	public final static String MONGO_ERROR = "Leider konnten wir die zur Verbindung Datenbank nicht herstellen";
 
 	public Messenger(){
 		super();
