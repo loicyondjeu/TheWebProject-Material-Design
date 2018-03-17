@@ -59,7 +59,7 @@
 	    <input name="date" class="datepicker" type="text" id="date" value=""/>
         <label for="date">Datum</label>
 	   </div><br/>
-       <span class="rigth-align"><button type="submit" class="btn" name="choosedMeal" value="${meal.meal_id}">auswählen</button></span>
+       <span class="rigth-align"><button type="submit" class="btn" name="choosedMeal" value="${meal.meal_id}">planen</button></span>
 	   </form>
        </div>
        

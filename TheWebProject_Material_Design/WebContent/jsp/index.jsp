@@ -75,40 +75,25 @@
    <div class="col s12 m6 l6">
    
    	<h3 class="red-text center-align">Vegetarisch</h3>
+   	
     <div class="card">
-    
+     <!--   ${tmv =  applicationScope.todayMealVegetarian} -->
      <div class="card-image waves-effect waves-block waves-light red">
-      <img src="../img/logo.svg" height="300" width="300" id=""/>
+      <img src="${not empty tmv ? tmv.image:'../img/logo.svg'}" height="300" width="300" id=""/>
      </div>
      
      <div class="card-content">
       <span class="card-title activator">
-       ${not empty applicationScope.todayMealVegetarian.name ? applicationScope.todayMealVegetarian.name : 'Es gibt leider keine Speise heute :(' }
+       ${not empty tmv ? tmv.name : 'Es gibt leider keine Speise heute :(' }
        <i class="material-icons right">add</i>
       </span>
      </div>
      
      <div class="card-reveal">
-     
-      <span class="card-title">
-       ${applicationScope.todayMealVegetarian.name}
-       <i class="material-icons right">close</i>
-      </span>
-      
-       <p>${applicationScope.todayMealVegetarian.description}</p>
-       
-         <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" 
-            href="../evaluateMeal?meal=${applicationScope.todayMealVegetarian.meal_id}&evaltype=normal" ${not empty applicationScope.todayMealVegetarian ? '':'disabled'}>
-          bewerten
-         </a>
-         <br/>
-         <br/>
-         <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" 
-            href="../evaluateMeal?meal=${applicationScope.todayMealVegetarian.meal_id}&evaltype=quick" ${not empty applicationScope.todayMealVegetarian ? '':'disabled'}>
-          Schnell bewerten
-         </a>
-
-       
+      <span class="card-title">${tmv.name}<i class="material-icons right">close</i></span>
+      <p>${tmv.description}</p> 
+      <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" href="../evaluateMeal?meal=${tmv.meal_id}&evaltype=normal" ${not empty tmv ? '':'disabled'}> bewerten </a>
+      <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" href="../evaluateMeal?meal=${tmv.meal_id}&evaltype=quick" ${not empty tmv ? '':'disabled'}>Schnell bewerten</a>
      </div>
      
     </div>
@@ -120,21 +105,28 @@
     <h3 class="red-text center-align">Vollkost</h3>
     
     <div class="card">
+     <!--   ${tmo =  applicationScope.todayMealVollkost} -->
      <div class="card-image waves-effect waves-block waves-light red">
-      <img src="../img/logo.svg" height="300" width="300" id=""/>
+      <img src="${not empty tmo ? tmo.image:'../img/logo.svg'}" height="300" width="300" id=""/>
      </div>
+     
      <div class="card-content">
       <span class="card-title activator">
-        ${not empty applicationScope.todayMealVollkost.name ? applicationScope.todayMealVegetarian.name : 'Es gibt leider keine Speise heute :(' }
+       ${not empty tmo ? tmo.name : 'Es gibt leider keine Speise heute :(' }
        <i class="material-icons right">add</i>
       </span>
      </div>
+     
      <div class="card-reveal">
-      <span class="card-title">${applicationScope.todayMealVollkost.name}<i class="material-icons right">close</i></span>
-       <p>${applicationScope.todayMealVollkost.description}</p>
-       <p><a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" href="../evaluateMeal?meal=${applicationScope.todayMealVollkost.meal_id}&evaltype=normal">bewerten</a>
-       <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" href="../evaluateMeal?meal=${applicationScope.todayMealVollkost.meal_id}&evaltype=quick">Schnell bewerten</a></p>
+      <span class="card-title">
+       ${tmo.name}
+       <i class="material-icons right">close</i>
+      </span>
+      <p>${tmo.description}</p>
+      <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" href="../evaluateMeal?meal=${tmo.meal_id}&evaltype=normal" ${not empty tmo ? '':'disabled'}> bewerten </a>
+      <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" href="../evaluateMeal?meal=${tmo.meal_id}&evaltype=quick" ${not empty tmo ? '':'disabled'}>Schnell bewerten</a>
      </div>
+     
     </div>
     
    </div>
@@ -144,17 +136,17 @@
   
   
   <div class="row white">
-  	<h1 class="red-text center-align">Unsere Standorte</h1>
+   <h1 class="red-text center-align">Unsere Standorte</h1>
+   
   	<div class="col s12 m12 l6">
   	 <div class="card">
   	  <div class="card-panel large">
-  	  	<span class="card-title">Mensa am Campus</span>
-			 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1056.6973116017093!2d8.423566803215005!3d49.473468962007026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4797cc7dbbd596fb%3A0x6c46f7025066f5d0!2sStudierendenwerk+Vorderpfalz+-+Mensa!5e1!3m2!1sen!2sde!4v1518518615723" width="90%" height="486" ></iframe>
-			
+  	   <span class="card-title">Mensa am Campus</span>
+	   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1056.6973116017093!2d8.423566803215005!3d49.473468962007026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4797cc7dbbd596fb%3A0x6c46f7025066f5d0!2sStudierendenwerk+Vorderpfalz+-+Mensa!5e1!3m2!1sen!2sde!4v1518518615723" width="90%" height="486" ></iframe>	
   	  </div>
   	 </div>
-  	 
   	</div>
+  	
   	<div class="col s12 m12 l6">
      <div class="card">
   	  <div class="card-panel large">
@@ -163,6 +155,7 @@
   	  </div>
   	 </div>
   	</div>
+  	
   </div>
   
  </main>

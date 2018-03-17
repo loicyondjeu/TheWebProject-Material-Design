@@ -7,7 +7,7 @@ import java.util.Date;
 
 public abstract class DateHelper {
 	
-	public static Date getTodayTimeRemoved(Date date) throws ParseException{
+	public static Date getDateTimeRemoved(Date date) throws ParseException{
 		SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
 		String strDate = formatter.format(date);
 		return formatter.parse(strDate);

@@ -11,14 +11,15 @@ import de.hs_lu.mensa.model.MealPlan;
 public abstract class ApplicationManager {
 	
 	 public static void setUpTodayMeals(ServletContext application) throws ParseException{
-		  Date today = DateHelper.getTodayTimeRemoved(new Date());
+		  Date today = DateHelper.getDateTimeRemoved(new Date());
 		  
 		  MealPlan todayMealPlan = new MealPlan();
 		  todayMealPlan.setDate(today);
 		  
 		  todayMealPlan.mongoRead();
 		  
-		  System.out.println(todayMealPlan.getRelatedMeals_ids().toString());
+		  //Für den Debug
+		  System.out.println("Die IDs der Speise für heute sind:" + todayMealPlan.getRelatedMeals_ids().toString());
 		  
 		  if(todayMealPlan.getRelatedMeals_ids().size() >= 2){
 			  Meal todayMealVegetarian = new Meal();
