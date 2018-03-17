@@ -24,22 +24,22 @@
    <div class="carousel carousel-slider center">
    
     <div class="carousel-item red white-text">
-	 <h1>Bewerte das Essen deiner Mensa</h1>
+	 <h1>Bewerte das Essen in der Mensa</h1>
 	 <p>Sag uns einfach wie dir das Essen geschmeckt hat !</p>
 	 <i class="material-icons large">directions_bike</i><br/>
 	 <a class="btn waves-effect" href="evaluateRefectory.jsp">Zur Bewertung</a>
 	</div>
 	
 	<div class="carousel-item red white-text">
-	 <h1>Verfolge deiner Lieblingsspeise Speise</h1>
-	 <p class="white-text">Gib uns deiner E-Mail und lasst dich benachrichtigen für dein Lieblingsessen</p>
+	 <h1>Verfolge Speisen</h1>
+	 <p>Gib uns deiner E-Mail und lasst dich benachrichtigen für dein Lieblingsessen</p>
 	 <i class="material-icons large">directions_bike</i><br/>
 	 <a class="btn waves-effect" href="notification.jsp">Sich anmelden</a>
 	</div>
 	
 	<div class="carousel-item red white-text">
-	 <h1>Schaue dir deinen Speiseplan an</h1>
-	 <p class="white-text">Bleibe immer im laufenden über die Ausgaben in deiner Mensa</p>
+	 <h1>Gucke den Speiseplan</h1>
+	 <p>Bleibe immer im laufenden über die Ausgaben in deiner Mensa</p>
 	 <i class="material-icons large">directions_bike</i><br/>
 	 <a class="btn waves-effect" href="viewMealPlan.jsp">Zur Speiseplan</a>
 	</div>
@@ -51,9 +51,10 @@
   <div class="row white">
   
    <div class="col s12 m12 l12">
-    <h1 class="red-text center-align">Heute
-    <span class="teal-text">
-		<script type="text/javascript">
+    <h1 class="red-text center-align">
+     Heute
+     <span class="teal-text">
+	  <script type="text/javascript">
 		function wochentag(i) {
 			var tage = [ 'Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag',
 					'Freitag', 'Samstag', 'Sonntag' ];
@@ -62,47 +63,81 @@
 		}
 			var datum = new Date();
 			var tag = datum.getDay();
+			
 		    document.write(wochentag(tag) + ", " + datum.getDate() + "." + parseInt(datum.getMonth()+1) + "." + (datum.getYear()+1900));
  		</script>
  	 </span>
-    in deiner Mensa</h1>
+    in deiner Mensa
+    </h1>
    </div>
    
    <div class="col s12 m6 l6">
+   
    	<h3 class="red-text center-align">Vegetarisch</h3>
     <div class="card">
+    
      <div class="card-image waves-effect waves-block waves-light red">
       <img src="../img/logo.svg" height="300" width="300" id=""/>
      </div>
+     
      <div class="card-content">
-      <span class="card-title activator">${applicationScope.todayMealVegetarian.name}<i class="material-icons right">add</i></span>
+      <span class="card-title activator">
+       ${not empty applicationScope.todayMealVegetarian.name ? applicationScope.todayMealVegetarian.name : 'Es gibt leider keine Speise heute :(' }
+       <i class="material-icons right">add</i>
+      </span>
      </div>
+     
      <div class="card-reveal">
-      <span class="card-title">${applicationScope.todayMealVegetarian.name}<i class="material-icons right">close</i></span>
+     
+      <span class="card-title">
+       ${applicationScope.todayMealVegetarian.name}
+       <i class="material-icons right">close</i>
+      </span>
+      
        <p>${applicationScope.todayMealVegetarian.description}</p>
-       <p><a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" href="../evaluateMeal?meal=${applicationScope.todayMealVegetarian.meal_id}&evaltype=normal">bewerten</a>
-       <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" href="../evaluateMeal?meal=${applicationScope.todayMealVegetarian.meal_id}&evaltype=quick">Schnell bewerten</a></p>
+       
+         <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" 
+            href="../evaluateMeal?meal=${applicationScope.todayMealVegetarian.meal_id}&evaltype=normal" ${not empty applicationScope.todayMealVegetarian ? '':'disabled'}>
+          bewerten
+         </a>
+         <br/>
+         <br/>
+         <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" 
+            href="../evaluateMeal?meal=${applicationScope.todayMealVegetarian.meal_id}&evaltype=quick" ${not empty applicationScope.todayMealVegetarian ? '':'disabled'}>
+          Schnell bewerten
+         </a>
+
+       
      </div>
+     
     </div>
+    
    </div>
    
    <div class="col s12 m6 l6">
+   
     <h3 class="red-text center-align">Vollkost</h3>
+    
     <div class="card">
      <div class="card-image waves-effect waves-block waves-light red">
       <img src="../img/logo.svg" height="300" width="300" id=""/>
      </div>
      <div class="card-content">
-      <span class="card-title activator">${applicationScope.todayMealVollkost.name}<i class="material-icons right">add</i></span>
+      <span class="card-title activator">
+        ${not empty applicationScope.todayMealVollkost.name ? applicationScope.todayMealVegetarian.name : 'Es gibt leider keine Speise heute :(' }
+       <i class="material-icons right">add</i>
+      </span>
      </div>
      <div class="card-reveal">
       <span class="card-title">${applicationScope.todayMealVollkost.name}<i class="material-icons right">close</i></span>
-       <p>${applicationScope.todayMealVollkost.description} #HierTodayMeal</p>
+       <p>${applicationScope.todayMealVollkost.description}</p>
        <p><a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" href="../evaluateMeal?meal=${applicationScope.todayMealVollkost.meal_id}&evaltype=normal">bewerten</a>
        <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" href="../evaluateMeal?meal=${applicationScope.todayMealVollkost.meal_id}&evaltype=quick">Schnell bewerten</a></p>
      </div>
     </div>
+    
    </div>
+   
   </div>
   
   

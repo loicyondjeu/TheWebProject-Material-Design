@@ -15,7 +15,7 @@
       <div class="col s12 m6 l6 offset-l3 offset-m3">
       
       <div class="center-align">
-     	<img src="../img/logo.svg" height="75" width="75" id=""/>
+     	<a href="index.jsp"><img src="../img/logo.svg" height="75" width="75" id=""/></a>
       	<h1 class="white-text" id="myGeschmack_logo_text"><span id="my">my</span>Geschmack</h1>
       </div>
 		

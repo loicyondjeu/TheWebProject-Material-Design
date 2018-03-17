@@ -6,7 +6,7 @@
      <img src="../img/logo.svg" height="50" width="50" id=""/>
     </a>
     <h5 class="brand-logo white-text" id="myGeschmack_logo_text">
-     <a href="#"><span id="my">&nbsp;my</span>Geschmack</a>
+     <a href="index.jsp"><span id="my">&nbsp;my</span>Geschmack</a>
     </h5>
     
     <ul class="right">

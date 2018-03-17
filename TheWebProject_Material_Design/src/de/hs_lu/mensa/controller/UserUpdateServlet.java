@@ -27,6 +27,7 @@ public class UserUpdateServlet extends HttpServlet {
 		Messenger messenger = SessionManager.getSessionMessenger(session);
 		
 		//Handle Resquest
+		request.setCharacterEncoding("UTF-8");
 		String username = request.getParameter("username");
 		String email = request.getParameter("email");
 		String old_password = request.getParameter("old_password");

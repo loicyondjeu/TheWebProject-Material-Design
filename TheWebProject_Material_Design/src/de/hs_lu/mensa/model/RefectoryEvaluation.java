@@ -9,6 +9,17 @@ import com.mongodb.client.MongoCollection;
 
 import de.hs_lu_mensa_dataaccess.MongoConnection;
 
+/**
+ * Die Klasse modelliert die Bewertung eines Mensa Gast für die Mensa.
+ * Die Mensa wird vom Gast auf 4 Charakteristiken gemessen.
+ * Die Diversität der Speise, die Abwechslung, die Qualität und die Portionsgröße.
+ * Es können weitere Charakteristiken hinzugefügt werden.
+ * Außerdem wird das Datum der Bewertung hinterlegt.
+ * 
+ *  Die Werte werden auf einem Skala von 1 bis 10 gemessen.
+ * @author loicy
+ *
+ */
 public class RefectoryEvaluation implements Persistable {
 	private Integer quality, diversity, variety, serving_size;
 	private Date date;

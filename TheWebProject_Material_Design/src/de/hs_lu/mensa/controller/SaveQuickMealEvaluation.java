@@ -23,6 +23,8 @@ public class SaveQuickMealEvaluation extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		request.setCharacterEncoding("UTF-8");
+		
 		String salad = request.getParameter("salad");
 		String soup = request.getParameter("soup");
 		String dessert = request.getParameter("dessert");
@@ -30,7 +32,7 @@ public class SaveQuickMealEvaluation extends HttpServlet {
 		String complement = request.getParameter("complement");
 		ObjectId meal_id = new ObjectId(request.getParameter("meal"));
 		
-		String bewerten = Denullyfier.denullify(request.getParameter("bewerten"));
+		String bewerten = Denullyfier.denullifyString(request.getParameter("bewerten"));
 		
 		System.out.println(bewerten);
 		if(bewerten.equals("bewerten")){

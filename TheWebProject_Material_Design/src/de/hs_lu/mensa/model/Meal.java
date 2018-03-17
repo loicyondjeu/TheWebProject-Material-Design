@@ -14,12 +14,12 @@ import de.hs_lu_mensa_dataaccess.MongoConnection;
 
 public class Meal implements Persistable {
 	private ObjectId meal_id;
-	private String name, description, soup, entree, complement, salad, dessert, allergies;
-	private Boolean vegetarian, halal, thumsup;
+	private String name, description, soup, entree, complement, salad, dessert;
+	private Boolean vegetarian, halal, pescetarian, thumsup;
 	private int stars; 
 	private String image;
 	private double energy, protein, fat, carbs, avg_evaluation;
-	private ArrayList<String> vitamins, comments;
+	private ArrayList<String> vitamins, allergies;
 	
 	private MongoConnection mongoConn;
 	private MongoCollection<Document> meals;
@@ -90,13 +90,27 @@ public class Meal implements Persistable {
 		Document mealDoc = new Document();
 		
 		mealDoc.append("name", this.name)
-				.append("entree", this.entree)
-				.append("vegetarian", this.vegetarian)
-				.append("halal", this.halal)
-				.append("description", this.description)
+			   .append("description", this.description)
+			   
+			   .append("soup", this.soup)
+			   .append("entree", this.entree)
+			   .append("salad", this.salad)
+			   .append("dessert",this.dessert)
+			   .append("complement", this.complement)
+			   
+			   .append("vegetarian", this.vegetarian)
+			   .append("pork", this.halal)
+			   .append("pescetarian", this.pescetarian)
+
 				.append("energy", this.energy)
+				.append("protein", this.protein)
+				.append("fat", this.fat)
+				.append("carbs", this.carbs)
+				
 				.append("vitamins", this.vitamins)
+				
 				.append("allergies", this.allergies)
+				
 				.append("image", this.image);
 		
 		return mealDoc;
@@ -174,14 +188,6 @@ public class Meal implements Persistable {
 		this.dessert = dessert;
 	}
 
-	public String getAllergies() {
-		return allergies;
-	}
-
-	public void setAllergies(String allergies) {
-		this.allergies = allergies;
-	}
-
 	public boolean isVegetarian() {
 		return vegetarian;
 	}
@@ -254,14 +260,6 @@ public class Meal implements Persistable {
 		this.vitamins = vitamins;
 	}
 
-	public ArrayList<String> getComments() {
-		return comments;
-	}
-
-	public void setComments(ArrayList<String> comments) {
-		this.comments = comments;
-	}
-
 	
 	public Boolean getHalal() {
 		return halal;
@@ -269,6 +267,14 @@ public class Meal implements Persistable {
 
 	public void setHalal(Boolean halal) {
 		this.halal = halal;
+	}
+
+	public Boolean getPescetarian() {
+		return pescetarian;
+	}
+
+	public void setPescetarian(Boolean pescetarian) {
+		this.pescetarian = pescetarian;
 	}
 
 	public MealList getMealList() {
@@ -287,14 +293,24 @@ public class Meal implements Persistable {
 		mealClone.setDescription(this.description);
 		return mealClone;
 	}
-	
+
+	public ArrayList<String> getAllergies() {
+		return allergies;
+	}
+
+	public void setAllergies(ArrayList<String> allergies) {
+		this.allergies = allergies;
+	}
+
 	@Override
 	public String toString() {
 		return String.format(
-				"Meal [name=%s, description=%s, soup=%s, entree=%s, complement=%s, salad=%s, dessert=%s, allergies=%s, vegetarian=%s, halal=%s, thumsup=%s, stars=%s, image=%s, energy=%s, protein=%s, fat=%s, carbs=%s, avg_evaluation=%s, vitamins=%s, comments=%s, meals=%s, mealList=%s]",
-				name, description, soup, entree, complement, salad, dessert, allergies, vegetarian, halal, thumsup,
-				stars, image, energy, protein, fat, carbs, avg_evaluation, vitamins, comments, meals, mealList);
+				"Meal [meal_id=%s, name=%s, description=%s, soup=%s, entree=%s, complement=%s, salad=%s, dessert=%s, vegetarian=%s, halal=%s, pescetarian=%s, image=%s]",
+				meal_id, name, description, soup, entree, complement, salad, dessert, vegetarian, halal, pescetarian,
+				image);
 	}
+	
+
 
 
 	

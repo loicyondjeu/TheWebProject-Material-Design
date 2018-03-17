@@ -22,6 +22,9 @@ public class EvaluateMealServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		/*HANDLE REQUEST*/
+		
+		request.setCharacterEncoding("UTF-8");
+		
 		ObjectId meal_id = new ObjectId(request.getParameter("meal"));
 		String evaltype = request.getParameter("evaltype");
 		

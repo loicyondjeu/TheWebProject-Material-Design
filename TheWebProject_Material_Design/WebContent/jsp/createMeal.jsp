@@ -62,7 +62,7 @@
             </div>
             <div class="input-field col s12">
                <input type="text" name="complement" id="complement">
-               <label for="complement">Komplement</label>
+               <label for="complement">Beilage</label>
             </div>
             <div class="input-field col s12">
                <input type="text" name="dessert" id="dessert">
@@ -125,7 +125,7 @@
 	      <label for="v1">A</label>
 	      <input type="checkbox" id="v2" name="v2" value="B1"/>
 	      <label for="v2">B1</label>
-	      <input type="checkbox" id="v3" name="v3" value="vB2"/>
+	      <input type="checkbox" id="v3" name="v3" value="B2"/>
 	      <label for="v3">B2</label>
 	      <input type="checkbox" id="v4" name="v4" value="C"/>
 	      <label for="v4">C</label>
@@ -133,9 +133,18 @@
 	      <label for="v5">D</label>
          </div>
             
-         <div class="input-field col s12">
-          <textarea name="allergies" id="allergies" class="materialize-textarea"></textarea>   
-	      <label for="allergies">Allergien</label>
+         <div class="col s12">
+	      <label>Allergien</label><br/>
+	      <input type="checkbox" id="allergie1" name="allergie1" value="Gluten"/>
+	      <label for="allergie1">Gluten</label>
+	      <input type="checkbox" id="allergie2" name="allergie2" value="Soja"/>
+	      <label for="allergie2">Soja</label>
+	      <input type="checkbox" id="allergie3" name="allergie3" value="Milch"/>
+	      <label for="allergie3">Milch</label>
+	      <input type="checkbox" id="allergie4" name="allergie4" value="Ei"/>
+	      <label for="allergie4">Ei</label>
+	      <input type="checkbox" id="allergie5" name="allergie5" value="Sellerie"/>
+	      <label for="allergie5">Sellerie</label>
          </div>
                                                        
         </div>
@@ -159,8 +168,8 @@
          <label for="date">Datum</label>
          </div>
         <div class="col s12">
-	     <input name="img" type="text" id="img" value=""/>
-         <label for="img">URL des Bilds</label>
+	     <input name="image" type="text" id="image" value=""/>
+         <label for="image">URL des Bilds</label>
         </div>                                    
         </div>
          <div class="step-actions">

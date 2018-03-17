@@ -29,8 +29,11 @@ public class FindMealServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		request.setCharacterEncoding("UTF-8");
+		
 		boolean planMeal = request.getParameter("choosedMeal") == null ? false:true;
-		boolean search = Denullyfier.denullify(request.getParameter("search")).equals("suchen") ? true:false;
+		boolean search = Denullyfier.denullifyString(request.getParameter("search")).equals("suchen") ? true:false;
 		
 		if(search){
 			boolean vegetarian = request.getParameter("vegetarian") == null ? false:true;

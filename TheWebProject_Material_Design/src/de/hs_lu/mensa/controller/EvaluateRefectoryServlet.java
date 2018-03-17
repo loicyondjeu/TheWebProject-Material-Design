@@ -24,6 +24,9 @@ public class EvaluateRefectoryServlet extends HttpServlet {
 		
 		Messenger messenger = SessionManager.getSessionMessenger(request.getSession());
 		
+		
+		request.setCharacterEncoding("UTF-8");
+		
 		Integer quality = Integer.valueOf(request.getParameter("quality"));
 		Integer diversity = Integer.valueOf(request.getParameter("diversity"));
 		Integer variety = Integer.valueOf(request.getParameter("variety"));

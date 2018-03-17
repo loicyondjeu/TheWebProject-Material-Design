@@ -21,6 +21,9 @@ public class SaveMealEvaluationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		request.setCharacterEncoding("UTF-8");
+		
 		Integer freshness = Integer.valueOf( request.getParameter("freshness"));
 		Integer serving_size = Integer.valueOf( request.getParameter("serving_size"));
 		Integer taste = Integer.valueOf( request.getParameter("taste"));
