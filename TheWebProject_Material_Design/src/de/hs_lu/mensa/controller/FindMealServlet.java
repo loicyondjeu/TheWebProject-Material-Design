@@ -122,7 +122,7 @@ public class FindMealServlet extends HttpServlet {
 				iae.printStackTrace();
 				
 			} catch (ParseException e) {
-				messenger.setMessage(Messenger.EVAL_ERROR);//TODO Date Error
+				messenger.setMessage(Messenger.DATE_ERROR);
 				response.sendRedirect("jsp/messaging.jsp?direct=index");
 				
 				e.printStackTrace();
