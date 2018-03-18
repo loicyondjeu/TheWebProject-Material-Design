@@ -9,12 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import de.hs_lu.mensa.helpers.Denullyfier;
 import de.hs_lu.mensa.helpers.Messenger;
 import de.hs_lu.mensa.helpers.SessionManager;
 import de.hs_lu.mensa.model.RefectoryEvaluation;
+import de.hs_lu_mensa_dataaccess.MongoTester;
 
 /**
- * Servlet implementation class EvaluateRefectoryServlet
+ * Dieser Controller übernimmt die Aufgabe zur Speicherung einer Bewertung der Mensa in der Datenbank.
  */
 @WebServlet("/evaluateRefectory")
 public class EvaluateRefectoryServlet extends HttpServlet {
@@ -22,19 +24,26 @@ public class EvaluateRefectoryServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		/* SESSION HANDLING */
 		Messenger messenger = SessionManager.getSessionMessenger(request.getSession());
 		
 		
+		/* REQUEST HANDLING */
 		request.setCharacterEncoding("UTF-8");
 		
-		Integer quality = Integer.valueOf(request.getParameter("quality"));
-		Integer diversity = Integer.valueOf(request.getParameter("diversity"));
-		Integer variety = Integer.valueOf(request.getParameter("variety"));
-		Integer serving_size = Integer.valueOf(request.getParameter("serving_size"));
+		Integer quality = Integer.valueOf(Denullyfier.denullifyInteger(request.getParameter("quality")));
+		Integer diversity = Integer.valueOf(Denullyfier.denullifyInteger(request.getParameter("diversity")) );
+		Integer variety = Integer.valueOf(Denullyfier.denullifyInteger(request.getParameter("variety")));
+		Integer serving_size = Integer.valueOf(Denullyfier.denullifyInteger(request.getParameter("serving_size")));
 		Date today = new Date();
+		
+		 //AKTION PRÜFUNG
 		String bewerten = request.getParameter("bewerten");
 
 		if(bewerten.equals("bewerten")){
+			
+			/* BEAN HANDLING */
+			//Da Alle Daten aus dem Resquest sauber gelesen worden sind, erzeugt der Controller ein Objekt Speise
 			RefectoryEvaluation eval = new RefectoryEvaluation();
 			
 			eval.setDiversity(diversity);
@@ -43,12 +52,28 @@ public class EvaluateRefectoryServlet extends HttpServlet {
 			eval.setVariety(variety);
 			eval.setDate(today);
 			
-			eval.mongoWrite();
-
-			messenger.setMessage(Messenger.THANKS_FOR_EVAL);
-			response.sendRedirect("jsp/messaging.jsp?direct=evaluateRefectory");
+			if(MongoTester.testMongo()){
+				
+				eval.mongoWrite();
+				
+				/* RESPONSE HANDLING */			
+				
+				messenger.setMessage(Messenger.THANKS_FOR_EVAL);
+				response.sendRedirect("jsp/messaging.jsp?direct=evaluateRefectory");
+				
+			}else{
+				
+				/* RESPONSE HANDLING */
+				
+				//Der Controller benachrichtigt den User für den Ausfall der Datenbank und führt zur der Anmelde Seite.
+				messenger.setMessage(Messenger.MONGO_ERROR);
+				response.sendRedirect("jsp/messaging.jsp?direct=signin");				
+			}			
 			
 		}else{
+			/* RESPONSE HANDLING */
+			
+			//Der Controller benachrichtigt einen Fehler
 			messenger.setMessage(Messenger.ERROR);
 			response.sendRedirect("jsp/messaging.jsp?direct=evaluateRefectory");
 		}

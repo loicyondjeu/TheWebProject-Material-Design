@@ -13,10 +13,11 @@ import de.hs_lu.mensa.helpers.Denullyfier;
 import de.hs_lu.mensa.helpers.Messenger;
 import de.hs_lu.mensa.helpers.SessionManager;
 import de.hs_lu.mensa.model.Meal;
+import de.hs_lu_mensa_dataaccess.MongoTester;
 
 /**
- * Die Klasse CreateMealServlet ist für alle Anfragen zum Anlegen eines Speise verantwortlich.
- * Dafür liest sie die Daten aus dem Request, erste llt eine Speise als Java Objekt und ruft die Methode des Java Objekt, damit
+ * Die Klasse CreateMealServlet ist für alle Anfragen zum Anlegen einer Speise verantwortlich.
+ * Dafür liest sie die Daten aus dem Request, erstellt eine Speise als Java Objekt und ruft die Methode des Java Objekt, damit
  * Es sich seblst in der Datenbank speichert.
  * <p><strong>Note</strong>: Nicht alle Daten der Speise müssen ausgefüllt sein.</p>
  */
@@ -27,9 +28,8 @@ public class CreateMealServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	  
 		
-		/*HANDLE REQUEST*/
+		/*REQUEST HANDLING*/
 		
-		//Request Verarbeitung
 		request.setCharacterEncoding("UTF-8");
 	    
 		String name = request.getParameter("name");
@@ -41,17 +41,16 @@ public class CreateMealServlet extends HttpServlet {
 		String complement = request.getParameter("complement");
 		String dessert = request.getParameter("dessert");
 		
-		
-		
 		Boolean vegetarian = request.getParameter("vegetarian") == null ? false : true;
 		Boolean halal = request.getParameter("halal") == null ? false : true;
 		Boolean pescetarian = request.getParameter("pescetarian") == null ? false : true;
 		
-		Double energy = Double.valueOf(request.getParameter("energy"));
-		Double protein = Double.valueOf(request.getParameter("protein"));
-		Double fat = Double.valueOf(request.getParameter("fat"));
-		Double carbs= Double.valueOf(request.getParameter("carbs"));
+		Double energy = Double.valueOf(Denullyfier.denullifyDouble(request.getParameter("energy")));
+		Double protein = Double.valueOf(Denullyfier.denullifyDouble(request.getParameter("protein")));
+		Double fat = Double.valueOf(Denullyfier.denullifyDouble(request.getParameter("fat")));
+		Double carbs= Double.valueOf(Denullyfier.denullifyDouble(request.getParameter("carbs")));
 		
+		/*Vitamins mit Hilfe ihrer Name Attribute in ArrayList speichern*/
 		ArrayList<String> vitamins =  new ArrayList<String>();
 		for (int i = 1; i < 6; i++){
 			String vitamin = request.getParameter("v"+i);
@@ -59,6 +58,7 @@ public class CreateMealServlet extends HttpServlet {
 				vitamins.add(vitamin);
 		}
 		
+		/*Vitamins mit Hilfe ihrer Name Attribute in ArrayList speichern*/
 		ArrayList<String> allergies =  new ArrayList<String>();
 		for (int i = 1; i < 6; i++){
 			String allergie = request.getParameter("allergie"+i);
@@ -69,9 +69,9 @@ public class CreateMealServlet extends HttpServlet {
 		String image = Denullyfier.denullifyString(request.getParameter("image"));
 		
 		
-		/*HANDLE BEAN*/
-		
-		//Anlegen der Bean für die Speise
+		/* BEAN HANDLING */
+		//Da Alle Daten aus dem Resquest sauber gelesen worden sind, erzeugt der Controller ein Objekt Speise
+
 		Meal meal = new Meal();
 		
 		meal.setName(name);
@@ -99,19 +99,30 @@ public class CreateMealServlet extends HttpServlet {
 		meal.setImage(image);
 		
 		
-		/*HANDLE DB*/
+		/* DATENBANK HANDLING */
 		
-		//Speise schreibt sich selbst in DB
-		meal.mongoWrite();
-		
-		/*HANDLE RESPONSE*/
-		
-		//Handle Response
-		Messenger messenger = SessionManager.getSessionMessenger(request.getSession());
-		messenger.setMessage(Messenger.CREATE_MEAL_OK);
-		response.sendRedirect("jsp/messaging.jsp?direct=createMeal");
-
-		
+		//Der Controller testet ob eine Datenbank verbindung liegt
+		if(MongoTester.testMongo()){	
+			
+			meal.mongoWrite();
+			
+			/* RESPONSE HANDLING */
+			
+			//Der Controller benachrichtigt den User für den Erfolg und führt zurück der Ansicht.
+			Messenger messenger = SessionManager.getSessionMessenger(request.getSession());
+			messenger.setMessage(Messenger.CREATE_MEAL_OK);
+			response.sendRedirect("jsp/messaging.jsp?direct=createMeal");
+			
+		}else{
+			
+			/* RESPONSE HANDLING */
+			
+			//Der Controller benachrichtigt den User für den Ausfall der Datenbank und führt zur der Anmelde Seite.
+			Messenger messenger = SessionManager.getSessionMessenger(request.getSession());
+			messenger.setMessage(Messenger.MONGO_ERROR);
+			response.sendRedirect("jsp/messaging.jsp?direct=signin");
+			
+		}
 		
 	}
 

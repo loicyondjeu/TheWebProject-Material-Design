@@ -1,11 +1,13 @@
 package de.hs_lu.mensa.model;
 
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import org.bson.Document;
 
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 
 import de.hs_lu_mensa_dataaccess.MongoConnection;
 
@@ -26,6 +28,7 @@ public class RefectoryEvaluation implements Persistable {
 	
 	private MongoConnection mongoConn;
 	private MongoCollection<Document> refectoryEvaluations;
+	private ArrayList<RefectoryEvaluation> refectoryEvaluationsObjects;
 	
 	public RefectoryEvaluation(){
 		super();
@@ -34,6 +37,26 @@ public class RefectoryEvaluation implements Persistable {
 	public void initMongo(){
 		this.mongoConn = new MongoConnection();
 		this.refectoryEvaluations = this.mongoConn.getMongoDataBase().getCollection("RefectoryEvaluations");
+	}
+	
+	public boolean mongoReadAll(){
+		initMongo();
+		
+		refectoryEvaluationsObjects = new ArrayList<RefectoryEvaluation>();
+		MongoCursor<Document> cursor = this.refectoryEvaluations.find().iterator();
+		
+		try{
+			while(cursor.hasNext()){
+				toObject(cursor.next());
+				refectoryEvaluationsObjects.add((RefectoryEvaluation)this.clone());
+			}
+		}finally{
+			cursor.close();
+		}
+		
+		if(refectoryEvaluationsObjects.isEmpty())	return false;
+		
+		return true;
 	}
 	
 	public void toObject(Document doc){
@@ -102,11 +125,27 @@ public class RefectoryEvaluation implements Persistable {
 		this.date = date;
 	}
 
+	public ArrayList<RefectoryEvaluation> getRefectoryEvaluationsObjects() {
+		return refectoryEvaluationsObjects;
+	}
+
 	@Override
 	public String toString() {
 		return String.format(
 				"RefectoryEvaluation [quality=%s, diversity=%s, variety=%s, serving_size=%s, date=%s, refectoryEvaluations=%s]",
 				quality, diversity, variety, serving_size, date, refectoryEvaluations);
+	}
+	
+	@Override
+	public RefectoryEvaluation clone(){
+		RefectoryEvaluation refectoryEvalClone = new RefectoryEvaluation();
+		
+		refectoryEvalClone.setVariety(this.variety);
+		refectoryEvalClone.setDiversity(this.diversity);
+		refectoryEvalClone.setServing_size(this.serving_size);
+		refectoryEvalClone.setQuality(this.quality);
+		
+		return refectoryEvalClone;
 	}
 
 

@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import de.hs_lu.mensa.helpers.Messenger;
 import de.hs_lu.mensa.helpers.SessionManager;
 import de.hs_lu.mensa.model.User;
+import de.hs_lu_mensa_dataaccess.MongoTester;
 
 /**
  * Servlet implementation class SigninServlet
@@ -23,38 +24,54 @@ public class SigninServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		//Handle Request
+		
+		/* REQUEST HANDLING */
 		
 		request.setCharacterEncoding("UTF-8");
 		
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		//String submit = request.getParameter("submit");
 		
-		//Handle Bean
+		/* Keine Aktionsprüfung da einzige Aktion Anmelden ist */ 
+		
+		/* BEAN HANDLING */
+		
 		User user = new User();
 		user.setUsername(username);
 		user.setPassword(password);
 		
-		//Initializing Session and user
-		HttpSession session = request.getSession();
-		session.setAttribute("user", user);
+		/* SESSION HANDLING */
 		
-		try{
-			//Handle Database
+		Messenger messenger = SessionManager.getSessionMessenger(request.getSession());
+		
+		
+		/* DATENBANK HANDLING */
+		
+		//Der Controller testet ob eine Datenbank verbindung liegt
+		if(MongoTester.testMongo()){	
+			
 			if(user.mongoRead()){
 				//Handle Response
+				//Initializing Session and user
+				HttpSession session = request.getSession();
+				session.setAttribute("user", user);
 				response.sendRedirect("jsp/features.jsp");
 			}else{
-				Messenger messenger = SessionManager.getSessionMessenger(session);
 				messenger.setMessage(Messenger.LOGIN_FAILED);
 				response.sendRedirect("jsp/messaging.jsp?direct=signin");
 			}
-		}catch (Exception e) {
-			Messenger messenger = SessionManager.getSessionMessenger(session);
-			messenger.setMessage(Messenger.LOGIN_FAILED);
+			
+		}else{
+			
+			/* RESPONSE HANDLING */
+			
+			//Der Controller benachrichtigt den User für den Ausfall der Datenbank und führt zur der Anmelde Seite.
+			messenger.setMessage(Messenger.MONGO_ERROR);
 			response.sendRedirect("jsp/messaging.jsp?direct=signin");
+			
 		}
+		
+
 
 	}
 

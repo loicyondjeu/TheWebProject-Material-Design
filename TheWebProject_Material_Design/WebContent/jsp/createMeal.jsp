@@ -3,7 +3,7 @@
 <html>
 <head>
 	<jsp:include page="../jsp_components/linkMetaDependencies.jsp">
-	 <jsp:param name="domain" value="admin" />
+	 <jsp:param name="domain" value="admin"/>
 	</jsp:include>
 	<title>Willkommen</title>
 </head>

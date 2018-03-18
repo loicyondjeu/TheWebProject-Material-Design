@@ -16,7 +16,7 @@
   <div class="col s12 l6">
    <div class="card-panel">
      <div class="card-content">
-     <div class="card-title red-text">${sessionScope.toEvaluateMeal.name}#Name</div>
+     <div class="card-title red-text">${sessionScope.toEvaluateMeal.name}</div>
      <h5>Beschreibung</h5>
      <p>${sessionScope.toEvaluateMeal.description}</p>
      <h5>Speisestruktur</h5>

@@ -13,7 +13,9 @@ import org.bson.types.ObjectId;
 import de.hs_lu.mensa.model.Meal;
 
 /**
- * Dieser Servlet verarbeitet die Anfragen nach der Speicherung einer Bewertung einer bestimmten Speise in der Datenbank.
+ * Dieser Servlet verarbeitet die Anfragen nach der Speicherung einer Bewertung für eine bestimmten Speise in der Datenbank.
+ * DEPRECATED
+ * 
  */
 @WebServlet("/evaluateMeal")
 public class EvaluateMealServlet extends HttpServlet {
@@ -21,7 +23,7 @@ public class EvaluateMealServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		/*HANDLE REQUEST*/
+		/*REQUEST HANDLING*/
 		
 		request.setCharacterEncoding("UTF-8");
 		

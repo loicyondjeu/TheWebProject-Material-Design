@@ -14,7 +14,7 @@ import de.hs_lu.mensa.helpers.SessionManager;
 import de.hs_lu.mensa.model.User;
 
 /**
- * Servlet implementation class LogoutServlet
+ * Der Controller meldet den in der Session angemeldeten Benutzer ab.
  */
 @WebServlet("/logout")
 public class LogoutServlet extends HttpServlet {
@@ -22,19 +22,22 @@ public class LogoutServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		/* REQUEST HANDLING */
 		request.setCharacterEncoding("UTF-8");
+		
+		/* SESSION HANDLING */
 		
 		//GET User Data from Session
 		HttpSession session = request.getSession();
 		User user = (User)session.getAttribute("user");
+		Messenger messenger = SessionManager.getSessionMessenger(session);
 		
 		//REMOVE user from session
-		System.out.println("Der Benutzer " + user.getUsername() + " wird abgemeldet...");
+		  /*DEBUG*/System.out.println("Der Benutzer " + user.getUsername() + " wird abgemeldet...");
 		session.removeAttribute("user");
-		System.out.println("Der Benutzer " + user.getUsername() + " wurde abgemeldet");
+		  /*DEBUG*/System.out.println("Der Benutzer " + user.getUsername() + " wurde abgemeldet");
 		
-		//RESPONSE
-		Messenger messenger = SessionManager.getSessionMessenger(session);
+		/* RESPONSE HANDLING */
 		messenger.setMessage(Messenger.LOGOUT_SUCCESS);
 		response.sendRedirect("jsp/messaging.jsp?direct=signin");
 	}

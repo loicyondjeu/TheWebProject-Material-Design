@@ -40,4 +40,13 @@ public abstract class DateHelper {
 		return formatter.parse(strDate);
 	}
 	
+	public static Date getDateFormatted(String toFormat) throws ParseException{
+		Date date = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
+		
+		date = formatter.parse(toFormat);
+		
+		return date;
+	}
+	
 }

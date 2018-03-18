@@ -7,6 +7,7 @@ import javax.servlet.ServletContext;
 
 import de.hs_lu.mensa.model.Meal;
 import de.hs_lu.mensa.model.MealPlan;
+import de.hs_lu.mensa.model.Statistics;
 
 public abstract class ApplicationManager {
 	
@@ -93,6 +94,17 @@ public abstract class ApplicationManager {
 				e.printStackTrace();
 			}
 		  
+	 }
+	 
+	 public static void setUpStatistics(ServletContext application){
+		 
+		 Statistics statistics = new Statistics();
+		 statistics.initCalculations();
+		 
+		 Statistics statisticsTemp = (Statistics)application.getAttribute("statistics");
+		  if(statisticsTemp == null){
+			  application.setAttribute("statistics", statistics);
+		  }
 	 }
 
 }

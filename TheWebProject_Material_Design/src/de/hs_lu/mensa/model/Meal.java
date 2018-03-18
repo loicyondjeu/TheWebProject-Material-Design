@@ -80,6 +80,13 @@ public class Meal implements Persistable {
 		meals.insertOne(this.toDocument());
 		mongoConn.close();
 	}
+	
+	public void mongoDelete(){
+		initMongo();
+		this.meals.deleteOne(this.toDocumentIdOnly());
+		mongoConn.close();
+	}
+	
 
 	public void toObject(Document doc){
 		this.setMeal_id(doc.getObjectId("_id"));
@@ -94,18 +101,26 @@ public class Meal implements Persistable {
 		
 		
 		this.setVegetarian(doc.getBoolean("vegetarian"));
-//		this.setHalal(doc.getBoolean("halal"));
-		this.setPescetarian(doc.getBoolean("pescetarian"));
+		this.setHalal(doc.getBoolean("halal"));
+//		this.setPescetarian(doc.getBoolean("pescetarian"));
 		
 //		this.setProtein(doc.getDouble("protein"));
-//		this.setEnergy(doc.getDouble("energy"));
+		this.setEnergy(doc.getDouble("energy"));
 //		this.setFat(doc.getDouble("fat"));
 //		this.setCarbs(doc.getDouble("carbs"));
 		
-		this.setAllergies((ArrayList<String>) doc.get("allergies"));
+		this.setAllergies((ArrayList<String>) doc.get("allergens"));
 		this.setVitamins((ArrayList<String>) doc.get("vitamins"));
 		
 		this.setImage(doc.getString("image"));
+	}
+	
+	public Document toDocumentIdOnly(){
+		Document mealDocIdOnly = new Document();
+		
+		mealDocIdOnly.append("_id", this.meal_id);
+		
+		return mealDocIdOnly;
 	}
 	
 	public Document toDocument() {
@@ -122,7 +137,7 @@ public class Meal implements Persistable {
 			   
 			   .append("vegetarian", this.vegetarian)
 			   .append("halal", this.halal)
-			   .append("pescetarian", this.pescetarian)
+//			   .append("pescetarian", this.pescetarian)
 
 				.append("energy", this.energy)
 				.append("protein", this.protein)
@@ -131,7 +146,7 @@ public class Meal implements Persistable {
 				
 				.append("vitamins", this.vitamins)
 				
-				.append("allergies", this.allergies)
+				.append("allergens", this.allergies)
 				
 				.append("image", this.image);
 		

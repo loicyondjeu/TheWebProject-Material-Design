@@ -95,10 +95,11 @@
        
        <!-- Icons für Angabe vegetarisch, pescetarian und schwein -->
        <div class="row">
-        ${meal.pescetarian ? '<img src="../img/pescetarian.svg" height="30" width="30"/>' : '<img src="../img/pescetarian.svg" height="30" width="30"/> '} 
-        ${meal.halal ? '<img src="../img/halal.svg" height="30" width="30"/>' : '<img src="../img/halal.svg" height="30" width="30"/> '} 
+        <%-- ${meal.pescetarian ? '<img src="../img/pescetarian.svg" height="30" width="30"/>' : ' '}  --%>
+        ${meal.halal ? '<img src="../img/halal.svg" height="30" width="30"/>' : ' '} 
         ${meal.vegetarian ? '<img src="../img/vegetarian.svg" height="30" width="30"/>' : ' '}                 
        </div>
+       
        
        <form action="../findMeal" method="get">
         <div class="input-field">
@@ -106,8 +107,8 @@
         <label for="date">Datum</label>
 	   </div><br/>
        <span class="rigth-align"><button type="submit" class="btn" name="choosedMeal" value="${meal.meal_id}">planen</button></span>
+       <span class="rigth-align"><button type="submit" class="btn" name="deleteMeal" value="${meal.meal_id}">löschen</button></span>
 	   </form>
-	   
        </div>
        
      </li>
