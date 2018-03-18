@@ -52,6 +52,7 @@ public class RefectoryEvaluation implements Persistable {
 			}
 		}finally{
 			cursor.close();
+			this.mongoConn.close();
 		}
 		
 		if(refectoryEvaluationsObjects.isEmpty())	return false;

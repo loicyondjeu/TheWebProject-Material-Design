@@ -37,6 +37,8 @@ public class MealPlan implements Persistable {
 		
 		Document mealPlanDoc = this.mealPlans.find(dateCondition).first();
 		
+		this.mongoConn.close();
+		
 		if(mealPlanDoc != null){
 			this.toObject(mealPlanDoc);
 			return true;
@@ -51,6 +53,8 @@ public class MealPlan implements Persistable {
 		Bson dateCondition = Filters.eq("date", this.getDate());
 		
 	    mealPlans.updateOne(dateCondition, Updates.set("meals", this.getRelatedMeals_ids()));
+	    
+		this.mongoConn.close();
 	}
 	
 	public void mongoWrite(){

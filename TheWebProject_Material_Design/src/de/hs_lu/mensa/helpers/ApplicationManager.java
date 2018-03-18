@@ -96,15 +96,19 @@ public abstract class ApplicationManager {
 		  
 	 }
 	 
-	 public static void setUpStatistics(ServletContext application){
-		 
-		 Statistics statistics = new Statistics();
-		 statistics.initCalculations();
-		 
-		 Statistics statisticsTemp = (Statistics)application.getAttribute("statistics");
-		  if(statisticsTemp == null){
-			  application.setAttribute("statistics", statistics);
-		  }
+	 public static void setUpStatistics(ServletContext application){	 
+		 try {
+			Statistics statistics = new Statistics();
+			 statistics.initCalculations();
+			 
+			 Statistics statisticsTemp = (Statistics)application.getAttribute("statistics");
+			  if(statisticsTemp == null){
+				  application.setAttribute("statistics", statistics);
+			  }
+		} catch (Exception e) {
+			//Das Laden der Statistiken ist fehlgeschlagen
+			e.printStackTrace();
+		}
 	 }
 
 }

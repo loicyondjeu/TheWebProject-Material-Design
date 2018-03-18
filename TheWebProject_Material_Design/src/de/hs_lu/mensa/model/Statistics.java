@@ -59,6 +59,8 @@ public class Statistics {
 		
 		this.numberOfMeals = (int)this.mongoConn.getMongoDataBase().getCollection("Meals").count();
 		
+		this.mongoConn.close();
+		
 		return numberOfMeals;
 	}
 
@@ -69,6 +71,8 @@ public class Statistics {
 		this.numberOfEvaluationOveral += (int)this.mongoConn.getMongoDataBase().getCollection("QuickMealEvaluations").count();
 		this.numberOfEvaluationOveral += (int)this.mongoConn.getMongoDataBase().getCollection("RefectoryEvaluations").count();
 		
+		this.mongoConn.close();
+		
 		return numberOfEvaluationOveral;
 	}
 
@@ -78,6 +82,8 @@ public class Statistics {
 		
 		this.numberOfEvaluationNormal = (int)this.mongoConn.getMongoDataBase().getCollection("MealEvaluations").count();
 		
+		this.mongoConn.close();
+		
 		return numberOfEvaluationNormal;
 	}
 
@@ -86,6 +92,8 @@ public class Statistics {
 		initMongo();
 		
 		this.numberOfEvaluationQuick = (int)this.mongoConn.getMongoDataBase().getCollection("QuickMealEvaluations").count();
+		
+		this.mongoConn.close();
 		
 		return numberOfEvaluationQuick;
 	}
@@ -116,6 +124,8 @@ public class Statistics {
 		
 		this.numberOfRefectoryEvaluations = (int)this.mongoConn.getMongoDataBase().getCollection("RefectoryEvaluations").count();
 		
+		this.mongoConn.close();
+		
 		return numberOfRefectoryEvaluations;
 	}
 
@@ -125,6 +135,8 @@ public class Statistics {
 		initMongo();
 		
 		this.numberOfUsers = (int)this.mongoConn.getMongoDataBase().getCollection("Users").count();
+		
+		this.mongoConn.close();
 		
 		return numberOfUsers;
 	}

@@ -41,7 +41,7 @@
       <i class="material-icons large red-text">dashboard</i>
      </div>
      <div class="card-action">
-      <a href="#" class="red-text">Statistiken ansehen</a>
+      <a href="dashboard.jsp" class="red-text">Statistiken ansehen</a>
      </div>
     </div>
    </div>

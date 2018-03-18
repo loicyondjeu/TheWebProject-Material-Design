@@ -42,7 +42,7 @@
          </li>
          
          <li>
-         	<a class="waves-effect" href="#">
+         	<a class="waves-effect" href="dashboard.jsp">
          		<i class="material-icons">dashboard</i>Statistiken ansehen
          	</a>
          </li>

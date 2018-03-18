@@ -71,7 +71,7 @@
    <c:forEach items="${sessionScope.mealList}" var="meal">
      <li>
 
-      <div class="collapsible-header"><i class="material-icons">local_pizza</i>${meal.name}</div>
+      <div class="collapsible-header"><i class="material-icons">restaurant</i>${meal.name}</div>
       
       <div class="collapsible-body white">
        

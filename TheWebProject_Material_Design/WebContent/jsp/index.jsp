@@ -101,8 +101,8 @@
         ${tmv.halal ? '<img src="../img/halal.svg" height="30" width="30"/>' : ' '} 
         ${tmv.vegetarian ? '<img src="../img/vegetarian.svg" height="30" width="30"/>' : ' '}                 
        </div> 
-      <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" href="../evaluateMeal?meal=${tmv.meal_id}&evaltype=normal" ${not empty tmv ? '':'disabled'}> bewerten </a>
-      <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" href="../evaluateMeal?meal=${tmv.meal_id}&evaltype=quick" ${not empty tmv ? '':'disabled'}>Schnell bewerten</a>
+      <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" href="../evaluateMeal?meal=${tmv.meal_id}&evaltype=normal" ${not empty tmv ? '':'disabled'}> bewerten <i class="material-icons right">sentiment_very_satisfied</i> </a>
+      <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" href="../evaluateMeal?meal=${tmv.meal_id}&evaltype=quick" ${not empty tmv ? '':'disabled'}>Schnell bewerten <i class="material-icons right">timer</i></a>
      </div>
      
     </div>
@@ -137,8 +137,8 @@
         ${tmo.halal ? '<img src="../img/halal.svg" height="30" width="30"/>' : ' '} 
         ${tmo.vegetarian ? '<img src="../img/vegetarian.svg" height="30" width="30"/>' : ' '}                 
        </div>       
-      <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" href="../evaluateMeal?meal=${tmo.meal_id}&evaltype=normal" ${not empty tmo ? '':'disabled'}> bewerten </a>
-      <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" href="../evaluateMeal?meal=${tmo.meal_id}&evaltype=quick" ${not empty tmo ? '':'disabled'}>Schnell bewerten</a>
+      <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" href="../evaluateMeal?meal=${tmo.meal_id}&evaltype=normal" ${not empty tmo ? '':'disabled'}> bewerten <i class="material-icons right">sentiment_very_satisfied</i> </a>
+      <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" href="../evaluateMeal?meal=${tmo.meal_id}&evaltype=quick" ${not empty tmo ? '':'disabled'}>Schnell bewerten <i class="material-icons right">timer</i> </a>
      </div>
      
     </div>

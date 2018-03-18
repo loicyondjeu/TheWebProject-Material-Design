@@ -52,6 +52,7 @@ public class Meal implements Persistable {
 			}
 		}finally{
 			cursor.close();
+			this.mongoConn.close();
 		}
 		
 		if(mealList.isEmpty())	return false;
@@ -65,6 +66,8 @@ public class Meal implements Persistable {
 		Bson meal_idCondition = Filters.eq("_id", this.meal_id);
 		
 		Document mealDoc = this.meals.find(meal_idCondition).first();
+		
+		this.mongoConn.close();
 		
 		if(mealDoc != null){
 			this.toObject(mealDoc);
