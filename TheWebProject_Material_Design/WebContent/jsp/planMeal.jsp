@@ -10,6 +10,7 @@
 	</jsp:include>
 	<title>Willkommen</title>
 </head>
+
 <body class="grey">
 
 <jsp:include page="../jsp_components/adminHeader.jsp"/>
@@ -18,11 +19,13 @@
  <div class="row">
  
   <div class="col s12 m12 l12">
+  
    <div class="card">
     <form action="../findMeal" method="get">
     
      <div class="card-content">
-      <span class="card-title red-text">Speise planen</span>
+     
+      <span class="card-title red-text"><i class="material-icons left">event</i>Speise planen</span>
       <br/>
       <div class="container">
 	   <div class="col s12">
@@ -36,20 +39,35 @@
        </div>
 	   <br/>
 	  </div>
+	  
     </div>
      
      <div class="card-action">
+     
        <div class="input-field">
 	     <input type="submit" name="search" value="suchen" class="btn red waves-effect waves-light">
 	     <input type="reset" name="reset" value="leeren" class="btn waves-effect waves-light">
 	   </div>
+	   
      </div>
      
     </form>
    </div>
    
+   <!-- Abfrage der Länge des Ergebnisses -->
+   <div class="row">
+    <div class="col l12 m12 s12">
+     <div class="card panel">
+      <div class="container">
+       <div class="flow-text">Aktuell <span class="teal-text"> ${not empty sessionScope.mealListSize ? sessionScope.mealListSize : '0'} </span> Speise(n) gefunden </div>      
+      </div>
+     </div>
+    </div>
+   </div>
+   
   <ul class="collapsible" data-collapsible="accordion">
   
+   <!-- ACHTUNG es wird hier mit Hilfe von JSTL auf auf alle Speise des Suchergebnisses iteriert -->
    <c:forEach items="${sessionScope.mealList}" var="meal">
      <li>
 
@@ -95,7 +113,6 @@
        
        <!-- Icons für Angabe vegetarisch, pescetarian und schwein -->
        <div class="row">
-        <%-- ${meal.pescetarian ? '<img src="../img/pescetarian.svg" height="30" width="30"/>' : ' '}  --%>
         ${meal.halal ? '<img src="../img/halal.svg" height="30" width="30"/>' : ' '} 
         ${meal.vegetarian ? '<img src="../img/vegetarian.svg" height="30" width="30"/>' : ' '}                 
        </div>
@@ -103,11 +120,12 @@
        
        <form action="../findMeal" method="get">
         <div class="input-field">
-	    <input name="date" class="datepicker" type="text" id="date" value=""/>
-        <label for="date">Datum</label>
-	   </div><br/>
-       <span class="rigth-align"><button type="submit" class="btn" name="choosedMeal" value="${meal.meal_id}">planen</button></span>
-       <span class="rigth-align"><button type="submit" class="btn" name="deleteMeal" value="${meal.meal_id}">löschen</button></span>
+	     <input name="date" class="datepicker" type="text" id="date" value=""/>
+         <label for="date">Datum</label>
+	    </div>
+	    <br/>
+        <span class="rigth-align"><button type="submit" class="btn teal" name="choosedMeal" value="${meal.meal_id}">planen<i class="material-icons right">event</i></button></span>
+        <span class="rigth-align"><button type="submit" class="btn red" name="deleteMeal" value="${meal.meal_id}">löschen<i class="material-icons right">delete</i></button></span>
 	   </form>
        </div>
        

@@ -90,7 +90,7 @@ public abstract class ApplicationManager {
 				  
 				  
 			} catch (Exception e) {
-				//Das Laden der heutigen Speisen ist fehlgeschlagen
+				//Das Laden der morgigen Speisen ist fehlgeschlagen
 				e.printStackTrace();
 			}
 		  

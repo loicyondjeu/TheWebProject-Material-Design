@@ -22,24 +22,28 @@ public class LogoutServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		/* REQUEST HANDLING */
-		request.setCharacterEncoding("UTF-8");
-		
-		/* SESSION HANDLING */
-		
-		//GET User Data from Session
-		HttpSession session = request.getSession();
-		User user = (User)session.getAttribute("user");
-		Messenger messenger = SessionManager.getSessionMessenger(session);
-		
-		//REMOVE user from session
-		  /*DEBUG*/System.out.println("Der Benutzer " + user.getUsername() + " wird abgemeldet...");
-		session.removeAttribute("user");
-		  /*DEBUG*/System.out.println("Der Benutzer " + user.getUsername() + " wurde abgemeldet");
-		
-		/* RESPONSE HANDLING */
-		messenger.setMessage(Messenger.LOGOUT_SUCCESS);
-		response.sendRedirect("jsp/messaging.jsp?direct=signin");
+		try {
+			/* REQUEST HANDLING */
+			request.setCharacterEncoding("UTF-8");
+			
+			/* SESSION HANDLING */
+			
+			//GET User Data from Session
+			HttpSession session = request.getSession();
+			User user = (User)session.getAttribute("user");
+			Messenger messenger = SessionManager.getSessionMessenger(session);
+			
+			//REMOVE user from session
+			  /*DEBUG*/System.out.println("Der Benutzer " + user.getUsername() + " wird abgemeldet...");
+			session.removeAttribute("user");
+			  /*DEBUG*/System.out.println("Der Benutzer " + user.getUsername() + " wurde abgemeldet");
+			
+			/* RESPONSE HANDLING */
+			messenger.setMessage(Messenger.LOGOUT_SUCCESS);
+			response.sendRedirect("jsp/messaging.jsp?direct=signin");
+		} catch (Exception e) {
+			response.sendRedirect("jsp/signin.jsp");
+		}
 	}
 
 }

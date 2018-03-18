@@ -76,6 +76,7 @@ public class FindMealServlet extends HttpServlet {
 					ArrayList<Meal> meals = mealProfile.getMealList();
 					
 					request.getSession().setAttribute("mealList", meals);
+					request.getSession().setAttribute("mealListSize", meals.size());
 					response.sendRedirect("jsp/planMeal.jsp");
 					
 				}else{
