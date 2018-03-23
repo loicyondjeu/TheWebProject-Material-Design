@@ -35,7 +35,7 @@ ApplicationManager.setUpStatistics(application);
    <div class="col l6 m6 s12">
     <div class="card-panel hoverable teal darken-4  white-text">
      <i class="material-icons large">group</i>
-     <h5>Anzahl von Users</h5>
+     <h5>Anzahl von Userns</h5>
      <h1>${applicationScope.statistics.numberOfUsers}</h1>
     </div>    
    </div>

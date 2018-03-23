@@ -19,6 +19,7 @@
 <jsp:include page="../jsp_components/guestHeader.jsp"/>
 
 <main>
+<div class="container">
 
  <div class="col s12 m12">
   <h1 class="red-text center-align">Dein Speiseplan</h1>
@@ -50,6 +51,7 @@
       <span class="card-title">${tmv.name}<i class="material-icons right">close</i></span>
       <p>${tmv.description}</p> 
       <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" href="../evaluateMeal?meal=${tmv.meal_id}&evaltype=normal" ${not empty tmv ? '':'disabled'}> bewerten <i class="material-icons right">sentiment_very_satisfied</i> </a>
+      <br/><br/>
       <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" href="../evaluateMeal?meal=${tmv.meal_id}&evaltype=quick" ${not empty tmv ? '':'disabled'}>Schnell bewerten <i class="material-icons right">timer</i></a>
      </div>
      
@@ -81,6 +83,7 @@
       </span>
       <p>${tmo.description}</p>
       <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" href="../evaluateMeal?meal=${tmo.meal_id}&evaltype=normal" ${not empty tmo ? '':'disabled'}> bewerten <i class="material-icons right">sentiment_very_satisfied</i> </a>
+      <br/><br/>
       <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" href="../evaluateMeal?meal=${tmo.meal_id}&evaltype=quick" ${not empty tmo ? '':'disabled'}>Schnell bewerten <i class="material-icons right">timer</i></a>
      </div>
      
@@ -120,6 +123,7 @@
       </span>
       <p>${tmv.description}</p>
       <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" href="../evaluateMeal?meal=${tmv.meal_id}&evaltype=normal" ${not empty tmv ? '':'disabled'}> bewerten <i class="material-icons right">sentiment_very_satisfied</i></a>
+      <br/><br/>
       <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" href="../evaluateMeal?meal=${tmv.meal_id}&evaltype=quick" ${not empty tmv ? '':'disabled'}>Schnell bewerten <i class="material-icons right">timer</i></a>
      </div>
      
@@ -150,6 +154,7 @@
       </span>
       <p>${tmo.description}</p>
       <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" href="../evaluateMeal?meal=${tmo.meal_id}&evaltype=normal" ${not empty tmo ? '':'disabled'}> bewerten <i class="material-icons right">sentiment_very_satisfied</i></a>
+      <br/><br/>
       <a class="waves-effect waves-light tooltipped teal btn" data-tooltip="Gehe zu bewertung" href="../evaluateMeal?meal=${tmo.meal_id}&evaltype=quick" ${not empty tmo ? '':'disabled'}>Schnell bewerten <i class="material-icons right">timer</i></a>
      </div>
      
@@ -158,7 +163,8 @@
    </div>
    
   </div>
-    
+  
+ </div>   
 </main>
 
  <jsp:include page="../jsp_components/guestFooter.jsp"/>

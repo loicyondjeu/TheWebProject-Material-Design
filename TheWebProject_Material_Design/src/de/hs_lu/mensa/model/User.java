@@ -33,6 +33,10 @@ public class User implements Persistable {
 		Document userDoc;
 		
 		userDoc = this.users.find(Filters.and(userCondition, passwordCondition)).first();
+		
+		mongoConn.close();
+		
+		
 		if(userDoc != null){
 			this.toObject(userDoc);
 			return true;
@@ -49,6 +53,8 @@ public class User implements Persistable {
 		
 		users.updateOne(Filters.and(userCondition, passwordCondition),
 				        Updates.combine(Updates.set("username", this.username), Updates.set("password", this.password), Updates.set("email", this.email)));
+		
+		mongoConn.close();
 	}
 	
 	public void mongoWrite(){
