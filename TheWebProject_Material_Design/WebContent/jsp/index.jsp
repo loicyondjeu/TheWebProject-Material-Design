@@ -159,7 +159,7 @@
   	 <div class="card">
   	  <div class="card-panel large">
   	   <span class="card-title">Mensa am Campus</span>
-	   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1056.6973116017093!2d8.423566803215005!3d49.473468962007026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4797cc7dbbd596fb%3A0x6c46f7025066f5d0!2sStudierendenwerk+Vorderpfalz+-+Mensa!5e1!3m2!1sen!2sde!4v1518518615723" width="90%" height="486" ></iframe>	
+	   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1056.6973116017093!2d8.423566803215005!3d49.473468962007026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4797cc7dbbd596fb%3A0x6c46f7025066f5d0!2sStudierendenwerk+Vorderpfalz+-+Mensa!5e1!3m2!1sen!2sde!4v1518518615723" width="90%" height="280" ></iframe>	
   	  </div>
   	 </div>
   	</div>
@@ -168,7 +168,7 @@
      <div class="card">
   	  <div class="card-panel large">
   	  	<span class="card-title">Studierendenwerk Vorderpfalz</span>  
-  	   	 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d657.1118441782642!2d8.107776950830093!3d49.20451924547957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479650604ac64971%3A0x9ba7b24d29669d41!2sStudierendenwerk+Vorderpfalz+A%C3%B6R+-+Zentrale+%2F+Mensa!5e1!3m2!1sde!2sde!4v1520873495617" width="90%" height="486" style="border:0" ></iframe>
+  	   	 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d657.1118441782642!2d8.107776950830093!3d49.20451924547957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479650604ac64971%3A0x9ba7b24d29669d41!2sStudierendenwerk+Vorderpfalz+A%C3%B6R+-+Zentrale+%2F+Mensa!5e1!3m2!1sde!2sde!4v1520873495617" width="90%" height="280" style="border:0" ></iframe>
   	  </div>
   	 </div>
   	</div>
