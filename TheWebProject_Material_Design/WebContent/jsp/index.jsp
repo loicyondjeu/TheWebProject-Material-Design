@@ -203,6 +203,16 @@
    </div>  
   
   </div>
+  
+  <div class="fixed-action-btn">
+  <a class="btn-floating btn-large red pulse" href="../jsp/evaluateRefectory.jsp">
+    <i class="large material-icons">sentiment_very_satisfied</i>
+  </a>
+  <ul>
+    <li><a class="btn-floating teal" href="../jsp/viewMealPlan.jsp"><i class="material-icons">event</i></a></li>
+  </ul>
+</div>
+
  </main>
     
  <jsp:include page="../jsp_components/guestFooter.jsp"/>

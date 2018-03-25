@@ -17,14 +17,20 @@
    <div class="card">
    
     <div class="card-content">
-     <div class="card-title red-text">Mensa bewerten</div>
+     <div class="card-title red-text"><h5><i class="material-icons left">sentiment_very_satisfied</i>Mensa bewerten</h5></div>
+     <br/> 
      
      <form action="../evaluateRefectory" method="post">
      
+     Hier kannst du die Mensa im Allgemein bewerten. Gebe einfach mal eine Note für die folgenden Kriterien auf einem Skala von 1 bis 10 :)
+     <br/>
+     <br/>     
+     
      <div class="row">
-           <div class="range-field">
+      <div class="range-field">
        <div class="col s4 m4 l12">
-        <label for="quality">Qualität</label>
+        <label for="quality"><i class="material-icons left">sentiment_very_satisfied</i>Qualität</label>
+        <br/>Wie bewertest du die Qualität der Speise unserer Mensa?        
         <input type="range" id="quality" min="0" max="10" name="quality" value=""/>
        </div>
       </div>
@@ -34,9 +40,10 @@
       <br/>
       
       <div class="row">
-             <div class="range-field">
+      <div class="range-field">
        <div class="col s4 m4 l12">
-        <label for="diversity">Vielfalt</label>
+        <label for="diversity"><i class="material-icons left">sentiment_very_satisfied</i>Vielfalt</label>
+        <br/>Ist das Essen in der Mensa vielfältig?          
         <input type="range" id="diversity" min="0" max="10" name="diversity" value=""/>
        </div>
       </div>
@@ -49,7 +56,8 @@
       <div class="row">
         <div class="range-field">
          <div class="col s4 m4 l12">
-        <label for="variety">Abwechslung</label>
+        <label for="variety"><i class="material-icons left">sentiment_very_satisfied</i>Abwechslung</label>
+        <br/>Findest du das Menü abwechslend?            
         <input type="range" id="variety" min="0" max="10" name="variety" value="" />
        </div>
       </div>  
@@ -62,7 +70,8 @@
         <div class="row">
        <div class="range-field">
        <div class="col s4 m4 l12">
-        <label for="serving_size">Portionsgröße</label>
+        <label for="serving_size"><i class="material-icons left">sentiment_very_satisfied</i>Portionsgröße</label>
+         <br/>Wie bewertest du die Portionsgröße im Allgemein ?               
         <input type="range" id="serving_size" min="0" max="10" name="serving_size" value=""/>
        </div>
       </div> 
@@ -79,8 +88,15 @@
    <div class="card">
    
     <div class="card-content">
-     <div class="card-title red-text">Vorschlag machen</div>
+     <div class="card-title red-text"><h5><i class="material-icons left">feedback</i>Vorschlag machen</h5></div>
+     <br/>
+     
      <form action="addSuggestion" method="post">
+     
+      Hier kannst du deiner Mensa verbessern mit deinem Vorschalg. Gebe einfach ein paar Infos über dich und deinen Vorschlag
+      <br/>
+      <br/>
+     
       <div class="input-field">
        <i class="material-icons prefix">person</i>
        <input id="Vorname" type="text" class="validate">

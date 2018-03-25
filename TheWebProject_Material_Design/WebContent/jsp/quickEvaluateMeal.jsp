@@ -16,7 +16,15 @@
 	    <h1 class="red-text">Wie hat es dir geschmeckt ? :)</h1>
 
 	    <form action="../saveQuickMealEvaluation" method="post">
-	    <div class="container flow-text">Speise: ${sessionScope.toEvaluateMeal.name}</div>
+	    <div class="row">
+         <div class="col l3 m12 s12">
+          <img src="${sessionScope.toEvaluateMeal.image}" class="responsive-img"/>    	
+         </div>
+         <div class="col l9 m12 s12">
+          <div class="container flow-text teal-text">${sessionScope.toEvaluateMeal.name}</div>    	
+         </div>         	     
+	    </div>
+ 
 	    <input type="hidden" name="meal" value="${sessionScope.toEvaluateMeal.meal_id}"/>
   <ul class="stepper horizontal">
  
@@ -146,6 +154,11 @@
    <li class="step">
       <div class="step-title waves-effect">OK</div>
       <div class="step-content">
+       <div class="row center-align">
+        <i class="material-icons large teal-text">cloud_done</i>
+        <h1>Alles Klar</h1>
+        <h2>Schicke uns deine Bewertung</h2>        
+       </div>
          <div class="step-actions">
             <input type="hidden" name="bewerten" value="bewerten"/>
             <button class="waves-effect waves-dark btn" type="submit" name="bewerten" value="bewerten">BEWERTUNG SCHICKEN<i class="material-icons right">send</i></button>

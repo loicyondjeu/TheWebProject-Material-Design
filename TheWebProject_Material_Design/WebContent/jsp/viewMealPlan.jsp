@@ -28,7 +28,7 @@
   <div class="row white">
   
    <div class="col s12 m12 l12">
-    <h1 class="red-text center-align">Heute in deiner Mensa</h1>
+    <h1 class="red-text center-align"><span class="teal-text">Heute</span> in der Mensa</h1>
    </div>
    
    <div class="col s12 m6 l6">
@@ -97,7 +97,7 @@
   <div class="row white">
   
    <div class="col s12 m12 l12">
-    <h1 class="red-text center-align">Morgen in deiner Mensa</h1>
+    <h1 class="red-text center-align"><span class="teal-text">Morgen</span> in der Mensa</h1>
    </div>
    
    <div class="col s12 m6 l6">
