@@ -27,7 +27,7 @@
    <div class="carousel carousel-slider center">
    
     <div class="carousel-item red white-text">
-	 <h3>Bewerte das Essen in der Mensa</h3>
+	 <h3>Bewerte das Getränk in der Mensa</h3>
 	 <p>Sag uns einfach wie dir das Essen geschmeckt hat !</p>
 	 <i class="material-icons large">directions_bike</i><br/>
 	 <a class="btn waves-effect" href="evaluateRefectory.jsp">Zur Bewertung</a>
