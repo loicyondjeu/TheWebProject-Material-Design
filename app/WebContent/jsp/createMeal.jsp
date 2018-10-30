@@ -12,7 +12,6 @@
 <jsp:include page="../jsp_components/adminHeader.jsp"/>
 
 <main>
-
  <div class="row">
   <div class="col s12 m12 l12">
  
