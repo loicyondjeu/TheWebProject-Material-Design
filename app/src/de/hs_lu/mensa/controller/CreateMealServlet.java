@@ -30,6 +30,7 @@ public class CreateMealServlet extends HttpServlet {
 		
 		/*REQUEST HANDLING*/
 		
+		
 		request.setCharacterEncoding("UTF-8");
 	    
 		String name = request.getParameter("name");
