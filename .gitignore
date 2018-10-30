@@ -2,3 +2,7 @@
 /.classpath
 /bin/
 /.idea/
+app/bin/
+app/.settings/
+app/.classpath
+app/.project
