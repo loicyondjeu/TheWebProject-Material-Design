@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+
+/**
+* Diese CSS enthält Formatierungen für die Seiten der Gäste der Mensa.
+* Sie basiert auf unsere 2 CSS Frameworks Materialize und Materialize-stepper
+* Loic
+*/
+
+/*Formatierung des Logos*/
+#myGeschmack_logo_text{
+	font-weight: 100;
+}
+#my{
+	font-weight: 300;
+}
+ul.stepper.horizontal {
+   min-height: 600px !important;
+}
